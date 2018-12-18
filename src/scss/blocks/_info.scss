@@ -1,0 +1,40 @@
+.info {
+    width: 78%;
+    background-color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    &__description {
+        font-size: 5vw;
+        letter-spacing: 0.034615em;
+        margin-bottom: 6.15vh;
+        line-height: 2.153846em;
+        text-align: center;
+    }
+    &__small-text {
+        color: #000000;
+        font-weight: 300;
+        font-size: 4.49vw;
+        line-height: 2.086957em;
+        font-weight: 300;
+        letter-spacing: 0.03478em;
+        margin-bottom: 4.88vh;
+        display: block;
+        text-align: center;
+    }
+    &__email {
+        color: black;
+        text-decoration: none;
+    }
+    &__instagram {
+        margin-top: auto;
+    }
+    &__instagram-svg {
+        width: 54px;
+        height: 54px;
+    }
+}
