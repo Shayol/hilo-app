@@ -2,11 +2,15 @@
     height: 100%;
     padding-top: 8vh;
     padding-bottom: 5.4vh;
-    width: 78%;
+    width: 100%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
+    transition-delay: 0.4s;
+    z-index: 10;
+    opacity: 1;
     &__logo {
         margin-bottom: 5.625vh;
     }
@@ -14,13 +18,16 @@
         flex-grow: 1;
         overflow: hidden;
         height: 100%;
+        width: 100%;
+        padding-left: 8.935vw;
+        padding-right: 8.935vw;
     }
     &__content {
-        width: 64.2578vw;
+        padding-left: 8.935vw;
+        padding-right: 8.935vw;
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
-        height: 100%;
-        // padding-left: 11%; // padding-right: 11%;
+        height: 100%; // padding-left: 11%; // padding-right: 11%;
     }
     &__arrow\--down {
         margin-top: 5.625vh;
