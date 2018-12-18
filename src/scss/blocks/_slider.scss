@@ -36,6 +36,7 @@
         position: relative;
         padding-top: 9.7656vh;
         padding-bottom: 12vh;
+        pointer-events: auto;
         &__content {
             position: relative;
             padding-left: 10vw;
@@ -44,6 +45,17 @@
         }
         &__logo {
             margin-bottom: 1vh;
+        }
+        &\--small {
+            .slider__logo,
+            .slide__artist,
+            .slide__portfolio,
+            .arrow {
+                display: none !important;
+            }
+            .slide__img-wrapper {
+                max-width: 36vw;
+            }
         }
     }
 }

@@ -6,11 +6,15 @@ window.addEventListener('load', function () {
     let info = document.querySelector('.info');
     let container = document.querySelector(".container");
     let slider = document.querySelector(".slider__content");
+    let sliderParent = document.querySelector(".slider");
     let arrowDown = document.querySelector(".arrow--down");
     let arrowLeft = document.querySelector(".arrow--left");
     let arrowRight = document.querySelector(".arrow--right");
     let slides = document.querySelectorAll(".slide");
+    let cube = document.querySelector('.d__cube');
     let currentSlide = 1;
+
+    //show info
 
     sliderLogo.forEach(logo => {
         logo.addEventListener('click', () => {
@@ -30,6 +34,7 @@ window.addEventListener('load', function () {
         let current = document.querySelector(".show-slide");
         let currentNumber = parseInt(current.dataset.id) - 1;
         if (current) {
+            e.stopPropagation();
             slides[currentNumber > 0 ? currentNumber - 1 : slides.length - 1].classList.add("show-slide");
             current.classList.remove("show-slide");
         }
@@ -39,6 +44,7 @@ window.addEventListener('load', function () {
         let current = document.querySelector(".show-slide");
         let currentNumber = parseInt(current.dataset.id) - 1;
         if (current) {
+            e.stopPropagation();
             slides[currentNumber < slides.length - 1 ? currentNumber + 1 : 0].classList.add("show-slide");
             current.classList.remove("show-slide");
         }
@@ -54,5 +60,12 @@ window.addEventListener('load', function () {
     }, { threshold: 0.6 });
 
     slides.forEach((element) => intersectionObserver.observe(element));
+
+    //zoom in 
+
+    sliderParent.addEventListener('click', function () {
+        sliderParent.classList.toggle("slider--small");
+        cube.classList.toggle("d__cube--big");
+    })
 
 });
