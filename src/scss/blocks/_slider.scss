@@ -1,0 +1,28 @@
+.slider {
+    height: 100%;
+    padding-top: 8vh;
+    padding-bottom: 5.4vh;
+    width: 78%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__logo {
+        margin-bottom: 5.625vh;
+    }
+    &__wrapper {
+        flex-grow: 1;
+        overflow: hidden;
+        height: 100%;
+    }
+    &__content {
+        width: 64.2578vw;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        height: 100%;
+        // padding-left: 11%; // padding-right: 11%;
+    }
+    &__arrow\--down {
+        margin-top: 5.625vh;
+    }
+}

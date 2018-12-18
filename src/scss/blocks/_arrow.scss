@@ -1,0 +1,17 @@
+.arrow {
+    display: flex;
+    min-height: 54px;
+    height: 7.8vw;
+    width: 100%;
+    position: relative;
+    &__content {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        border-right: 1px solid #D7D7D7;
+        border-bottom: 1px solid #D7D7D7;
+        transform: translate(-50%, -50%) rotate(45deg);
+        height: 54px;
+        width: 54px;
+    }
+}
