@@ -2,59 +2,78 @@
     &__scene {
         width: 100%;
         height: 100%;
-        perspective: 80vw;
-        pointer-events: none;
     }
     &__cube {
         width: 100%;
         height: 100%;
-        position: relative;
-        transform-style: preserve-3d;
-        transform: translateZ(-40vw);
-        &\--big {
-            transform: translateZ(41vw);
-            transition: 1s cubic-bezier(.02, .01, .47, 1);
-        }
     }
     &__cube-face {
-        position: absolute;
-        border: 20px solid black;
-    }
-    &__cube-face\--front {
-        transform: rotateY( 0deg) translateZ(40vw);
-        width: 100%;
-        height: 100%;
-    }
-    &__cube-face\--right {
-        transform: rotateY( 90deg) translateZ(50vw);
-        width: 80vw;
-        height: 100%;
-        left: calc(50% - 40vw);
-        background-color: green;
+        display: none;
     }
     &__cube-face\--back {
-        transform: rotateY(0) translateZ(-40vw);
+        display: block;
         width: 100%;
         height: 100%;
-        pointer-events: auto;
     }
-    &__cube-face\--left {
-        transform: rotateY(-90deg) translateZ(50vw);
-        background-color: blue;
-        width: 80vw;
-        height: 100%;
-        left: calc(50% - 40vw);
-    }
-    &__cube-face\--top {
-        transform: rotateX( 90deg) translateZ(50vh);
-        width: 100%;
-        height: 80vw;
-        top: calc(50% - 40vw);
-    }
-    &__cube-face\--bottom {
-        transform: rotateX(-90deg) translateZ(50vh);
-        width: 100%;
-        height: 80vw;
-        top: calc(50% - 40vw);
+    @media(min-width: $desktop) {
+        &__scene {
+            width: 100%;
+            height: 100%;
+            perspective: 80vw;
+            pointer-events: none;
+        }
+        &__cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: translateZ(-40vw);
+            transition: all .85s;
+            &\--big {
+                transform: translateZ(41vw);
+            }
+        }
+        &__cube-face {
+            display: block;
+            position: absolute;
+            border: 20px solid black;
+        }
+        &__cube-face\--front {
+            transform: rotateY( 0deg) translateZ(40vw);
+            width: 100%;
+            height: 100%;
+        }
+        &__cube-face\--right {
+            transform: rotateY( 90deg) translateZ(50vw);
+            width: 80vw;
+            height: 100%;
+            left: calc(50% - 40vw);
+            background-color: green;
+        }
+        &__cube-face\--back {
+            transform: rotateY(0) translateZ(-40vw);
+            width: 100%;
+            height: 100%;
+            pointer-events: auto;
+        }
+        &__cube-face\--left {
+            transform: rotateY(-90deg) translateZ(50vw);
+            background-color: blue;
+            width: 80vw;
+            height: 100%;
+            left: calc(50% - 40vw);
+        }
+        &__cube-face\--top {
+            transform: rotateX( 90deg) translateZ(50vh);
+            width: 100%;
+            height: 80vw;
+            top: calc(50% - 40vw);
+        }
+        &__cube-face\--bottom {
+            transform: rotateX(-90deg) translateZ(50vh);
+            width: 100%;
+            height: 80vw;
+            top: calc(50% - 40vw);
+        }
     }
 }

@@ -17,7 +17,14 @@
             width: 54px;
         }
     }
+    &\--left {
+        display: none;
+    }
+    &\--right {
+        display: none;
+    }
     @media(min-width: $desktop) {
+        cursor: pointer;
         &\--down {
             display: none;
         }

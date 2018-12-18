@@ -69,10 +69,12 @@
             font-size: 1.875vw;
             letter-spacing: 0.034815em;
             margin-bottom: .6em;
+            transition: opacity .85s;
         }
         &__portfolio {
             font-size: 1.25vw;
             letter-spacing: 0.035em;
+            transition: opacity .85s;
         }
     }
 }

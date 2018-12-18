@@ -17,7 +17,8 @@ window.addEventListener('load', function () {
     //show info
 
     sliderLogo.forEach(logo => {
-        logo.addEventListener('click', () => {
+        logo.addEventListener('click', (e) => {
+            e.stopPropagation();
             container.classList.toggle("show-info");
         });
     });
@@ -25,7 +26,10 @@ window.addEventListener('load', function () {
     //navigate slider
     arrowDown.addEventListener('click', e => {
         if (TweenLite) {
-            e.preventDefault();
+            e.stopPropagation();
+            if (parseInt(currentSlide) >= slides.length) {
+                return;
+            }
             TweenLite.to(slider, .5, { scrollTo: "#slide" + (parseInt(currentSlide) + 1) });
         }
     });

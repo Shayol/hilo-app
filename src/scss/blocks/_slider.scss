@@ -45,16 +45,18 @@
         }
         &__logo {
             margin-bottom: 1vh;
+            transition: opacity .85s;
         }
         &\--small {
             .slider__logo,
             .slide__artist,
             .slide__portfolio,
             .arrow {
-                display: none !important;
+                // display: none !important;
+                opacity: 0;
             }
             .slide__img-wrapper {
-                max-width: 36vw;
+                // max-width: 36vw;
             }
         }
     }
