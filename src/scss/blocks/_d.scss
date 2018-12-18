@@ -14,7 +14,6 @@
     &__cube-face {
         position: absolute;
         border: 20px solid black;
-        opacity: 0.3;
     }
     &__cube-face\--front {
         transform: rotateY( 0deg) translateZ(20vw);
@@ -25,11 +24,11 @@
         transform: rotateY( 90deg) translateZ(50vw);
         width: 40vw;
         height: 100%;
-        left: 40vw;
+        left: calc(50% - 20vw);
         background-color: green;
     }
     &__cube-face\--back {
-        transform: rotateY(0) translateZ(20vw);
+        transform: rotateY(0) translateZ(-20vw);
         width: 100%;
         height: 100%;
     }
@@ -38,7 +37,7 @@
         background-color: blue;
         width: 40vw;
         height: 100%;
-        left: 40vw;
+        left: calc(50% - 20vw);
     }
     &__cube-face\--top {
         transform: rotateX( 90deg) translateZ(50vh);
