@@ -30,7 +30,7 @@ window.addEventListener('load', function () {
         let current = document.querySelector(".show-slide");
         let currentNumber = parseInt(current.dataset.id) - 1;
         if (current) {
-            slides[currentNumber > 0 ? currentNumber - 1 : slides.length].classList.add("show-slide");
+            slides[currentNumber > 0 ? currentNumber - 1 : slides.length - 1].classList.add("show-slide");
             current.classList.remove("show-slide");
         }
     });
