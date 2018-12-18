@@ -1,17 +1,16 @@
 .info {
     width: 78%;
     background-color: white;
-    height: 100%;
+    height: 85.75%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
     &__description {
         font-size: 5vw;
         letter-spacing: 0.034615em;
         margin-bottom: 6.15vh;
+        margin-top: 10vh;
         line-height: 2.153846em;
         text-align: center;
     }
