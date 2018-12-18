@@ -1,0 +1,55 @@
+.d {
+    &__scene {
+        width: 100%;
+        height: 100%;
+        perspective: 80vw;
+    }
+    &__cube {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: translateZ(-20vw);
+    }
+    &__cube-face {
+        position: absolute;
+        border: 20px solid black;
+        opacity: 0.3;
+    }
+    &__cube-face\--front {
+        transform: rotateY( 0deg) translateZ(20vw);
+        width: 100%;
+        height: 100%;
+    }
+    &__cube-face\--right {
+        transform: rotateY( 90deg) translateZ(50vw);
+        width: 40vw;
+        height: 100%;
+        left: 40vw;
+        background-color: green;
+    }
+    &__cube-face\--back {
+        transform: rotateY(0) translateZ(20vw);
+        width: 100%;
+        height: 100%;
+    }
+    &__cube-face\--left {
+        transform: rotateY(-90deg) translateZ(50vw);
+        background-color: blue;
+        width: 40vw;
+        height: 100%;
+        left: 40vw;
+    }
+    &__cube-face\--top {
+        transform: rotateX( 90deg) translateZ(50vh);
+        width: 100%;
+        height: 40vw;
+        top: calc(50% - 20vw);
+    }
+    &__cube-face\--bottom {
+        transform: rotateX(-90deg) translateZ(50vh);
+        width: 100%;
+        height: 40vw;
+        top: calc(50% - 20vw);
+    }
+}
