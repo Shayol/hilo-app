@@ -80,7 +80,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(obj)$/,
+        test: /\.(pdf)$/,
         use: {
           loader: "file-loader",
           options: {
