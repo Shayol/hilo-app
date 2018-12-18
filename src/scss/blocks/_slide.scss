@@ -50,4 +50,28 @@
         width: 100%;
         height: auto;
     }
+    @media(min-width: $desktop) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        z-index: -1;
+        transition-delay: initial;
+        padding: 0;
+        &__img-wrapper {
+            margin-top: auto;
+            max-width: 40vw;
+        }
+        &__artist {
+            font-size: 1.875vw;
+            letter-spacing: 0.034815em;
+            margin-bottom: .6em;
+        }
+        &__portfolio {
+            font-size: 1.25vw;
+            letter-spacing: 0.035em;
+        }
+    }
 }

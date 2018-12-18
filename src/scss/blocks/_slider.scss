@@ -27,9 +27,23 @@
         padding-right: 8.935vw;
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
-        height: 100%; // padding-left: 11%; // padding-right: 11%;
+        height: 100%;
     }
     &__arrow\--down {
         margin-top: 5.625vh;
+    }
+    @media(min-width: $desktop) {
+        position: relative;
+        padding-top: 9.7656vh;
+        padding-bottom: 12vh;
+        &__content {
+            position: relative;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            overflow: hidden;
+        }
+        &__logo {
+            margin-bottom: 1vh;
+        }
     }
 }

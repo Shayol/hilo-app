@@ -6,7 +6,9 @@ window.addEventListener('load', function () {
     let info = document.querySelector('.info');
     let container = document.querySelector(".container");
     let slider = document.querySelector(".slider__content");
-    let arrowDown = document.querySelector(".slider__arrow--down");
+    let arrowDown = document.querySelector(".arrow--down");
+    let arrowLeft = document.querySelector(".arrow--left");
+    let arrowRight = document.querySelector(".arrow--right");
     let slides = document.querySelectorAll(".slide");
     let currentSlide = 1;
 
@@ -16,11 +18,29 @@ window.addEventListener('load', function () {
         });
     });
 
-    //scroll on mobile
+    //navigate slider
     arrowDown.addEventListener('click', e => {
         if (TweenLite) {
             e.preventDefault();
-            TweenLite.to(slider, 1, { scrollTo: "#slide" + (parseInt(currentSlide) + 1) });
+            TweenLite.to(slider, .5, { scrollTo: "#slide" + (parseInt(currentSlide) + 1) });
+        }
+    });
+
+    arrowLeft.addEventListener('click', e => {
+        let current = document.querySelector(".show-slide");
+        let currentNumber = parseInt(current.dataset.id) - 1;
+        if (current) {
+            slides[currentNumber > 0 ? currentNumber - 1 : slides.length].classList.add("show-slide");
+            current.classList.remove("show-slide");
+        }
+    });
+
+    arrowRight.addEventListener('click', e => {
+        let current = document.querySelector(".show-slide");
+        let currentNumber = parseInt(current.dataset.id) - 1;
+        if (current) {
+            slides[currentNumber < slides.length - 1 ? currentNumber + 1 : 0].classList.add("show-slide");
+            current.classList.remove("show-slide");
         }
     });
 
