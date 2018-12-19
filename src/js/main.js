@@ -50,7 +50,7 @@ window.addEventListener('load', function () {
     //navigate slider
     arrowDown.forEach((arrow, index) => {
         arrow.addEventListener('click', e => {
-            if (index < arrowDown.length - 1) {
+            if (index < slides.length - 1) {
 
                 if (TweenLite) {
 
