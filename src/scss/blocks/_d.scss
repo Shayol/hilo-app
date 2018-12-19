@@ -30,13 +30,14 @@
             transform: translateZ(-40vw);
             transition: all .85s;
             &\--big {
-                transform: translateZ(41vw);
+                transform: translateZ(43vw);
             }
         }
         &__cube-face {
             display: block;
             position: absolute;
             border-image-source: url('../img/camila_lamarca.png');
+            border-image-repeat: stretch;
         }
         &__cube-face\--front {
             transform: rotateY( 0deg) translateZ(40vw);
@@ -46,7 +47,7 @@
             border-bottom: 15px solid transparent;
             border-left: 15px solid transparent;
             border-right: 15px solid transparent;
-            border-image-slice: 20%;
+            border-image-slice: 40%;
         }
         &__cube-face\--right {
             transform: rotateY( 90deg) translateZ(50vw);
@@ -55,7 +56,7 @@
             left: calc(50% - 40vw);
             border-top: 15px solid transparent;
             border-bottom: 15px solid transparent;
-            border-image-slice: 20%;
+            border-image-slice: 40%;
         }
         &__cube-face\--back {
             transform: rotateY(0) translateZ(-40vw);
@@ -66,14 +67,14 @@
             border-bottom: 15px solid transparent;
             border-left: 15px solid transparent;
             border-right: 15px solid transparent;
-            border-image-slice: 20%;
+            border-image-slice: 40%;
         }
         &__cube-face\--left {
             transform: rotateY(-90deg) translateZ(50vw);
             width: 80vw;
             height: 100%;
             left: calc(50% - 40vw);
-            border-image-slice: 20%;
+            border-image-slice: 40%;
             border-top: 15px solid transparent;
             border-bottom: 15px solid transparent;
         }

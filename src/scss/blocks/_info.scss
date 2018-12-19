@@ -23,6 +23,9 @@
         margin-top: 11.8vh;
         line-height: 2.153846em;
         text-align: center;
+        &\--desktop {
+            display: none;
+        }
     }
     &__small-text {
         color: #000000;
@@ -47,14 +50,32 @@
         height: 56px;
     }
     @media(min-width: $desktop) {
-        padding-top: 12.75%;
-        padding-bottom: 12.75%;
+        padding-top: 7%;
+        padding-bottom: 11%;
         &__description {
             font-size: 1.6vw;
+            margin-top: 16.8vh;
+            letter-spacing: 0.034783em;
+            &\--mobile {
+                display: none;
+            }
+            &\--desktop {
+                display: block;
+            }
         }
         &__small-text {
             font-size: 1.3889vw;
             line-height: 1.3333em;
+            margin-bottom: 3.6vh;
+        }
+        &__schedule {
+            margin-bottom: 0;
+        }
+        &__email {
+            margin-top: auto;
+        }
+        &__break {
+            display: none;
         }
     }
 }

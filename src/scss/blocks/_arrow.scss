@@ -26,6 +26,7 @@
     }
     @media(min-width: $desktop) {
         cursor: pointer;
+        transition: border-color 0.4s ease;
         &\--down {
             display: none;
         }
@@ -39,6 +40,9 @@
             transform: translateY(-50%) rotate(45deg);
             height: 54px;
             width: 54px;
+            &:hover {
+                border-color: #777676;
+            }
         }
         &\--right {
             display: block;
@@ -50,6 +54,9 @@
             transform: translateY(-50%) rotate(-45deg);
             height: 54px;
             width: 54px;
+            &:hover {
+                border-color: #504f4f;
+            }
         }
     }
 }

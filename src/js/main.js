@@ -44,6 +44,8 @@ window.addEventListener('load', function () {
             let newSlide = slides[currentNumber > 0 ? currentNumber - 1 : slides.length - 1];
             newSlide.classList.add("show-slide");
             current.classList.remove("show-slide");
+
+            changeBorder(newSlide);
         }
     });
 
@@ -56,13 +58,18 @@ window.addEventListener('load', function () {
             newSlide.classList.add("show-slide");
             current.classList.remove("show-slide");
 
-            //change border image for cube
-            let el = newSlide.querySelector(".slide__img-wrapper");
-            let computImg = getComputedStyle(el).backgroundImage.split("img/")[1]
-            let img = computImg.substring(0, computImg.length - 2);
-            cubeFace.forEach(c => c.style.borderImageSource = `url(../img/${img})`);
+            changeBorder(newSlide);
         }
     });
+
+
+    function changeBorder(newSlide) {
+        //change border image for cube
+        let el = newSlide.querySelector(".slide__img-wrapper");
+        let computImg = getComputedStyle(el).backgroundImage.split("img/")[1]
+        let img = computImg.substring(0, computImg.length - 2);
+        cubeFace.forEach(c => c.style.borderImageSource = `url(../img/${img})`);
+    }
 
     const intersectionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
