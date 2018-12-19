@@ -12,7 +12,7 @@ window.addEventListener('load', function () {
     let arrowRight = document.querySelector(".arrow--right");
     let slides = document.querySelectorAll(".slide");
     let cube = document.querySelector('.d__cube');
-    let cubeFace = document.querySelector(".d__cube-face");
+    let cubeFace = document.querySelectorAll(".d__cube-face");
     let scene = document.querySelector(".d__scene");
     let currentSlide = 1;
 
@@ -58,8 +58,9 @@ window.addEventListener('load', function () {
 
             //change border image for cube
             let el = newSlide.querySelector(".slide__img-wrapper");
-            let img = getComputedStyle(el).backgroundImage;
-            cubeFace.style.borderImageSource = img;
+            let computImg = getComputedStyle(el).backgroundImage.split("img/")[1]
+            let img = computImg.substring(0, computImg.length - 2);
+            cubeFace.forEach(c => c.style.borderImageSource = `url(../img/${img})`);
         }
     });
 
