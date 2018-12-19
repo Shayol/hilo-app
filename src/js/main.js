@@ -6,6 +6,7 @@ import '../img/border_camila_lamarca.png';
 import '../img/border_carolina_zancolli.png';
 import '../img/border_claudia_cortinez.png';
 import '../img/border_florencia_walter.png';
+import '../img/border_samuel_lasso.png';
 
 window.addEventListener('load', function () {
     let sliderLogo = document.querySelectorAll(".logo");

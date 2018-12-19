@@ -11,15 +11,21 @@
         animation-fill-mode: forwards;
         opacity: 1;
         &__cube-face {
-            border: 15px solid black !important;
             animation: intro 5s cubic-bezier(.02, .01, .47, 1);
             display: flex;
             align-items: center;
             justify-content: center;
+            border-image-source: initial;
             animation-fill-mode: forwards;
-            &\--back {
-                background-color: white !important;
-            }
+            border: 15px solid black;
+            // &\--front, // &\--back {
+//     border: 15px solid black;
+// }
+// &\--left,
+// &\--right {
+//     border-top: 15px solid black;
+//     border-bottom: 15px solid black;
+// }
         }
         &__logo {
             width: 80%;
