@@ -1,5 +1,6 @@
 import "../scss/main.scss";
 require('intersection-observer');
+import '../img/favicon.ico';
 
 window.addEventListener('load', function () {
     let sliderLogo = document.querySelectorAll(".logo");
