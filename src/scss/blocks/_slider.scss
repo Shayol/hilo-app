@@ -36,8 +36,7 @@
         position: relative;
         padding-top: 9.7656vh;
         padding-bottom: 12vh;
-        pointer-events: auto;
-        cursor: pointer;
+        pointer-events: auto; // cursor: pointer;
         &__content {
             position: relative;
             padding-left: 10vw;
@@ -54,6 +53,7 @@
             .slide__portfolio,
             .arrow {
                 opacity: 0;
+                z-index: -1;
             }
         }
     }

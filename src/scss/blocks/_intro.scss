@@ -1,0 +1,50 @@
+.intro {
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    display: none;
+    @media(min-width: $desktop) {
+        display: block;
+        z-index: 20;
+        animation: zindex 1s linear forwards infinite;
+        &__cube-face {
+            border: 15px solid black !important;
+            animation: intro 4s cubic-bezier(.02, .01, .47, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation-fill-mode: forwards;
+            &\--back {
+                background-color: white;
+            }
+        }
+        &__logo {
+            width: 80%;
+        }
+    }
+}
+
+@keyframes intro {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.9
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes zindex {
+    0% {
+        z-index: 50;
+    }
+    99.9% {
+        z-index: 50;
+    }
+    100% {
+        z-index: -2;
+    }
+}

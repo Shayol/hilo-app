@@ -38,6 +38,9 @@
             position: absolute;
             border-image-source: url('../img/camila_lamarca.png');
             border-image-repeat: stretch;
+            opacity: 0;
+            animation: homeintro 4s cubic-bezier(.02, .01, .47, 1);
+            animation-fill-mode: forwards;
         }
         &__cube-face\--front {
             transform: rotateY( 0deg) translateZ(40vw);
@@ -90,5 +93,14 @@
             height: 80vw;
             top: calc(50% - 40vw);
         }
+    }
+}
+
+@keyframes homeintro {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
