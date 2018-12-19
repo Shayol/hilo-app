@@ -1,6 +1,11 @@
 import "../scss/main.scss";
 require('intersection-observer');
 import '../img/favicon.ico';
+import '../img/border_sol_pochat.png';
+import '../img/border_camila_lamarca.png';
+import '../img/border_carolina_zancolli.png';
+import '../img/border_claudia_cortinez.png';
+import '../img/border_florencia_walter.png';
 
 window.addEventListener('load', function () {
     let sliderLogo = document.querySelectorAll(".logo");
@@ -68,7 +73,7 @@ window.addEventListener('load', function () {
         let el = newSlide.querySelector(".slide__img-wrapper");
         let computImg = getComputedStyle(el).backgroundImage.split("img/")[1]
         let img = computImg.substring(0, computImg.length - 2);
-        cubeFace.forEach(c => c.style.borderImageSource = `url(../img/${img})`);
+        cubeFace.forEach(c => c.style.borderImageSource = `url(../img/border_${img})`);
     }
 
     const intersectionObserver = new IntersectionObserver((entries, observer) => {
