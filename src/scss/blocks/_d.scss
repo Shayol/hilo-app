@@ -39,7 +39,8 @@
             border-image-source: url('../img/camila_lamarca.png');
             border-image-repeat: stretch;
             opacity: 0;
-            animation: homeintro 4s cubic-bezier(.02, .01, .47, 1);
+            animation: homeintro 5s cubic-bezier(.02, .01, .47, 1);
+            animation-delay: 2s;
             animation-fill-mode: forwards;
             border-top: 15px solid transparent;
             border-bottom: 15px solid transparent;

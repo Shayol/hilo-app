@@ -7,11 +7,12 @@
     @media(min-width: $desktop) {
         display: block;
         z-index: 20;
-        animation: zindex 1s linear;
+        animation: zindex 5s linear;
         animation-fill-mode: forwards;
+        opacity: 1;
         &__cube-face {
             border: 15px solid black !important;
-            animation: intro 4s cubic-bezier(.02, .01, .47, 1);
+            animation: intro 5s cubic-bezier(.02, .01, .47, 1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -30,9 +31,6 @@
     0% {
         opacity: 1;
     }
-    50% {
-        opacity: 0.9
-    }
     100% {
         opacity: 0;
     }
@@ -40,10 +38,10 @@
 
 @keyframes zindex {
     0% {
-        z-index: 50;
+        z-index: 20;
     }
     99.9% {
-        z-index: 50;
+        z-index: 20;
     }
     100% {
         z-index: -2;
