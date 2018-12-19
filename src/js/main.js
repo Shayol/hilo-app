@@ -29,7 +29,6 @@ window.addEventListener('load', function () {
     //navigate slider
     arrowDown.addEventListener('click', e => {
         if (TweenLite) {
-            e.stopPropagation();
             if (parseInt(currentSlide) >= slides.length) {
                 return;
             }

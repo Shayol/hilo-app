@@ -7,7 +7,8 @@
     @media(min-width: $desktop) {
         display: block;
         z-index: 20;
-        animation: zindex 1s linear forwards infinite;
+        animation: zindex 1s linear;
+        animation-fill-mode: forwards;
         &__cube-face {
             border: 15px solid black !important;
             animation: intro 4s cubic-bezier(.02, .01, .47, 1);
@@ -16,7 +17,7 @@
             justify-content: center;
             animation-fill-mode: forwards;
             &\--back {
-                background-color: white;
+                background-color: white !important;
             }
         }
         &__logo {
