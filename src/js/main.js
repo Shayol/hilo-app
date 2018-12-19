@@ -8,6 +8,14 @@ import '../img/border_claudia_cortinez.png';
 import '../img/border_florencia_walter.png';
 import '../img/border_samuel_lasso.png';
 
+var vh = document.documentElement.clientHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+window.addEventListener('resize', () => {
+    vh = document.documentElement.clientHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+})
+
 window.addEventListener('load', function () {
     let sliderLogo = document.querySelectorAll(".logo");
     let info = document.querySelector('.info');
