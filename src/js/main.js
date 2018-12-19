@@ -1,5 +1,5 @@
 import "../scss/main.scss";
-require('intersection-observer');
+// require('intersection-observer');
 import '../img/favicon.ico';
 import '../img/border_sol_pochat.png';
 import '../img/border_camila_lamarca.png';
@@ -101,16 +101,16 @@ window.addEventListener('load', function () {
         cubeFace.forEach(c => c.style.borderImageSource = `url(../img/border_${img})`);
     }
 
-    const intersectionObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            if (entry.intersectionRatio > 0.3) {
-                currentSlide = entry.target.dataset.id;
-            }
+    // const intersectionObserver = new IntersectionObserver((entries, observer) => {
+    //     entries.forEach((entry) => {
+    //         if (entry.intersectionRatio > 0.3) {
+    //             currentSlide = entry.target.dataset.id;
+    //         }
 
-        });
-    }, { threshold: 0.6 });
+    //     });
+    // }, { threshold: 0.6 });
 
-    slides.forEach((element) => intersectionObserver.observe(element));
+    // slides.forEach((element) => intersectionObserver.observe(element));
 
     //zoom in 
 
