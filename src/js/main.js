@@ -22,7 +22,7 @@ window.addEventListener('load', function () {
     let container = document.querySelector(".container");
     let slider = document.querySelector(".slider__content");
     let sliderParent = document.querySelector(".slider");
-    let arrowDown = document.querySelector(".arrow--down");
+    let arrowDown = document.querySelectorAll(".arrow--down");
     let arrowLeft = document.querySelector(".arrow--left");
     let arrowRight = document.querySelector(".arrow--right");
     let slides = document.querySelectorAll(".slide");
@@ -41,14 +41,23 @@ window.addEventListener('load', function () {
     });
 
     //navigate slider
-    arrowDown.addEventListener('click', e => {
-        if (TweenLite) {
-            if (parseInt(currentSlide) >= slides.length) {
-                return;
+    arrowDown.forEach((arrow, index) => {
+        arrow.addEventListener('click', e => {
+            if (index < arrowDown.length - 1) {
+
+                if (TweenLite) {
+
+                    TweenLite.to(slider, .5, { scrollTo: "#slide" + (index + 2) });
+                }
             }
-            TweenLite.to(slider, .5, { scrollTo: "#slide" + (parseInt(currentSlide) + 1) });
-        }
-    });
+            // if (TweenLite) {
+            //     if (parseInt(currentSlide) >= slides.length) {
+            //         return;
+            //     }
+            //     TweenLite.to(slider, .5, { scrollTo: "#slide" + (parseInt(currentSlide) + 1) });
+            // }
+        });
+    })
 
     arrowLeft.addEventListener('click', e => {
         let current = document.querySelector(".show-slide");
