@@ -11,21 +11,20 @@
         animation-fill-mode: forwards;
         opacity: 1;
         &__cube-face {
-            animation: intro 5s cubic-bezier(.02, .01, .47, 1);
+            animation: intro 3s cubic-bezier(.02, .01, .47, 1);
             display: flex;
             align-items: center;
             justify-content: center;
             border-image-source: initial;
             animation-fill-mode: forwards;
-            border: 15px solid black;
-            // &\--front, // &\--back {
-//     border: 15px solid black;
-// }
-// &\--left,
-// &\--right {
-//     border-top: 15px solid black;
-//     border-bottom: 15px solid black;
-// }
+            border: 15px solid black; // &\--front, // &\--back {
+            //     border: 15px solid black;
+            // }
+            // &\--left,
+            // &\--right {
+            //     border-top: 15px solid black;
+            //     border-bottom: 15px solid black;
+            // }
         }
         &__logo {
             width: 80%;
@@ -36,6 +35,9 @@
 @keyframes intro {
     0% {
         opacity: 1;
+    }
+    70% {
+        opacity: 60%;
     }
     100% {
         opacity: 0;
