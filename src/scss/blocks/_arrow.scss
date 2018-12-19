@@ -4,18 +4,16 @@
     height: 7.8vw;
     width: 100%;
     position: relative;
-    z-index: 2;
-
-    // -webkit-touch-callout: none; // -webkit-user-select: none;
-// -khtml-user-select: none;
-// -moz-user-select: none;
-// -ms-user-select: none;
-// user-select: none;
+    z-index: 2; // -webkit-touch-callout: none; // -webkit-user-select: none;
+    // -khtml-user-select: none;
+    // -moz-user-select: none;
+    // -ms-user-select: none;
+    // user-select: none;
     &\--down {
         .arrow__content {
             position: absolute;
             left: 50%;
-            top: 0;
+            top: 50%;
             border-right: 1px solid #979797;
             border-bottom: 1px solid #979797;
             transform: translate(-50%, -50%) rotate(45deg);
@@ -28,6 +26,11 @@
     }
     &\--right {
         display: none;
+    }
+    @media(max-width: $desktop - 1) and (orientation: landscape) {
+        .arrow__content {
+            top: 0;
+        }
     }
     @media(min-width: $desktop) {
         cursor: pointer;
