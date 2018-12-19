@@ -29,9 +29,6 @@
         -webkit-overflow-scrolling: touch;
         height: 100%;
     }
-    &__arrow\--down {
-        margin-top: 1.5vh;
-    }
     @media(min-width: $desktop) {
         position: relative;
         padding-top: 9.7656vh;
