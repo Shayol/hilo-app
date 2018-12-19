@@ -8,6 +8,13 @@ import '../img/border_claudia_cortinez.png';
 import '../img/border_florencia_walter.png';
 import '../img/border_samuel_lasso.png';
 
+import '../assets/Camila Lamarca.pdf';
+import '../assets/Carolina Zancolli.pdf';
+import '../assets/Claudia Cortinez.pdf';
+import '../assets/Florencia Walter.pdf';
+import '../assets/Samuel Lasso.pdf';
+import '../assets/Sol Pochat.pdf';
+
 var vh = document.documentElement.clientHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
