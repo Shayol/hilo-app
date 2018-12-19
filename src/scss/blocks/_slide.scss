@@ -55,6 +55,26 @@
     &__arrow\--down {
         margin-top: auto;
     }
+    @media(max-width: $desktop - 1) and (orientation: landscape) {
+        flex-wrap: wrap;
+        align-content: space-around;
+        justify-items: space-around;
+        &__img-wrapper {
+            height: 90%;
+            margin: 0;
+            max-width: 45%;
+        }
+        &__arrow\--down {
+            width: 50% !important;
+        }
+        &__artist {
+            font-size: 4vw;
+            margin: 5% 0 2% 0;
+        }
+        &__portfolio {
+            font-size: 2.5vw;
+        }
+    }
     @media(min-width: $desktop) {
         position: absolute;
         top: 0;
