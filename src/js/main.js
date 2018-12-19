@@ -12,6 +12,8 @@ window.addEventListener('load', function () {
     let arrowRight = document.querySelector(".arrow--right");
     let slides = document.querySelectorAll(".slide");
     let cube = document.querySelector('.d__cube');
+    let cubeFace = document.querySelector(".d__cube-face");
+    let scene = document.querySelector(".d__scene");
     let currentSlide = 1;
 
     //show info
@@ -39,7 +41,8 @@ window.addEventListener('load', function () {
         let currentNumber = parseInt(current.dataset.id) - 1;
         if (current) {
             e.stopPropagation();
-            slides[currentNumber > 0 ? currentNumber - 1 : slides.length - 1].classList.add("show-slide");
+            let newSlide = slides[currentNumber > 0 ? currentNumber - 1 : slides.length - 1];
+            newSlide.classList.add("show-slide");
             current.classList.remove("show-slide");
         }
     });
@@ -49,8 +52,14 @@ window.addEventListener('load', function () {
         let currentNumber = parseInt(current.dataset.id) - 1;
         if (current) {
             e.stopPropagation();
-            slides[currentNumber < slides.length - 1 ? currentNumber + 1 : 0].classList.add("show-slide");
+            let newSlide = slides[currentNumber < slides.length - 1 ? currentNumber + 1 : 0];
+            newSlide.classList.add("show-slide");
             current.classList.remove("show-slide");
+
+            //change border image for cube
+            let el = newSlide.querySelector(".slide__img-wrapper");
+            let img = getComputedStyle(el).backgroundImage;
+            cubeFace.style.borderImageSource = img;
         }
     });
 
