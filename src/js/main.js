@@ -95,10 +95,10 @@ window.addEventListener('load', function () {
 
     function changeBorder(newSlide) {
         //change border image for cube
-        let el = newSlide.querySelector(".slide__img-wrapper");
-        let computImg = getComputedStyle(el).backgroundImage.split("img/")[1]
-        let img = computImg.substring(0, computImg.length - 2);
-        cubeFace.forEach(c => c.style.borderImageSource = `url(../img/border_${img})`);
+        // let el = newSlide.querySelector(".slide__img-wrapper");
+        // let computImg = getComputedStyle(el).backgroundImage.split("img/")[1]
+        // let img = computImg.substring(0, computImg.length - 2);
+        // cubeFace.forEach(c => c.style.borderImageSource = `url(../img/border_${img})`);
     }
 
     // const intersectionObserver = new IntersectionObserver((entries, observer) => {
@@ -114,7 +114,10 @@ window.addEventListener('load', function () {
 
     //zoom in 
 
-    sliderParent.addEventListener('click', function () {
+    sliderParent.addEventListener('click', function (e) {
+        if (e.target.classList.contains("slide__portfolio")) {
+            return;
+        }
         sliderParent.classList.toggle("slider--small");
         cube.classList.toggle("d__cube--big");
     })

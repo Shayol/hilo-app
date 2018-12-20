@@ -89,17 +89,18 @@
         &__img-wrapper {
             margin-top: auto;
             margin-bottom: auto;
+            height: 60%;
             max-width: 40vw;
             transition: all 0.4s linear;
         }
         &__artist {
-            font-size: 1.875vw;
+            font-size: 1.6vw;
             letter-spacing: 0.034815em;
             margin-bottom: .6em;
             transition: opacity .85s;
         }
         &__portfolio {
-            font-size: 1.25vw;
+            font-size: 1.05vw;
             letter-spacing: 0.035em;
             transition: opacity .85s;
         }
