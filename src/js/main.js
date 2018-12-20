@@ -15,6 +15,8 @@ import '../assets/Florencia Walter.pdf';
 import '../assets/Samuel Lasso.pdf';
 import '../assets/Sol Pochat.pdf';
 
+import './generateSlides';
+
 var vh = document.documentElement.clientHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
@@ -57,12 +59,6 @@ window.addEventListener('load', function () {
                     TweenLite.to(slider, .5, { scrollTo: "#slide" + (index + 2) });
                 }
             }
-            // if (TweenLite) {
-            //     if (parseInt(currentSlide) >= slides.length) {
-            //         return;
-            //     }
-            //     TweenLite.to(slider, .5, { scrollTo: "#slide" + (parseInt(currentSlide) + 1) });
-            // }
         });
     })
 
