@@ -35,33 +35,29 @@
     @media(min-width: $desktop) {
         cursor: pointer;
         transition: border-color 0.4s ease;
+        height: 2.4vw;
+        width: 2.4vw;
+        display: block;
+        position: absolute;
+        top: 37.5%;
+        min-height: initial;
         &\--down {
             display: none;
         }
         &\--left {
-            display: block;
-            position: absolute;
-            left: 10.5%;
-            top: 50%;
+            left: 0;
             border-left: 1px solid #979797;
             border-bottom: 1px solid #979797;
-            transform: translateY(-50%) rotate(45deg);
-            height: 54px;
-            width: 54px;
+            transform: translateX(40%) rotate(45deg);
             &:hover {
                 border-color: #777676;
             }
         }
         &\--right {
-            display: block;
-            position: absolute;
-            right: 10.5%;
-            top: 50%;
+            right: 0;
             border-right: 1px solid #979797;
             border-bottom: 1px solid #979797;
-            transform: translateY(-50%) rotate(-45deg);
-            height: 54px;
-            width: 54px;
+            transform: translateX(-40%) rotate(-45deg);
             &:hover {
                 border-color: #504f4f;
             }
