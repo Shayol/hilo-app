@@ -11,6 +11,7 @@
     transition-delay: 0.4s;
     z-index: 10;
     opacity: 1;
+    background-color: white;
     &__logo {
         margin-bottom: 2.5vh;
     }
@@ -43,6 +44,7 @@
         height: 79%;
         padding: 0;
         pointer-events: auto; // cursor: pointer;
+        background-color: transparent;
         &__content {
             position: relative;
             padding: 0;
@@ -63,7 +65,8 @@
             .slider__logo,
             .slide__artist,
             .slide__portfolio,
-            .arrow {
+            .arrow,
+            .slider__logo {
                 opacity: 0;
                 z-index: -1;
             }
