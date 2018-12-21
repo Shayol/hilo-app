@@ -86,6 +86,12 @@
         transition-delay: initial;
         padding: 0;
         transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
+        &:first-child {
+            animation: fadein .85s .25s cubic-bezier(.455, .03, .515, .955);
+            animation-delay: 1.3;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
         &__img-wrapper {
             margin-top: auto;
             margin-bottom: auto;
@@ -104,5 +110,14 @@
             letter-spacing: 0.035em;
             transition: opacity .85s;
         }
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

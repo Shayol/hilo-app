@@ -36,10 +36,10 @@
         &__cube-face {
             display: block;
             position: absolute;
-            animation: homeintro 4s cubic-bezier(.02, .01, .47, 1);
-            animation-delay: 8s;
+            animation: homeintro .85s cubic-bezier(.455, .03, .515, .955);
+            animation-delay: .25s;
+            background-color: black;
             animation-fill-mode: forwards;
-            background-image: url('../img/camila_lamarca.png');
             background-repeat: no-repeat;
         }
         &__cube-face\--right {
@@ -81,15 +81,22 @@
                 width: calc(100% - 30px);
                 height: calc(100% - 30px);
                 background-color: white;
-            } // &::after {
-            //     content: url('../img/logo.svg');
-            //     position: absolute;
-            //     top: 50%;
-            //     left: 50%;
-            //     transform: translate(-50%, -50%);
-            //     width: 80%;
-            //     height: auto;
-            // }
+            }
+            &::before {
+                content: '';
+                background-image: url('../img/logo.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 50%;
+                animation: logo .85s cubic-bezier(.455, .03, .515, .955);
+                animation-fill-mode: forwards;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 50%;
+                height: 50%;
+            }
         }
         &__cube-face\--left {
             transform: rotateY(-90deg) translateZ(50vw);
@@ -154,5 +161,16 @@
     }
     100% {
         background-color: transparent;
+    }
+}
+
+@keyframes logo {
+    0% {
+        z-index: 100;
+        opacity: 1;
+    }
+    100% {
+        z-index: -1;
+        opacity: 0;
     }
 }

@@ -39,4 +39,4 @@ function generateSlides() {
 
 }
 
-generateSlides();
+export default generateSlides;

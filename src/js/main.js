@@ -1,12 +1,5 @@
 import "../scss/main.scss";
-// require('intersection-observer');
 import '../img/favicon.ico';
-import '../img/border_sol_pochat.png';
-import '../img/border_camila_lamarca.png';
-import '../img/border_carolina_zancolli.png';
-import '../img/border_claudia_cortinez.png';
-import '../img/border_florencia_walter.png';
-import '../img/border_samuel_lasso.png';
 
 import '../assets/Camila Lamarca.pdf';
 import '../assets/Carolina Zancolli.pdf';
@@ -15,7 +8,9 @@ import '../assets/Florencia Walter.pdf';
 import '../assets/Samuel Lasso.pdf';
 import '../assets/Sol Pochat.pdf';
 
-import './generateSlides';
+import generateSlides from './generateSlides';
+
+generateSlides();
 
 var vh = document.documentElement.clientHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -101,7 +96,10 @@ window.addEventListener('load', function () {
         cubeFace.forEach(c => c.style.backgroundImage = `url(../img/${img})`);
     }
 
-    changeBorder(slides[0]);
+    setTimeout(() => {
+        changeBorder(slides[0]);
+    }, 250);
+
 
     //zoom in 
 
@@ -118,11 +116,6 @@ window.addEventListener('load', function () {
     window.addEventListener('keydown', (e) => {
         if (e.defaultPrevented) {
             return; // Do nothing if the event was already processed
-        }
-
-        if (e.shiftKey) {
-            zoom(e);
-            return;
         }
 
         switch (e.key) {
