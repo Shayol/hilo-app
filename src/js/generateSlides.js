@@ -21,7 +21,7 @@ function generateSlides() {
 
     shuffledData.forEach((el, index) => {
 
-        str += `<div id="slide1" data-id="${index + 1}" class="slide show-slide">
+        str += `<div id="slide${index + 1}" data-id="${index + 1}" class="slide ${index == 0 ? 'show-slide' : ''}">
                 <div class="slide__img-wrapper slide__img-wrapper--${el.firstname}_${el.lastname}"></div>
                     <h2 class="slide__artist">
                     ${el.firstname} ${el.lastname}

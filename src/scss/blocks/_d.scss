@@ -28,7 +28,7 @@
             position: relative;
             transform-style: preserve-3d;
             transform: translateZ(-30vw);
-            transition: all .85s;
+            transition: all .85s cubic-bezier(.455, .03, .515, .955);
             &\--big {
                 transform: translateZ(33vw);
             }
@@ -39,17 +39,27 @@
             animation: homeintro 4s cubic-bezier(.02, .01, .47, 1);
             animation-delay: 8s;
             animation-fill-mode: forwards;
-            border-top: 15px solid black;
-            border-bottom: 15px solid black;
-            border-left: 15px solid black;
-            border-right: 15px solid black;
+            background-image: url('../img/camila_lamarca.png');
+            background-repeat: no-repeat;
         }
         &__cube-face\--right {
             transform: rotateY( 90deg) translateZ(50vw);
             width: 60vw;
             height: 100%;
             left: calc(50% - 30vw);
-            border-left: initial;
+            background-position: left -2vw;
+            background-size: 500% 500%;
+            background-position: 50%;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 15px;
+                left: -15px;
+                bottom: 15px;
+                width: calc(100% - 15px);
+                height: calc(100% - 30px);
+                background-color: white;
+            }
         }
         &__cube-face\--back {
             transform: rotateY(0) translateZ(-30vw);
@@ -59,42 +69,90 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background-size: 500% 500%;
+            background-position: 50%;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 15px;
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                width: calc(100% - 30px);
+                height: calc(100% - 30px);
+                background-color: white;
+            } // &::after {
+            //     content: url('../img/logo.svg');
+            //     position: absolute;
+            //     top: 50%;
+            //     left: 50%;
+            //     transform: translate(-50%, -50%);
+            //     width: 80%;
+            //     height: auto;
+            // }
         }
         &__cube-face\--left {
             transform: rotateY(-90deg) translateZ(50vw);
             width: 60vw;
             height: 100%;
             left: calc(50% - 30vw);
-            border-right: initial;
+            background-size: 500% 500%;
+            background-position: 50%;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                bottom: 15px;
+                width: calc(100% - 15px);
+                height: calc(100% - 30px);
+                background-color: white;
+            }
         }
         &__cube-face\--top {
             transform: rotateX( 90deg) translateZ(calc(var(--vh, 1vh) * 50));
             width: 100%;
             height: 60vw;
             top: calc(50% - 30vw);
-            border-bottom: initial;
+            background-size: 500% 500%;
+            background-position: 50%;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                right: 15px; // bottom: 15px;
+                width: calc(100% - 30px);
+                height: calc(100% - 15px);
+                background-color: white;
+            }
         }
         &__cube-face\--bottom {
             transform: rotateX(-90deg) translateZ(calc(var(--vh, 1vh) * 50));
             width: 100%;
             height: 60vw;
             top: calc(50% - 30vw);
-            border-top: initial;
+            background-size: 500% 500%;
+            background-position: 50%;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 15px;
+                left: 15px;
+                right: 15px; // bottom: 15px;
+                width: calc(100% - 30px);
+                height: calc(100% - 15px);
+                background-color: white;
+            }
         }
     }
 }
 
 @keyframes homeintro {
     0% {
-        border-top: 15px solid black;
-        border-bottom: 15px solid black;
-        border-left: 15px solid black;
-        border-right: 15px solid black;
+        background-color: black;
     }
     100% {
-        border-top: 15px solid transparent;
-        border-bottom: 15px solid transparent;
-        border-left: 15px solid transparent;
-        border-right: 15px solid transparent;
+        background-color: transparent;
     }
 }
