@@ -35,8 +35,7 @@ window.addEventListener('load', function () {
     let arrowLeft = document.querySelector(".arrow--left");
     let arrowRight = document.querySelector(".arrow--right");
     let slides = document.querySelectorAll(".slide");
-    let cube = document.querySelector('.d__cube');
-    let cubeFace = document.querySelectorAll(".d__cube-face");
+    let background = document.querySelector(".background");
     let containerMain = document.querySelector(".container__main")
     let scene = document.querySelector(".d__scene");
     let currentSlide = 1;
@@ -99,7 +98,7 @@ window.addEventListener('load', function () {
         let el = newSlide.querySelector(".slide__img-wrapper");
         let computImg = getComputedStyle(el).backgroundImage.split("img/")[1]
         let img = computImg.substring(0, computImg.length - 2);
-        cubeFace.forEach(c => c.style.backgroundImage = `url(../img/${img})`);
+        background.style.backgroundImage = `url(../img/${img})`;
     }
 
     changeBorder(slides[0]);
@@ -113,7 +112,7 @@ window.addEventListener('load', function () {
             return;
         }
         sliderParent.classList.toggle("slider--small");
-        cube.classList.toggle("container__main--big");
+        containerMain.classList.toggle("container__main--big");
     }
 
     window.addEventListener('keydown', (e) => {
