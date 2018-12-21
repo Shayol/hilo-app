@@ -101,6 +101,8 @@ window.addEventListener('load', function () {
         cubeFace.forEach(c => c.style.backgroundImage = `url(../img/${img})`);
     }
 
+    changeBorder(slides[0]);
+
     //zoom in 
 
     sliderParent.addEventListener('click', zoom);
