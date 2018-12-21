@@ -37,6 +37,7 @@ window.addEventListener('load', function () {
     let slides = document.querySelectorAll(".slide");
     let cube = document.querySelector('.d__cube');
     let cubeFace = document.querySelectorAll(".d__cube-face");
+    let containerMain = document.querySelector(".container__main")
     let scene = document.querySelector(".d__scene");
     let currentSlide = 1;
 
@@ -115,7 +116,7 @@ window.addEventListener('load', function () {
             return;
         }
         sliderParent.classList.toggle("slider--small");
-        cube.classList.toggle("d__cube--big");
+        containerMain.classList.toggle("container__main--big");
     })
 
 });
