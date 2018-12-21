@@ -98,7 +98,7 @@ window.addEventListener('load', function () {
 
     setTimeout(() => {
         changeBorder(slides[0]);
-    }, 250);
+    }, 1100);
 
 
     //zoom in 

@@ -36,10 +36,9 @@
         &__cube-face {
             display: block;
             position: absolute;
-            animation: homeintro .85s cubic-bezier(.455, .03, .515, .955);
+            animation: homeintro 0.85s cubic-bezier(.455, .03, .515, .955) alternate;
             animation-delay: .25s;
             background-color: black;
-            animation-fill-mode: forwards;
             background-repeat: no-repeat;
         }
         &__cube-face\--right {
@@ -157,10 +156,10 @@
 
 @keyframes homeintro {
     0% {
-        background-color: black;
+        opacity: 1;
     }
     100% {
-        background-color: transparent;
+        opacity: 0.6;
     }
 }
 
