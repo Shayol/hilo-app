@@ -62,7 +62,11 @@ window.addEventListener('load', function () {
         });
     })
 
-    arrowLeft.addEventListener('click', e => {
+    arrowLeft.addEventListener('click', moveRight);
+
+    arrowRight.addEventListener('click', moveLeft);
+
+    function moveRight(e) {
         let current = document.querySelector(".show-slide");
         let currentNumber = parseInt(current.dataset.id) - 1;
         if (current) {
@@ -73,9 +77,9 @@ window.addEventListener('load', function () {
 
             changeBorder(newSlide);
         }
-    });
+    }
 
-    arrowRight.addEventListener('click', e => {
+    function moveLeft(e) {
         let current = document.querySelector(".show-slide");
         let currentNumber = parseInt(current.dataset.id) - 1;
         if (current) {
@@ -86,7 +90,7 @@ window.addEventListener('load', function () {
 
             changeBorder(newSlide);
         }
-    });
+    }
 
 
     function changeBorder(newSlide) {
@@ -97,25 +101,49 @@ window.addEventListener('load', function () {
         cubeFace.forEach(c => c.style.backgroundImage = `url(../img/${img})`);
     }
 
-    // const intersectionObserver = new IntersectionObserver((entries, observer) => {
-    //     entries.forEach((entry) => {
-    //         if (entry.intersectionRatio > 0.3) {
-    //             currentSlide = entry.target.dataset.id;
-    //         }
-
-    //     });
-    // }, { threshold: 0.6 });
-
-    // slides.forEach((element) => intersectionObserver.observe(element));
-
     //zoom in 
 
-    sliderParent.addEventListener('click', function (e) {
-        if (e.target.classList.contains("slide__portfolio")) {
+    sliderParent.addEventListener('click', zoom);
+
+    function zoom(e) {
+        if (e && e.target.classList.contains("slide__portfolio")) {
             return;
         }
         sliderParent.classList.toggle("slider--small");
         cube.classList.toggle("d__cube--big");
-    })
+    }
+
+    window.addEventListener('keydown', (e) => {
+        if (e.defaultPrevented) {
+            return; // Do nothing if the event was already processed
+        }
+
+        if (e.shiftKey) {
+            zoom(e);
+            return;
+        }
+
+        switch (e.key) {
+
+            case "Left": // IE/Edge specific value
+                moveLeft(e);
+            case "ArrowLeft":
+                moveLeft(e);
+                break;
+            case "Right": // IE/Edge specific value
+                moveRight(e);
+            case "ArrowRight":
+                moveRight(e);
+                break;
+            case " ":
+                zoom(e);
+                break;
+            default:
+                return; // Quit when this doesn't handle the key event.
+        }
+
+        // Cancel the default action to avoid it being handled twice
+        event.preventDefault();
+    }, true);
 
 });
