@@ -69,7 +69,6 @@ window.addEventListener('load', function () {
             let newSlide = slides[currentNumber > 0 ? currentNumber - 1 : slides.length - 1];
             newSlide.classList.add("show-slide");
             current.classList.remove("show-slide");
-
             changeBorder(newSlide);
         }
     }
@@ -98,6 +97,7 @@ window.addEventListener('load', function () {
 
     setTimeout(() => {
         changeBorder(slides[0]);
+        slides[0].classList.add("show-slide");
     }, 1100);
 
 
