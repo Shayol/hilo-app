@@ -92,7 +92,7 @@ window.addEventListener('load', function () {
         let el = newSlide.querySelector(".slide__img-wrapper");
         let computImg = getComputedStyle(el).backgroundImage.split("img/")[1]
         let img = computImg.substring(0, computImg.length - 2);
-        cubeFace.forEach(c => c.style.backgroundImage = `url(../img/${img})`);
+        container.style.backgroundImage = `url(../img/${img})`;
     }
 
     setTimeout(() => {
