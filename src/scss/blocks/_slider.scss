@@ -1,6 +1,5 @@
 .slider {
     height: 100%;
-    padding-top: 8vh;
     padding-bottom: 4vh;
     width: 100%;
     overflow: hidden;
@@ -12,9 +11,6 @@
     z-index: 10;
     opacity: 1;
     background-color: white;
-    &__logo {
-        margin-bottom: 2.5vh;
-    }
     &__wrapper {
         flex-grow: 1;
         overflow: hidden;
@@ -57,16 +53,11 @@
             margin-right: auto;
             position: relative;
         }
-        &__logo {
-            margin-bottom: 1vh;
-            transition: opacity .85s;
-        }
         &\--small {
             .slider__logo,
             .slide__artist,
             .slide__portfolio,
-            .arrow,
-            .slider__logo {
+            .arrow {
                 opacity: 0;
                 z-index: -1;
             }

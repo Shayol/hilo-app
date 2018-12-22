@@ -5,7 +5,7 @@
         transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
         transition-delay: 0.4s;
     }
-    .slider {
+    .slider__wrapper {
         opacity: 0;
         z-index: -1;
         transition-delay: initial;

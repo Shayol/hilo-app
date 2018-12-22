@@ -1,15 +1,21 @@
 .logo {
-    // max-width: 139px;
-    // min-width: 100px;
-    // max-height: 46px;
     width: 27.14vw;
+    padding-top: 16%;
     height: auto;
     cursor: pointer;
+    margin-bottom: 2.5vh;
+    background-color: white;
+    text-align: center;
     &__svg {
         width: 100%;
         height: 100%;
     }
     @media(min-width: $desktop) {
+        background-color: transparent;
+        opacity: 0;
+        padding-top: 10.4vh;
         width: 8.8vw;
+        margin-bottom: 1vh;
+        transition: opacity .85s;
     }
 }
