@@ -35,6 +35,13 @@ function generateSlides() {
                 </div>`
     });
 
+    str += `<div class="arrow slider__arrow arrow--left">
+                <div class="arrow__content"></div>
+            </div>
+            <div class="arrow slider__arrow arrow--right">
+                <div class="arrow__content"></div>
+            </div>`
+
     content.innerHTML = str;
 
 }

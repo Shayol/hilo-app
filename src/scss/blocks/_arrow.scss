@@ -35,11 +35,11 @@
     @media(min-width: $desktop) {
         cursor: pointer;
         transition: border-color 0.4s ease;
-        height: 2.4vw;
-        width: 2.4vw;
+        height: 1.2vw;
+        width: 1.2vw;
         display: block;
         position: absolute;
-        top: 37.5%;
+        top: 26.5%;
         min-height: initial;
         transition: all 0.4s linear;
         &\--down {

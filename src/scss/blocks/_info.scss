@@ -51,12 +51,12 @@
     }
     @media(min-width: $desktop) {
         &__content {
-            padding-top: 9%;
-            padding-bottom: 14%;
+            padding-top: 3vh;
+            padding-bottom: 0;
         }
         &__description {
-            font-size: 1.6vw;
-            margin-top: 16.8vh;
+            font-size: 0.75vw;
+            margin-top: 0;
             letter-spacing: 0.034783em;
             &\--mobile {
                 display: none;
@@ -66,9 +66,9 @@
             }
         }
         &__small-text {
-            font-size: 1.3889vw;
+            font-size: 0.7vw;
             line-height: 1.3333em;
-            margin-bottom: 3.6vh;
+            margin-bottom: 1.8vh;
         }
         &__schedule {
             margin-bottom: 0;
@@ -78,6 +78,11 @@
         }
         &__break {
             display: none;
+        }
+        &__instagram-svg {
+            width: 28px;
+            height: 28px;
+            margin-top: auto;
         }
     }
 }
