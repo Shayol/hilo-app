@@ -45,8 +45,9 @@
             height: 100%;
             position: relative;
             transition: all .85s cubic-bezier(.455, .03, .515, .955);
+            transform: scale(1);
             &\--big {
-                transform: scale(1);
+                transform: scale(2);
                 .logo {
                     z-index: 11;
                     opacity: 1;

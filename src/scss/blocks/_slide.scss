@@ -85,27 +85,26 @@
         z-index: -1;
         transition-delay: initial;
         padding: 0;
-        transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
-        // &:first-child {
-    //     animation: fadein .85s 1s cubic-bezier(.455, .03, .515, .955);
-    //     animation-fill-mode: forwards;
-    //     opacity: 0;
-    // }
+        transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1); // &:first-child {
+        //     animation: fadein .85s 1s cubic-bezier(.455, .03, .515, .955);
+        //     animation-fill-mode: forwards;
+        //     opacity: 0;
+        // }
         &__img-wrapper {
-            margin-top: auto;
+            margin-top: 0;
             margin-bottom: auto;
             height: 60%;
             max-width: 40vw;
             transition: all 0.4s linear;
         }
         &__artist {
-            font-size: 1.6vw;
+            font-size: 0.7vw;
             letter-spacing: 0.034815em;
             margin-bottom: .6em;
             transition: opacity .85s;
         }
         &__portfolio {
-            font-size: 1.05vw;
+            font-size: 0.5vw;
             letter-spacing: 0.035em;
             transition: opacity .85s;
         }

@@ -11,10 +11,12 @@
         height: 100%;
     }
     @media(min-width: $desktop) {
+        z-index: -1;
         background-color: transparent;
         opacity: 0;
-        padding-top: 10.4vh;
-        width: 8.8vw;
+        margin-top: 7%;
+        padding: 0;
+        width: 4.1vw;
         margin-bottom: 1vh;
         transition: opacity .85s;
     }
