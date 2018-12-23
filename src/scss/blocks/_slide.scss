@@ -62,7 +62,8 @@
         &__img-wrapper {
             height: 90%;
             margin: 0;
-            max-width: 45%;
+            max-width: 34vw;
+            width: 22vw;
         }
         &__arrow\--down {
             width: 50% !important;
@@ -90,7 +91,8 @@
             margin-top: 0;
             margin-bottom: auto;
             height: 71%;
-            max-width: 40vw;
+            max-width: 34vw;
+            width: 22vw;
             transition: all 0.4s linear;
         }
         &__artist {
