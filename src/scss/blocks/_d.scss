@@ -61,8 +61,8 @@
             background-color: transparent;
         }
         &__cube-face\--top-right {
-            width: 26%;
-            height: 26%;
+            width: calc(25% + 5px);
+            height: calc(25% + 5px);
             top: 0;
             right: 0;
             &::after {
@@ -72,8 +72,8 @@
                 left: 0;
                 width: calc(100% - 5px);
                 height: calc(100% - 5px);
-                border-top: calc(26vh - 5px) solid white;
-                border-right: calc(26vw - 5px) solid transparent;
+                border-top: 25vh solid white;
+                border-right: 25vw solid transparent;
             }
             &::before {
                 content: '';
@@ -82,8 +82,8 @@
                 right: 0;
                 width: calc(100% - 5px);
                 height: calc(100% - 5px);
-                border-bottom: calc(26vh - 5px) solid white;
-                border-left: calc(26vw - 5px) solid transparent;
+                border-bottom: 25vh solid white;
+                border-left: 25vw solid transparent;
             }
         }
         &__cube-face\--back {
@@ -93,13 +93,12 @@
             left: 50%;
             transform: translate(-50%, -50%);
             display: flex;
-            border: 5px solid transparent;
             background-color: white;
             background-clip: padding-box;
         }
         &__cube-face\--top-left {
-            width: 26%;
-            height: 26%;
+            width: calc(25% + 5px);
+            height: calc(25% + 5px);
             left: 0;
             top: 0;
             &::after {
@@ -109,8 +108,8 @@
                 right: 0;
                 width: calc(100% - 5px);
                 height: calc(100% - 5px);
-                border-top: calc(26vh - 5px) solid white;
-                border-left: calc(26vw - 5px) solid transparent;
+                border-top: 25vh solid white;
+                border-left: 25vw solid transparent;
             }
             &::before {
                 content: '';
@@ -119,13 +118,13 @@
                 left: 0;
                 width: calc(100% - 5px);
                 height: calc(100% - 5px);
-                border-bottom: calc(26vh - 5px) solid white;
-                border-right: calc(26vw - 5px) solid transparent;
+                border-bottom: 25vh solid white;
+                border-right: 25vw solid transparent;
             }
         }
         &__cube-face\--bottom-left {
-            width: 26%;
-            height: 26%;
+            width: calc(25% + 5px);
+            height: calc(25% + 5px);
             bottom: 0;
             left: 0;
             &::after {
@@ -135,8 +134,8 @@
                 left: 0;
                 width: calc(100% - 5px);
                 height: calc(100% - 5px);
-                border-top: calc(26vh - 5px) solid white;
-                border-right: calc(26vw - 5px) solid transparent;
+                border-top: 25vh solid white;
+                border-right: 25vw solid transparent;
             }
             &::before {
                 content: '';
@@ -145,13 +144,13 @@
                 right: 0;
                 width: calc(100% - 5px);
                 height: calc(100% - 5px);
-                border-bottom: calc(26vh - 5px) solid white;
-                border-left: calc(26vw - 5px) solid transparent;
+                border-bottom: 25vh solid white;
+                border-left: 25vw solid transparent;
             }
         }
         &__cube-face\--bottom-right {
-            width: 26%;
-            height: 26%;
+            width: calc(25% + 5px);
+            height: calc(25% + 5px);
             bottom: 0;
             right: 0;
             &::after {
@@ -161,8 +160,8 @@
                 right: 0;
                 width: calc(100% - 5px);
                 height: calc(100% - 5px);
-                border-top: calc(26vh - 5px) solid white;
-                border-left: calc(26vw - 5px) solid transparent;
+                border-top: 25vh solid white;
+                border-left: 25vw solid transparent;
             }
             &::before {
                 content: '';
@@ -171,17 +170,17 @@
                 left: 0;
                 width: calc(100% - 5px);
                 height: calc(100% - 5px);
-                border-bottom: calc(26vh - 5px) solid white;
-                border-right: calc(26vw - 5px) solid transparent;
+                border-bottom: 25vh solid white;
+                border-right: 25vw solid transparent;
             }
         }
         &__cube-face\--middle-left {
-            width: calc(26% - 10px);
-            height: 48%;
+            width: calc(25%);
+            height: calc(50% - 10px);
             background-color: white;
             border-top: 1px solid white;
             border-bottom: 1px solid white;
-            top: calc(26% - 1px);
+            top: calc(25% + 4px);
             left: 0;
         }
         &__cube-face\--middle-right {
