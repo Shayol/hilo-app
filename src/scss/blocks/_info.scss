@@ -18,7 +18,7 @@
         align-items: center;
     }
     &__description {
-        font-size: 4.7vw;
+        font-size: 4.7vmin;
         letter-spacing: 0.034615em;
         margin-bottom: 2.2em;
         margin-top: 2.8em;
@@ -31,7 +31,7 @@
     &__small-text {
         color: #000000;
         font-weight: 300;
-        font-size: 3.7vw;
+        font-size: 3.7vmin;
         line-height: 2.086957em;
         font-weight: 300;
         letter-spacing: 0.03478em;
@@ -49,6 +49,14 @@
     &__instagram-svg {
         width: 56px;
         height: 56px;
+    }
+    @media(max-width: $desktop - 1) and (orientation: landscape) {
+        padding-left: 4%;
+        padding-right: 4%;
+        &__description {
+            margin-bottom: 0.55em;
+            margin-top: 0.75em;
+        }
     }
     @media(min-width: $desktop) {
         &__content {
@@ -87,4 +95,5 @@
             margin-top: auto;
         }
     }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {}
 }
