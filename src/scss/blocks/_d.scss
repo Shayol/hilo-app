@@ -96,6 +96,20 @@
             border: 5px solid transparent;
             background-color: white;
             background-clip: padding-box;
+            .d__intro {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url("../img/logo.svg");
+                background-size: 52%;
+                background-position: 50%;
+                z-index: 10;
+                background-repeat: no-repeat;
+                transition: all .85s cubic-bezier(.455, .03, .515, .955);
+            }
         }
         &__cube-face\--top-left {
             width: calc(25% + 5px);
@@ -183,6 +197,26 @@
             border-bottom: 1px solid white;
             top: calc(25% + 5px);
             left: 0;
+            &::before {
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: 0;
+                height: 2px;
+                width: calc(100% - 2px);
+                background-color: white;
+                z-index: 30;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                height: 2px;
+                width: calc(100% - 2px);
+                background-color: white;
+                z-index: 30;
+            }
         }
         &__cube-face\--middle-right {
             width: 25%;
@@ -190,6 +224,26 @@
             background-color: white;
             top: calc(25% + 5px);
             right: 0;
+            &::before {
+                content: '';
+                position: absolute;
+                top: -2px;
+                right: 0;
+                height: 4px;
+                width: calc(100% - 2px);
+                background-color: white;
+                z-index: 30;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                right: 0;
+                height: 4px;
+                width: calc(100% - 2px);
+                background-color: white;
+                z-index: 30;
+            }
         }
         &__cube-face\--middle-top {
             width: calc(50% - 10px);
@@ -197,6 +251,24 @@
             background-color: white;
             top: 0;
             left: calc(25% + 5px);
+            &::before {
+                content: '';
+                position: absolute;
+                left: -2px;
+                height: calc(100% - 2px);
+                width: 4px;
+                background-color: white;
+                z-index: 30;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                right: -2px;
+                height: calc(100% - 2px);
+                width: 4px;
+                background-color: white;
+                z-index: 30;
+            }
         }
         &__cube-face\--middle-bottom {
             width: calc(50% - 10px);
@@ -204,6 +276,26 @@
             background-color: white;
             bottom: 0;
             left: calc(25% + 5px);
+            &::before {
+                content: '';
+                position: absolute;
+                left: -2px;
+                height: calc(100% - 2px);
+                width: 4px;
+                background-color: white;
+                bottom: 0;
+                z-index: 30;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: -2px;
+                height: calc(100% - 2px);
+                width: 4px;
+                background-color: white;
+                z-index: 30;
+            }
         }
     }
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {

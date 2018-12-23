@@ -45,7 +45,6 @@ window.addEventListener('load', function () {
     let cube = document.querySelector('.d__cube');
     let cubeFace = document.querySelectorAll(".d__cube-face");
     let back = document.querySelector(".d__cube-face--back");
-    let background = document.querySelector(".container__background");
     let scene = document.querySelector(".d__scene");
     let currentSlide = 1;
 
@@ -109,10 +108,18 @@ window.addEventListener('load', function () {
         container.style.backgroundImage = `url(../img/${img})`;
     }
 
+    //intro animation
     setTimeout(() => {
+        let background = document.querySelector(".container__background");
+        let intro = document.querySelector(".d__intro");
         changeBorder(slides[0]);
         background.style.opacity = '0';
-        slides[0].classList.add("show-slide");
+        intro.style.opacity = '0';
+        intro.style.zIndex = '-1';
+        setTimeout(() => {
+            slides[0].classList.add("show-slide");
+        }, 850);
+
     }, 250);
 
 
@@ -121,7 +128,7 @@ window.addEventListener('load', function () {
     back.addEventListener('click', zoom);
 
     function zoom(e) {
-        if (e && e.target.classList.contains("slide__portfolio")) {
+        if (e && e.target.classList.contains("slide__portfolio") || e.target.className.indexOf("info") > -1) {
             return;
         }
         sliderParent.classList.toggle("slider--small");
