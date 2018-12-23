@@ -128,7 +128,7 @@ window.addEventListener('load', function () {
     back.addEventListener('click', zoom);
 
     function zoom(e) {
-        if (e && e.target.classList.contains("slide__portfolio") || e.target.className.indexOf("info") > -1) {
+        if (e && e.target.classList.contains("slide__portfolio") || container.classList.contains("show-info")) {
             return;
         }
         sliderParent.classList.toggle("slider--small");
