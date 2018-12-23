@@ -85,20 +85,16 @@
         z-index: -1;
         transition-delay: initial;
         padding: 0;
-        transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1); // &:first-child {
-        //     animation: fadein .85s 1s cubic-bezier(.455, .03, .515, .955);
-        //     animation-fill-mode: forwards;
-        //     opacity: 0;
-        // }
+        transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
         &__img-wrapper {
             margin-top: 0;
             margin-bottom: auto;
-            height: 70%;
+            height: 71%;
             max-width: 40vw;
             transition: all 0.4s linear;
         }
         &__artist {
-            font-size: 0.75vw;
+            font-size: 0.8095vw;
             letter-spacing: 0.034815em;
             margin-bottom: .6em;
             transition: opacity .85s;
@@ -108,14 +104,5 @@
             letter-spacing: 0.035em;
             transition: opacity .85s;
         }
-    }
-}
-
-@keyframes fadein {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
     }
 }

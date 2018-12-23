@@ -60,13 +60,12 @@
     }
     @media(min-width: $desktop) {
         &__content {
-            padding-top: 2.5vh;
-            padding-bottom: 16%;
+            padding-top: 2.5vh; // padding-bottom: 16%;
         }
         &__description {
-            font-size: 0.74vw;
+            font-size: 0.7679vw;
             margin-top: 0;
-            margin-bottom: 3em;
+            margin-bottom: 4em;
             letter-spacing: 0.034783em;
             &\--mobile {
                 display: none;
@@ -76,7 +75,7 @@
             }
         }
         &__small-text {
-            font-size: 0.6vw;
+            font-size: 0.6677vw;
             line-height: 1.3333em;
             margin-bottom: 1.8vh;
         }
