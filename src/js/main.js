@@ -12,26 +12,24 @@ import generateSlides from './generateSlides';
 
 generateSlides();
 
-var back = document.querySelector(".d__cube-face--back");
-
 var vh = document.documentElement.clientHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-var zoomW = (document.documentElement.clientWidth / (back.clientWidth - 10)).toFixed(2);
-var zoomH = (document.documentElement.clientHeight / (back.clientHeight - 10)).toFixed(2);
-var zoom = zoomW > zoomH ? zoomW : zoomH;
+// var zoomW = (document.documentElement.clientWidth / (back.clientWidth - 10)).toFixed(2);
+// var zoomH = (document.documentElement.clientHeight / (back.clientHeight - 10)).toFixed(2);
+// var zoom = zoomW > zoomH ? zoomW : zoomH;
 
-document.documentElement.style.setProperty('--brUp', `${zoom}`);
+// document.documentElement.style.setProperty('--brUp', `${zoom}`);
 
 window.addEventListener('resize', () => {
     vh = document.documentElement.clientHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-    var zoomW = (document.documentElement.clientWidth / (back.clientWidth - 10)).toFixed(2);
-    var zoomH = (document.documentElement.clientHeight / (back.clientHeight - 10)).toFixed(2);
-    var zoom = zoomW > zoomH ? zoomW : zoomH;
+    // var zoomW = (document.documentElement.clientWidth / (back.clientWidth - 10)).toFixed(2);
+    // var zoomH = (document.documentElement.clientHeight / (back.clientHeight - 10)).toFixed(2);
+    // var zoom = zoomW > zoomH ? zoomW : zoomH;
 
-    document.documentElement.style.setProperty('--zoom', `${zoom}`);
+    // document.documentElement.style.setProperty('--zoom', `${zoom}`);
 })
 
 window.addEventListener('load', function () {
@@ -46,6 +44,8 @@ window.addEventListener('load', function () {
     let slides = document.querySelectorAll(".slide");
     let cube = document.querySelector('.d__cube');
     let cubeFace = document.querySelectorAll(".d__cube-face");
+    let back = document.querySelector(".d__cube-face--back");
+    let background = document.querySelector(".container__background");
     let scene = document.querySelector(".d__scene");
     let currentSlide = 1;
 
@@ -111,13 +111,14 @@ window.addEventListener('load', function () {
 
     setTimeout(() => {
         changeBorder(slides[0]);
+        background.style.opacity = '0';
         slides[0].classList.add("show-slide");
-    }, 1100);
+    }, 250);
 
 
     //zoom in 
 
-    sliderParent.addEventListener('click', zoom);
+    back.addEventListener('click', zoom);
 
     function zoom(e) {
         if (e && e.target.classList.contains("slide__portfolio")) {

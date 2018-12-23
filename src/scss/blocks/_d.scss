@@ -58,8 +58,6 @@
         &__cube-face {
             display: block;
             position: absolute;
-            animation: homeintro 0.85s cubic-bezier(.455, .03, .515, .955) alternate;
-            animation-delay: .25s;
             background-color: transparent;
         }
         &__cube-face\--top-right {
@@ -95,9 +93,9 @@
             left: 50%;
             transform: translate(-50%, -50%);
             display: flex;
-            padding: 5px;
+            border: 5px solid transparent;
             background-color: white;
-            background-clip: content-box;
+            background-clip: padding-box;
         }
         &__cube-face\--top-left {
             width: calc(25% + 5px);
