@@ -1,20 +1,4 @@
 import data from './data.js';
-// const pathToImgs = require.context('../img', true);
-// function importAll(r) {
-//     let images = {};
-//     r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-//     return images;
-// }
-
-// const images = importAll(require.context('../img', false, /\.(png|jpe?g|svg)$/));
-// const cats = [
-//     'black-cat.png',
-//     'white-cat.png',
-//     'grumpy-cat.png',
-//     'rainbow-cat.png'
-// ];
-
-// const imgCats = () => data.map(name => `<img src='${pathToImgs(name, true)}' alt='${name}' />`);
 
 const shuffle = array => [...array].sort(() => Math.random() - 0.5);
 

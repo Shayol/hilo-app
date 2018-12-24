@@ -106,6 +106,7 @@ window.addEventListener('load', function () {
         let slide = shuffledData[newIndex]
         let url = `url(../img/${slide.firstname}_${slide.lastname}.png)`;
         container.style.backgroundImage = url;
+        container.style.backgroundPosition = slide.backgroundPosition;
     }
 
     //intro animation

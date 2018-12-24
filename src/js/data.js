@@ -1,11 +1,11 @@
 let data = [
 
-    { firstname: 'camila', lastname: 'lamarca' },
-    { firstname: 'carolina', lastname: 'zancolli' },
-    { firstname: 'claudia', lastname: 'cortinez' },
-    { firstname: 'florencia', lastname: 'walter' },
-    { firstname: 'samuel', lastname: 'lasso' },
-    { firstname: 'sol', lastname: 'pochat' }
+    { firstname: 'camila', lastname: 'lamarca', backgroundPosition: "center" },
+    { firstname: 'carolina', lastname: 'zancolli', backgroundPosition: "center" },
+    { firstname: 'claudia', lastname: 'cortinez', backgroundPosition: "center" },
+    { firstname: 'florencia', lastname: 'walter', backgroundPosition: "center" },
+    { firstname: 'samuel', lastname: 'lasso', backgroundPosition: "50% 70%" },
+    { firstname: 'sol', lastname: 'pochat', backgroundPosition: "center" }
 ];
 
 export default data;
