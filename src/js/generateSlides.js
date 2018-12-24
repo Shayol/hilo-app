@@ -1,4 +1,20 @@
 import data from './data.js';
+// const pathToImgs = require.context('../img', true);
+// function importAll(r) {
+//     let images = {};
+//     r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+//     return images;
+// }
+
+// const images = importAll(require.context('../img', false, /\.(png|jpe?g|svg)$/));
+// const cats = [
+//     'black-cat.png',
+//     'white-cat.png',
+//     'grumpy-cat.png',
+//     'rainbow-cat.png'
+// ];
+
+// const imgCats = () => data.map(name => `<img src='${pathToImgs(name, true)}' alt='${name}' />`);
 
 const shuffle = array => [...array].sort(() => Math.random() - 0.5);
 
@@ -13,25 +29,29 @@ function generateSlides() {
     shuffledData.forEach((el, index) => {
 
         str += `<div id="slide${index + 1}" data-id="${index + 1}" class="slide">
-                <div class="slide__img-wrapper style="background-image:url(../img/${el.firstname}_${el.lastname}.png"></div>
+                <div class="slide__img-wrapper" style="background-image:url('../img/${el.firstname}_${el.lastname}.png');"></div>
                     <h2 class="slide__artist">
                     ${el.firstname} ${el.lastname}
                     </h2>
                     <a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="slide__portfolio" download>
                         portfolio
                     </a>
-                    <div class="arrow arrow--down slide__arrow slide__arrow--down">
-                        ${index + 1 >= shuffledData.length ? '' : '<div class="arrow__content"></div>'}
-                    </div>
-                </div>`
+            <div class="arrow arrow--down slide__arrow slide__arrow--down">
+                ${index + 1 >= shuffledData.length ? '' : '<div class="arrow__content"></div>'}
+            </div>
+                </div > `
     });
 
-    str += `<div class="arrow slider__arrow arrow--left">
+
+    str +=
+        `<div class="arrow slider__arrow arrow--left">
                 <div class="arrow__content"></div>
-            </div>
-            <div class="arrow slider__arrow arrow--right">
+            </div>`;
+
+    str +=
+        `<div class="arrow slider__arrow arrow--right">
                 <div class="arrow__content"></div>
-            </div>`
+            </div>`;
 
     content.innerHTML = str;
 

@@ -19,6 +19,7 @@
     "autoprefixer": "^9.3.1",
     "babel-loader": "^8.0.4",
     "babel-preset-env": "^1.7.0",
+    "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^1.0.0",
     "file-loader": "^2.0.0",
     "html-loader": "^0.5.5",
@@ -34,7 +35,6 @@
     "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.0.0",
-    "intersection-observer": "^0.5.1"
+    "@babel/polyfill": "^7.0.0"
   }
 }

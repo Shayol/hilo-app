@@ -1,12 +1,12 @@
 import "../scss/main.scss";
 import '../img/favicon.ico';
 
-import '../assets/Camila Lamarca.pdf';
-import '../assets/Carolina Zancolli.pdf';
-import '../assets/Claudia Cortinez.pdf';
-import '../assets/Florencia Walter.pdf';
-import '../assets/Samuel Lasso.pdf';
-import '../assets/Sol Pochat.pdf';
+// import '../assets/Camila Lamarca.pdf';
+// import '../assets/Carolina Zancolli.pdf';
+// import '../assets/Claudia Cortinez.pdf';
+// import '../assets/Florencia Walter.pdf';
+// import '../assets/Samuel Lasso.pdf';
+// import '../assets/Sol Pochat.pdf';
 
 import { generateSlides, shuffledData } from './generateSlides';
 
@@ -79,7 +79,8 @@ window.addEventListener('load', function () {
         let currentNumber = parseInt(current.dataset.id) - 1;
         if (current) {
             e.stopPropagation();
-            let newSlide = slides[currentNumber > 0 ? currentNumber - 1 : slides.length - 1];
+            let newIndex = currentNumber > 0 ? currentNumber - 1 : slides.length - 1;
+            let newSlide = slides[newIndex];
             newSlide.classList.add("show-slide");
             current.classList.remove("show-slide");
             changeBorder(newIndex);
