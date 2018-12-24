@@ -1,28 +1,19 @@
-let data = [
-
-    { firstname: 'camila', lastname: 'lamarca' },
-    { firstname: 'carolina', lastname: 'zancolli' },
-    { firstname: 'claudia', lastname: 'cortinez' },
-    { firstname: 'florencia', lastname: 'walter' },
-    { firstname: 'samuel', lastname: 'lasso' },
-    { firstname: 'sol', lastname: 'pochat' }
-];
+import data from './data.js';
 
 const shuffle = array => [...array].sort(() => Math.random() - 0.5);
 
 const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1);
 
+let shuffledData = shuffle(data);
+
 function generateSlides() {
     let str = '';
     let content = document.querySelector(".slider__content");
-    let shuffledData = shuffle(data);
-
-    // let shuffledData = randomIndexes.map(i => data[i]);
 
     shuffledData.forEach((el, index) => {
 
         str += `<div id="slide${index + 1}" data-id="${index + 1}" class="slide">
-                <div class="slide__img-wrapper slide__img-wrapper--${el.firstname}_${el.lastname}"></div>
+                <div class="slide__img-wrapper style="background-image:url(../img/${el.firstname}_${el.lastname}.png"></div>
                     <h2 class="slide__artist">
                     ${el.firstname} ${el.lastname}
                     </h2>
@@ -46,4 +37,4 @@ function generateSlides() {
 
 }
 
-export default generateSlides;
+export { generateSlides, shuffledData };

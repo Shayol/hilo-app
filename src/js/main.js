@@ -8,7 +8,7 @@ import '../assets/Florencia Walter.pdf';
 import '../assets/Samuel Lasso.pdf';
 import '../assets/Sol Pochat.pdf';
 
-import generateSlides from './generateSlides';
+import { generateSlides, shuffledData } from './generateSlides';
 
 generateSlides();
 
@@ -82,7 +82,7 @@ window.addEventListener('load', function () {
             let newSlide = slides[currentNumber > 0 ? currentNumber - 1 : slides.length - 1];
             newSlide.classList.add("show-slide");
             current.classList.remove("show-slide");
-            changeBorder(newSlide);
+            changeBorder(newIndex);
         }
     }
 
@@ -91,28 +91,27 @@ window.addEventListener('load', function () {
         let currentNumber = parseInt(current.dataset.id) - 1;
         if (current) {
             e.stopPropagation();
-            let newSlide = slides[currentNumber < slides.length - 1 ? currentNumber + 1 : 0];
+            let newIndex = currentNumber < slides.length - 1 ? currentNumber + 1 : 0;
+            let newSlide = slides[newIndex];
             newSlide.classList.add("show-slide");
             current.classList.remove("show-slide");
 
-            changeBorder(newSlide);
+            changeBorder(newIndex);
         }
     }
 
 
-    function changeBorder(newSlide) {
-        //change border image for cube
-        let el = newSlide.querySelector(".slide__img-wrapper");
-        let computImg = getComputedStyle(el).backgroundImage.split("img/")[1]
-        let img = computImg.substring(0, computImg.length - 2);
-        container.style.backgroundImage = `url(../img/${img})`;
+    function changeBorder(newIndex) {
+        let slide = shuffledData[newIndex]
+        let url = `url(../img/${slide.firstname}_${slide.lastname}.png)`;
+        container.style.backgroundImage = url;
     }
 
     //intro animation
     setTimeout(() => {
         let background = document.querySelector(".container__background");
         let intro = document.querySelector(".d__intro");
-        changeBorder(slides[0]);
+        changeBorder(0);
         background.style.opacity = '0';
         intro.style.opacity = '0';
         intro.style.zIndex = '-1';
