@@ -8,7 +8,8 @@ module.exports = {
   entry: './src/js/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'script.js'
+    filename: 'script.js',
+    publicPath: '/hilo-app/'
   },
   devServer: {
     contentBase: path.join(__dirname, "dist"),
