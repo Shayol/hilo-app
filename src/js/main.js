@@ -12,8 +12,8 @@ import { generateSlides, shuffledData } from './generateSlides';
 
 generateSlides();
 
-var vh = document.documentElement.clientHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
+// var vh = document.documentElement.clientHeight * 0.01;
+// document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 // var zoomW = (document.documentElement.clientWidth / (back.clientWidth - 10)).toFixed(2);
 // var zoomH = (document.documentElement.clientHeight / (back.clientHeight - 10)).toFixed(2);
@@ -21,16 +21,16 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 // document.documentElement.style.setProperty('--brUp', `${zoom}`);
 
-window.addEventListener('resize', () => {
-    vh = document.documentElement.clientHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+// window.addEventListener('resize', () => {
+//     vh = document.documentElement.clientHeight * 0.01;
+//     document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-    // var zoomW = (document.documentElement.clientWidth / (back.clientWidth - 10)).toFixed(2);
-    // var zoomH = (document.documentElement.clientHeight / (back.clientHeight - 10)).toFixed(2);
-    // var zoom = zoomW > zoomH ? zoomW : zoomH;
+//     // var zoomW = (document.documentElement.clientWidth / (back.clientWidth - 10)).toFixed(2);
+//     // var zoomH = (document.documentElement.clientHeight / (back.clientHeight - 10)).toFixed(2);
+//     // var zoom = zoomW > zoomH ? zoomW : zoomH;
 
-    // document.documentElement.style.setProperty('--zoom', `${zoom}`);
-})
+//     // document.documentElement.style.setProperty('--zoom', `${zoom}`);
+// })
 
 window.addEventListener('load', function () {
     let sliderLogo = document.querySelectorAll(".logo");

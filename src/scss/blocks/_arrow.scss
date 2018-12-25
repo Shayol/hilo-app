@@ -4,11 +4,7 @@
     height: 7.8vw;
     width: 100%;
     position: relative;
-    z-index: 2; // -webkit-touch-callout: none; // -webkit-user-select: none;
-    // -khtml-user-select: none;
-    // -moz-user-select: none;
-    // -ms-user-select: none;
-    // user-select: none;
+    z-index: 2;
     &\--down {
         .arrow__content {
             position: absolute;
@@ -34,14 +30,12 @@
     }
     @media(min-width: $desktop) {
         cursor: pointer;
-        transition: border-color 0.4s ease;
         height: 1.4vw;
         width: 1.4vw;
         display: block;
         position: absolute;
         top: 26.5%;
         min-height: initial;
-        transition: all 0.4s linear;
         &\--down {
             display: none;
         }
@@ -50,18 +44,12 @@
             border-left: 1px solid #979797;
             border-bottom: 1px solid #979797;
             transform: translateX(40%) rotate(45deg);
-            &:hover {
-                border-color: #777676;
-            }
         }
         &\--right {
             right: 0;
             border-right: 1px solid #979797;
             border-bottom: 1px solid #979797;
             transform: translateX(-40%) rotate(-45deg);
-            &:hover {
-                border-color: #504f4f;
-            }
         }
     }
 }
