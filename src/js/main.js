@@ -47,7 +47,7 @@ window.addEventListener('load', function () {
     let cube = document.querySelector('.d__cube');
     let back = document.querySelector(".d__cube-face--back");
     let timerId;
-    let slideIndex = 1;
+    let slideIndex = 0;
 
 
     //show info
@@ -65,16 +65,27 @@ window.addEventListener('load', function () {
 
             if (TweenLite) {
 
-                TweenLite.to(slider, .5, { scrollTo: "#slide" + (slideIndex + 2) });
+                TweenLite.to(slider, .5, { scrollTo: "#slide" + (slideIndex + 1) });
             }
         }
         else {
             if (TweenLite) {
 
-                TweenLite.to(slider, 0, { scrollTo: "#slide1" });
+                TweenLite.to(slider, 0, { scrollTo: "#slide0" });
             }
         }
     });
+
+    const intersectionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.intersectionRatio > 0.3) {
+                slideIndex = parseInt(entry.target.dataset.id);
+            }
+
+        });
+    }, { threshold: 0.6 });
+
+    slides.forEach((element) => intersectionObserver.observe(element));
 
     //loop scroll
 
@@ -84,7 +95,7 @@ window.addEventListener('load', function () {
             console.log('scrolled');
             if (TweenLite) {
 
-                TweenLite.to(slider, 0, { scrollTo: "#slide1" });
+                TweenLite.to(slider, 0, { scrollTo: "#slide0" });
             }
         }
     });
@@ -97,7 +108,7 @@ window.addEventListener('load', function () {
 
     function moveRight(e) {
         let current = document.querySelector(".show-slide");
-        let currentNumber = parseInt(current.dataset.id) - 1;
+        let currentNumber = parseInt(current.dataset.id);
         if (current) {
             if (e) e.stopPropagation();
             let newIndex = currentNumber > 0 ? currentNumber - 1 : slides.length - 1;
@@ -110,7 +121,7 @@ window.addEventListener('load', function () {
 
     function moveLeft(e) {
         let current = document.querySelector(".show-slide");
-        let currentNumber = parseInt(current.dataset.id) - 1;
+        let currentNumber = parseInt(current.dataset.id);
         if (current) {
             if (e) e.stopPropagation();
             let newIndex = currentNumber < slides.length - 1 ? currentNumber + 1 : 0;

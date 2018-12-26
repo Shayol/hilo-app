@@ -7,8 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 2.5vh;
-    padding-bottom: 2.5vh;
+    padding-bottom: 16.6016vmin;
     &__artist {
         text-transform: uppercase;
         font-size: 5vw;
@@ -28,25 +27,24 @@
         background-position: 50% 50%;
         background-size: contain;
         margin: 0;
-        margin-bottom: 2vh;
-        // &\--camila_lamarca {
-    //     background-image: url("../img/camila_lamarca.png")
-    // }
-    // &\--carolina_zancolli {
-    //     background-image: url("../img/carolina_zancolli.png")
-    // }
-    // &\--claudia_cortinez {
-    //     background-image: url("../img/claudia_cortinez.png")
-    // }
-    // &\--florencia_walter {
-    //     background-image: url("../img/florencia_walter.png")
-    // }
-    // &\--samuel_lasso {
-    //     background-image: url("../img/samuel_lasso.png")
-    // }
-    // &\--sol_pochat {
-    //     background-image: url("../img/sol_pochat.png")
-    // }
+        margin-bottom: 2vh; // &\--camila_lamarca {
+        //     background-image: url("../img/camila_lamarca.png")
+        // }
+        // &\--carolina_zancolli {
+        //     background-image: url("../img/carolina_zancolli.png")
+        // }
+        // &\--claudia_cortinez {
+        //     background-image: url("../img/claudia_cortinez.png")
+        // }
+        // &\--florencia_walter {
+        //     background-image: url("../img/florencia_walter.png")
+        // }
+        // &\--samuel_lasso {
+        //     background-image: url("../img/samuel_lasso.png")
+        // }
+        // &\--sol_pochat {
+        //     background-image: url("../img/sol_pochat.png")
+        // }
     }
     &__img {
         width: 100%;
