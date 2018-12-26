@@ -21,7 +21,7 @@ function generateSlides() {
                         portfolio
                     </a>
             <div class="arrow arrow--down slide__arrow slide__arrow--down">
-                ${index + 1 >= shuffledData.length ? '' : '<div class="arrow__content"></div>'}
+                <div class="arrow__content"></div>
             </div>
                 </div > `
     });

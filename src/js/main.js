@@ -43,10 +43,9 @@ window.addEventListener('load', function () {
     let arrowRight = document.querySelector(".arrow--right");
     let slides = document.querySelectorAll(".slide");
     let cube = document.querySelector('.d__cube');
-    let cubeFace = document.querySelectorAll(".d__cube-face");
     let back = document.querySelector(".d__cube-face--back");
-    let scene = document.querySelector(".d__scene");
-    let currentSlide = 1;
+    let timerId;
+
 
     //show info
 
@@ -67,18 +66,39 @@ window.addEventListener('load', function () {
                     TweenLite.to(slider, .5, { scrollTo: "#slide" + (index + 2) });
                 }
             }
+            else {
+                if (TweenLite) {
+
+                    TweenLite.to(slider, 0, { scrollTo: "#slide1" });
+                }
+            }
         });
     })
 
-    arrowLeft.addEventListener('click', moveRight);
+    //loop scroll
 
-    arrowRight.addEventListener('click', moveLeft);
+    slider.addEventListener('scroll', function (event) {
+        let element = event.target;
+        if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+            console.log('scrolled');
+            if (TweenLite) {
+
+                TweenLite.to(slider, 0, { scrollTo: "#slide1" });
+            }
+        }
+    });
+
+    //desktop slider navigation
+
+    arrowLeft.addEventListener('click', moveLeft);
+
+    arrowRight.addEventListener('click', moveRight);
 
     function moveRight(e) {
         let current = document.querySelector(".show-slide");
         let currentNumber = parseInt(current.dataset.id) - 1;
         if (current) {
-            e.stopPropagation();
+            if (e) e.stopPropagation();
             let newIndex = currentNumber > 0 ? currentNumber - 1 : slides.length - 1;
             let newSlide = slides[newIndex];
             newSlide.classList.add("show-slide");
@@ -91,7 +111,7 @@ window.addEventListener('load', function () {
         let current = document.querySelector(".show-slide");
         let currentNumber = parseInt(current.dataset.id) - 1;
         if (current) {
-            e.stopPropagation();
+            if (e) e.stopPropagation();
             let newIndex = currentNumber < slides.length - 1 ? currentNumber + 1 : 0;
             let newSlide = slides[newIndex];
             newSlide.classList.add("show-slide");
@@ -119,10 +139,29 @@ window.addEventListener('load', function () {
         intro.style.zIndex = '-1';
         setTimeout(() => {
             slides[0].classList.add("show-slide");
+            runTimer();
         }, 850);
 
     }, 250);
 
+    //change slides every 3secs
+
+    function runTimer() {
+        timerId = setInterval(() => {
+            moveRight();
+        }, 3000);
+    }
+
+
+    function checkTimer() {
+        if (cube.classList.contains("d__cube--big")) {
+            clearInterval(timerId);
+        }
+        else {
+            runTimer();
+        }
+
+    }
 
     //zoom in 
 
@@ -134,6 +173,7 @@ window.addEventListener('load', function () {
         }
         sliderParent.classList.toggle("slider--small");
         cube.classList.toggle("d__cube--big");
+        checkTimer();
     }
 
     window.addEventListener('keydown', (e) => {
