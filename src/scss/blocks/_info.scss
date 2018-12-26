@@ -7,8 +7,8 @@
     width: 100%;
     height: 100%;
     transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
-    padding-left: 11%;
-    padding-right: 11%;
+    padding-left: 8.935vw;
+    padding-right: 8.935vw;
     &__content {
         background-color: white; // padding-bottom: 15%; // display: flex;
         // flex-direction: column;
@@ -17,48 +17,76 @@
         width: 100%;
         height: 100%;
         overflow-y: scroll;
+        padding-left: 4.4675vw;
+        padding-right: 4.4675vw;
     }
-    &__second-page {
+    &__second-page,
+    &__first-page {
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 8.7891vmin;
     }
+    &__first-page {}
     &__description {
-        font-size: 4.7vmin;
+        font-size: 5vmin;
         letter-spacing: 0.034615em;
-        margin-bottom: 2.2em;
-        margin-top: 2em;
+        margin-bottom: 1.5em;
         line-height: 2.153846em;
-        text-align: center;
+        text-align: center; // height: 30%;
         &\--desktop {
             display: none;
         }
     }
     &__header {
         text-transform: uppercase;
-        font-weight: bold;
+        font-weight: 700;
         text-align: center;
+        margin-bottom: 0.6em;
+        color: #000000;
+        font-size: 5.2vmin;
+        line-height: 1.8em;
+    }
+    &__artists,
+    &__director {
+        margin-bottom: 6vmax;
     }
     &__small-text {
         color: #000000;
-        font-weight: 300;
-        font-size: 3.7vmin;
+        font-size: 4.4vmin;
         line-height: 2.086957em;
         font-weight: 300;
         letter-spacing: 0.03478em;
-        margin-bottom: 1.2em;
+        margin-bottom: 2em;
+        display: block;
+        text-align: center;
+    }
+    &__second-page-text {
+        margin-bottom: 0.6em;
+        color: #000000;
+        font-size: 5.2vmin;
+        line-height: 1.8em;
+        font-weight: 300;
+        letter-spacing: 0.03478em; // margin-bottom: 2em;
         display: block;
         text-align: center;
     }
     &__email {
         color: black;
         text-decoration: none;
+        margin-top: 2.2em;
     }
     &__instagram {
-        margin-top: auto;
-        text-align: center;
+        // margin-top: auto; // text-align: center;
     }
     &__instagram-svg {
         width: 56px;
         height: 56px;
+    }
+    &__contact {
+        // height: 60%;
     }
     @media(max-width: $desktop - 1) and (orientation: landscape) {
         padding-left: 4%;

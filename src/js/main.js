@@ -91,7 +91,7 @@ window.addEventListener('load', function () {
 
     slider.addEventListener('scroll', function (event) {
         let element = event.target;
-        if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+        if (element.scrollHeight - 1 <= element.clientHeight + element.scrollTop) {
             console.log('scrolled');
             if (TweenLite) {
 
