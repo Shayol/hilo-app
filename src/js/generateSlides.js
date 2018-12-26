@@ -20,11 +20,12 @@ function generateSlides() {
                     <a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="slide__portfolio" download>
                         portfolio
                     </a>
-            <div class="arrow arrow--down slide__arrow slide__arrow--down">
-                <div class="arrow__content"></div>
-            </div>
                 </div > `
     });
+
+    str += `<div class="arrow arrow--down slide__arrow slide__arrow--down">
+                <div class="arrow__content"></div>
+            </div>`;
 
 
     str +=

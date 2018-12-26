@@ -1,6 +1,8 @@
 import "../scss/main.scss";
 import '../img/favicon.ico';
 
+require('intersection-observer');
+
 // import '../assets/Camila Lamarca.pdf';
 // import '../assets/Carolina Zancolli.pdf';
 // import '../assets/Claudia Cortinez.pdf';
@@ -38,13 +40,14 @@ window.addEventListener('load', function () {
     let container = document.querySelector(".container");
     let slider = document.querySelector(".slider__content");
     let sliderParent = document.querySelector(".slider");
-    let arrowDown = document.querySelectorAll(".arrow--down");
+    let arrowDown = document.querySelector(".arrow--down");
     let arrowLeft = document.querySelector(".arrow--left");
     let arrowRight = document.querySelector(".arrow--right");
     let slides = document.querySelectorAll(".slide");
     let cube = document.querySelector('.d__cube');
     let back = document.querySelector(".d__cube-face--back");
     let timerId;
+    let slideIndex = 1;
 
 
     //show info
@@ -57,23 +60,21 @@ window.addEventListener('load', function () {
     });
 
     //navigate slider
-    arrowDown.forEach((arrow, index) => {
-        arrow.addEventListener('click', e => {
-            if (index < slides.length - 1) {
+    arrowDown.addEventListener('click', e => {
+        if (slideIndex < slides.length - 1) {
 
-                if (TweenLite) {
+            if (TweenLite) {
 
-                    TweenLite.to(slider, .5, { scrollTo: "#slide" + (index + 2) });
-                }
+                TweenLite.to(slider, .5, { scrollTo: "#slide" + (slideIndex + 2) });
             }
-            else {
-                if (TweenLite) {
+        }
+        else {
+            if (TweenLite) {
 
-                    TweenLite.to(slider, 0, { scrollTo: "#slide1" });
-                }
+                TweenLite.to(slider, 0, { scrollTo: "#slide1" });
             }
-        });
-    })
+        }
+    });
 
     //loop scroll
 
