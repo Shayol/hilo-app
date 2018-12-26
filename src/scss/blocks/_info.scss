@@ -85,8 +85,8 @@
         width: 56px;
         height: 56px;
     }
-    &__contact {
-        // height: 60%;
+    &__dot {
+        displaY: none;
     }
     @media(max-width: $desktop - 1) and (orientation: landscape) {
         padding-left: 4%;
@@ -97,14 +97,67 @@
         }
     }
     @media(min-width: $desktop) {
+        display: block;
+        padding: 0 0 5.3vh 0;
         &__content {
-            padding-top: 2.5vh; // padding-bottom: 16%;
+            display: flex;
+            overflow-y: hidden;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0;
+        }
+        &__first-page {
+            order: 1;
+            padding: 0;
+            height: auto;
+        }
+        &__contact {
+            display: flex;
+        }
+        &__second-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-content: space-evenly;
+            flex-wrap: wrap;
+            height: 55%;
+            padding: 0;
+        }
+        &__instagram {
+            margin-bottom: auto;
+            margin-top: auto;
+            &\--mobile {
+                display: none;
+            }
+            &\--desktop {
+                display: inline-block;
+            }
+        }
+        &__second-page-text {
+            font-size: 0.6677vw;
+            line-height: 1.3333em;
+            margin-bottom: 1.8vh;
+        }
+        &__right-column {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &__header {
+            font-size: 0.6677vw;
+            line-height: 1.3333em;
+            margin-bottom: 1.8vh;
+        }
+        &__artists,
+        &__director,
+        &__curator {
+            margin-bottom: 0;
         }
         &__description {
-            font-size: 0.7679vw;
-            margin-top: 0;
-            margin-bottom: 4em;
-            letter-spacing: 0.034783em;
+            font-size: 0.6677vw;
+            line-height: 1.3333em;
             &\--mobile {
                 display: none;
             }
@@ -129,7 +182,10 @@
         &__instagram-svg {
             width: 28px;
             height: 28px;
-            margin-top: auto;
+        }
+        &__dot {
+            display: initial;
+            margin-right: 0.2em;
         }
     }
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {}

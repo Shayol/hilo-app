@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-
+var WebpackPwaManifest = require('webpack-pwa-manifest');
 
 module.exports = {
   entry: './src/js/main.js',
@@ -115,5 +115,17 @@ module.exports = {
       { from: 'src/img', to: 'img' },
       { from: 'src/assets', to: 'assets' }
     ]),
+    new WebpackPwaManifest({
+      name: 'hilo',
+      description: 'Contemporary art gallery representing emerging artists from Latin America',
+      ios: true,
+      icons: [
+        {
+          src: path.resolve('src/img/icon.png'),
+          sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+          ios: true
+        }
+      ]
+    })
   ]
 };
