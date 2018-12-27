@@ -115,7 +115,8 @@ window.addEventListener('load', function () {
             let newSlide = slides[newIndex];
             newSlide.classList.add("show-slide");
             current.classList.remove("show-slide");
-            changeBorder(newIndex);
+            setTimeout(changeBorder, 400, newIndex);
+            // changeBorder(newIndex);
         }
     }
 
@@ -129,7 +130,8 @@ window.addEventListener('load', function () {
             newSlide.classList.add("show-slide");
             current.classList.remove("show-slide");
 
-            changeBorder(newIndex);
+            setTimeout(changeBorder, 850, newIndex);
+            // changeBorder(newIndex);
         }
     }
 
@@ -152,7 +154,7 @@ window.addEventListener('load', function () {
         setTimeout(() => {
             slides[0].classList.add("show-slide");
             runTimer();
-        }, 850);
+        }, 400);
 
     }, 250);
 
