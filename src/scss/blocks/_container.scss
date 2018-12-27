@@ -19,16 +19,20 @@
         position: relative;
     }
     @media(min-width: $desktop) {
-        transition: all .85s cubic-bezier(.455, .03, .515, .955);
         &__background {
             position: absolute;
+            background-repeat: no-repeat;
+            background-size: 250%;
+            background-position: 50%;
             top: 0;
             right: 0;
             width: 100%;
             height: 100%;
-            transition: all .85s cubic-bezier(.455, .03, .515, .955);
-            opacity: 1;
-            background-color: black;
+            transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
+            &\--1 {
+                opacity: 1;
+                background-color: black;
+            }
         }
     }
 }

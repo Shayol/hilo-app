@@ -48,6 +48,9 @@ window.addEventListener('load', function () {
     let back = document.querySelector(".d__cube-face--back");
     let timerId;
     let slideIndex = 0;
+    let background1 = document.querySelector(".container__background--1");
+    let background2 = document.querySelector(".container__background--2");
+    let backgroundFirst = false;
 
 
     //show info
@@ -130,7 +133,7 @@ window.addEventListener('load', function () {
             newSlide.classList.add("show-slide");
             current.classList.remove("show-slide");
 
-            setTimeout(changeBorder, 850, newIndex);
+            setTimeout(changeBorder, 400, newIndex);
             // changeBorder(newIndex);
         }
     }
@@ -139,21 +142,36 @@ window.addEventListener('load', function () {
     function changeBorder(newIndex) {
         let slide = shuffledData[newIndex]
         let url = `url(../img/${slide.firstname}_${slide.lastname}.png)`;
-        container.style.backgroundImage = url;
-        container.style.backgroundPosition = slide.backgroundPosition;
+        if (!backgroundFirst) {
+            background1.style.backgroundImage = url;
+            background1.style.backgroundPosition = slide.backgroundPosition;
+            background1.style.opacity = '1';
+            background2.style.opacity = '0';
+        }
+        else {
+            background2.style.backgroundImage = url;
+            background2.style.backgroundPosition = slide.backgroundPosition;
+            background1.style.opacity = '0';
+            background2.style.opacity = '1';
+        }
+
+        backgroundFirst = !backgroundFirst;
+
     }
 
     //intro animation
     setTimeout(() => {
-        let background = document.querySelector(".container__background");
         let intro = document.querySelector(".d__intro");
-        changeBorder(0);
-        background.style.opacity = '0';
         intro.style.opacity = '0';
         intro.style.zIndex = '-1';
         setTimeout(() => {
             slides[0].classList.add("show-slide");
-            runTimer();
+
+            setTimeout(() => {
+                background1.style.backgroundColor = "transparent";
+                changeBorder(0);
+                runTimer();
+            }, 400);
         }, 400);
 
     }, 250);
