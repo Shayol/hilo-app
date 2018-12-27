@@ -26,6 +26,8 @@
         display: none;
     }
     @media(max-width: $desktop - 1) and (orientation: landscape) {
+        height: 12.8125vmin;
+        padding-bottom: 5vmin;
         .arrow__content {
             top: 0;
         }
