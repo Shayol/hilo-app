@@ -26,8 +26,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        padding-bottom: 8.7891vmin;
+        align-items: center; // padding-bottom: 8.7891vmin;
     }
     &__description {
         font-size: 5vmin;
@@ -38,6 +37,9 @@
         &\--desktop {
             display: none;
         }
+    }
+    &__schedule {
+        margin-bottom: 0;
     }
     &__header {
         text-transform: uppercase;
@@ -63,9 +65,9 @@
         text-align: center;
     }
     &__second-page-text {
-        margin-bottom: 0.6em;
+        // margin-bottom: 0.6em;
         color: #000000;
-        font-size: 5.2vmin;
+        font-size: 4.4vmin;
         line-height: 1.8em;
         font-weight: 300;
         letter-spacing: 0.03478em; // margin-bottom: 2em;
@@ -78,7 +80,6 @@
         margin-top: 2.2em;
     }
     &__instagram {
-        // margin-top: auto; // text-align: center;
         &\--desktop {
             display: none;
         }
@@ -104,7 +105,7 @@
     }
     @media(min-width: $desktop) {
         display: block;
-        padding: 0 0 5.3vh 0;
+        padding: 0 0 2.5vmin 0;
         &__content {
             display: flex;
             overflow-y: hidden;
@@ -116,22 +117,22 @@
             order: 1;
             padding: 0;
             height: auto;
+            display: flex;
         }
         &__contact {
             display: flex;
         }
         &__second-page {
+            height: auto;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-content: space-evenly;
-            flex-wrap: wrap;
-            height: 55%;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: baseline;
             padding: 0;
+            flex-grow: 0;
         }
         &__instagram {
-            margin-bottom: auto;
-            margin-top: auto;
+            display: block; // margin: auto 0;
             &\--mobile {
                 display: none;
             }
@@ -139,17 +140,19 @@
                 display: inline-block;
             }
         }
+        &__address {
+            margin-bottom: 0;
+        }
         &__second-page-text {
             font-size: 0.6677vw;
             line-height: 1.3333em;
             margin-bottom: 1.8vh;
         }
         &__right-column {
-            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
+            justify-content: stretch;
         }
         &__header {
             font-size: 0.6677vw;
@@ -194,5 +197,15 @@
             margin-right: 0.2em;
         }
     }
-    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {}
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        &__description {
+            font-size: 4vmin;
+            line-height: 1.333em;
+        }
+        &__second-page-text {
+            font-size: 4vmin;
+            line-height: 1.333em;
+            margin-bottom: 0;
+        }
+    }
 }

@@ -10,4 +10,5 @@
         z-index: -1;
         transition-delay: initial;
     }
+    @media(min-width: $desktop) {}
 }
