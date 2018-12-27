@@ -163,7 +163,7 @@ window.addEventListener('load', function () {
     function runTimer() {
         timerId = setInterval(() => {
             moveRight();
-        }, 3000);
+        }, 7000);
     }
 
 
