@@ -29,7 +29,6 @@
         align-items: center;
         padding-bottom: 8.7891vmin;
     }
-    &__first-page {}
     &__description {
         font-size: 5vmin;
         letter-spacing: 0.034615em;
@@ -80,6 +79,9 @@
     }
     &__instagram {
         // margin-top: auto; // text-align: center;
+        &\--desktop {
+            display: none;
+        }
     }
     &__instagram-svg {
         width: 56px;
@@ -94,6 +96,10 @@
         &__description {
             margin-bottom: 0.55em;
             margin-top: 0.75em;
+        }
+        &__second-page,
+        &__first-page {
+            height: auto;
         }
     }
     @media(min-width: $desktop) {
