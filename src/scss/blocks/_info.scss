@@ -151,7 +151,7 @@
         &__second-page-text {
             font-size: 0.6335vw;
             line-height: 1.3333em;
-            margin-bottom: 1.2vh;
+            margin-bottom: 1.2vh; // -webkit-transform: translateZ(0);
         }
         &__right-column {
             display: flex;

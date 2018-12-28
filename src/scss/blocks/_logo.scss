@@ -26,6 +26,7 @@
         width: 4.5vw;
         margin-bottom: 5.3vh;
         transition: opacity .85s;
+        -webkit-transform: translateZ(0); //to remove jumping due to pixel rounding during transition in crome
         pointer-events: none;
     }
 }
