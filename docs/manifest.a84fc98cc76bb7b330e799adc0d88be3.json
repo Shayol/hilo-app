@@ -1,0 +1,40 @@
+{
+  "icons": [
+    {
+      "src": "icon_512x512.2274daf504c2ab579e78a567d1bd022c.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_384x384.71c592aa6cb5140fe5409412e701eba8.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_256x256.dbdd05dfbf7fe7f6c14f98ffb70c3085.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_192x192.74daf2b6da097d9ffb7e5ca1ee00724f.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_128x128.3c6118503b596d833c442c8ed4526d12.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_96x96.415d115e3d2d74d7d36e3b8da18a66c7.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "hilo",
+  "short_name": "hilo",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "Contemporary art gallery representing emerging artists from Latin America"
+}
