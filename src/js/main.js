@@ -50,7 +50,7 @@ window.addEventListener('load', function () {
     let slideIndex = 0;
     let background1 = document.querySelector(".container__background--1");
     let background2 = document.querySelector(".container__background--2");
-    let backgroundFirst = false;
+    let backgroundFirst = true;
 
 
     //show info
@@ -168,10 +168,10 @@ window.addEventListener('load', function () {
             slides[0].classList.add("show-slide");
 
             setTimeout(() => {
-                background1.style.backgroundColor = "transparent";
+                // background1.style.backgroundColor = "transparent";
                 changeBorder(0);
                 runTimer();
-            }, 400);
+            }, 800);
         }, 400);
 
     }, 250);
