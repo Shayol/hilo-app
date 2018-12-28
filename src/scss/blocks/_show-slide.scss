@@ -3,5 +3,6 @@
         opacity: 1;
         transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
         transition-delay: 0.4s;
+        -webkit-transform: translateZ(0);
     }
 }

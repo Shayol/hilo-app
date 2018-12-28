@@ -73,15 +73,17 @@
             width: 22vw; // transition: all 0.4s linear;
         }
         &__artist {
-            font-size: 0.8095vw;
-            letter-spacing: 0.034815em;
+            font-size: 0.81vw;
+            letter-spacing: 0.0348em;
             margin-bottom: .6em;
             transition: opacity .85s;
+            -webkit-transform: translateZ(0);
         }
         &__portfolio {
             font-size: 0.5vw;
             letter-spacing: 0.035em;
             transition: opacity .85s;
+            -webkit-transform: translateZ(0);
         }
     }
 }

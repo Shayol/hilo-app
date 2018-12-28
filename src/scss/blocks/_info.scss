@@ -151,7 +151,8 @@
         &__second-page-text {
             font-size: 0.6335vw;
             line-height: 1.3333em;
-            margin-bottom: 1.2vh; // -webkit-transform: translateZ(0);
+            margin-bottom: 1.2vh;
+            -webkit-transform: translateZ(0);
         }
         &__right-column {
             display: flex;
@@ -163,6 +164,7 @@
             font-size: 0.6677vw;
             line-height: 1.3333em;
             margin-bottom: 1.5vh;
+            -webkit-transform: translateZ(0);
         }
         &__artists,
         &__director,
@@ -186,6 +188,7 @@
             font-size: 0.6335vw;
             line-height: 1.3333em;
             margin-bottom: 1.8vh;
+            -webkit-transform: translateZ(0);
         }
         &__schedule {
             margin-bottom: 0;
