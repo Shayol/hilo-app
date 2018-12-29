@@ -36,9 +36,9 @@ function generateSlides() {
                     </a>
                     </div>`;
 
-        navStr += `<div class='nav__item'>
+        navStr += `<a href='#slide${index}' class='nav__item'>
                         ${capitalize(el.lastname)}
-                   </div>`;
+                   </a>`;
     });
 
     slider.innerHTML = str;

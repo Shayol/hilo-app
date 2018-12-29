@@ -1,22 +1,22 @@
 .nav {
     display: none;
     @media(min-width: $desktop) {
-        position: absolute;
         opacity: 0;
         z-index: -1;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
+        display: flex;
+        width: 20%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
         &__item {
             font-size: 0.81vw;
             letter-spacing: 0.0348em;
             transition: opacity .85s;
             color: #9b9b9b;
             text-align: right;
+            text-decoration: none;
             &:hover {
-                color: black;
-            }
-            &\--active {
                 color: black;
             }
         }

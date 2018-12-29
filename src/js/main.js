@@ -40,6 +40,7 @@ window.addEventListener('load', function () {
     let slideIndex = 0;
     let background1 = document.querySelector(".container__background--1");
     let background2 = document.querySelector(".container__background--2");
+    let scrollNav = document.querySelectorAll(".nav__item");
     let backgroundFirst = true;
 
 
@@ -69,10 +70,26 @@ window.addEventListener('load', function () {
     //     }
     // });
 
+    scrollNav.forEach(el => {
+        el.addEventListener('click', e => {
+            if (TweenLite) {
+                e.preventDefault();
+                TweenLite.to(slider, 1, { scrollTo: "#" + el.href.split("#")[1] });
+            }
+        });
+    });
+
     const intersectionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
             if (entry.intersectionRatio > 0.3) {
                 slideIndex = parseInt(entry.target.dataset.id);
+
+                scrollNav.forEach(nav => {
+                    nav.classList.remove("scrolled");
+                    if (entry.target.id == nav.href.split("#")[1]) {
+                        nav.classList.add("scrolled");
+                    }
+                });
             }
 
         });
@@ -88,10 +105,24 @@ window.addEventListener('load', function () {
             if (e) e.stopPropagation();
             let newIndex = currentNumber > 0 ? currentNumber - 1 : slides.length - 1;
             let newSlide = slides[newIndex];
-            newSlide.classList.add("show-slide");
+
+            current.addEventListener("transitionend", handleTransition, false);
+
             current.classList.remove("show-slide");
-            setTimeout(changeBorder, 400, newIndex);
-            // changeBorder(newIndex);
+
+            function handleTransition(event) {
+
+                if (TweenLite) {
+
+                    TweenLite.to(slider, 0, { scrollTo: "#slide" + newIndex });
+                }
+
+                newSlide.classList.add("show-slide");
+                setTimeout(changeBorder, 400, newIndex);
+
+                current.removeEventListener('transitionend', handleTransition);
+
+            }
         }
     }
 
@@ -102,11 +133,24 @@ window.addEventListener('load', function () {
             if (e) e.stopPropagation();
             let newIndex = currentNumber < slides.length - 1 ? currentNumber + 1 : 0;
             let newSlide = slides[newIndex];
-            newSlide.classList.add("show-slide");
+
+            current.addEventListener("transitionend", handleTransition, false);
+
             current.classList.remove("show-slide");
 
-            setTimeout(changeBorder, 400, newIndex);
-            // changeBorder(newIndex);
+            function handleTransition(event) {
+
+                if (TweenLite) {
+
+                    TweenLite.to(slider, 0, { scrollTo: "#slide" + newIndex });
+                }
+
+                newSlide.classList.add("show-slide");
+                setTimeout(changeBorder, 400, newIndex);
+
+                current.removeEventListener('transitionend', handleTransition);
+
+            }
         }
     }
 

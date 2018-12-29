@@ -18,16 +18,25 @@
         padding-top: 5vh;
     }
     @media(min-width: $desktop) {
-        width: 9.15vw;
-        z-index: -1;
+        display: none;
+        width: 20%;
         background-color: transparent;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         opacity: 0;
         margin: 0;
         padding: 0;
-        width: 4.5vw;
         margin-bottom: 0;
         transition: opacity .85s;
         -webkit-transform: translateZ(0); //to remove jumping due to pixel rounding during transition in crome
         pointer-events: none;
+        &__wrapper {
+            width: 4.5vw;
+        }
+        &__svg {
+            height: auto;
+        }
     }
 }
