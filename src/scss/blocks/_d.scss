@@ -81,20 +81,6 @@
             border: 5px solid transparent;
             background-color: white;
             background-clip: padding-box;
-            .d__intro {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-image: url("../img/logo-big.svg");
-                background-size: 27%;
-                background-position: 50%;
-                z-index: 10;
-                background-repeat: no-repeat;
-                transition: all .85s cubic-bezier(.455, .03, .515, .955);
-            }
         }
         &__cube-face\--top-left {
             width: calc(25% + 5px);

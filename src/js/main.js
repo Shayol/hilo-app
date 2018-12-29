@@ -160,28 +160,20 @@ window.addEventListener('load', function () {
     }
 
     //intro animation
+    slides[0].classList.add("show-slide");
+
     setTimeout(() => {
-        let intro = document.querySelector(".d__intro");
-        intro.style.opacity = '0';
-        intro.style.zIndex = '-1';
-        setTimeout(() => {
-            slides[0].classList.add("show-slide");
-
-            setTimeout(() => {
-                // background1.style.backgroundColor = "transparent";
-                changeBorder(0);
-                runTimer();
-            }, 800);
-        }, 400);
-
-    }, 250);
+        // background1.style.backgroundColor = "transparent";
+        changeBorder(0);
+        runTimer();
+    }, 800);
 
     //change slides every 3secs
 
     function runTimer() {
         timerId = setInterval(() => {
             moveRight();
-        }, 7000);
+        }, 5000);
     }
 
 
@@ -190,6 +182,7 @@ window.addEventListener('load', function () {
             clearInterval(timerId);
         }
         else {
+            clearInterval(timerId);
             runTimer();
         }
 
@@ -217,15 +210,25 @@ window.addEventListener('load', function () {
 
             case "Left": // IE/Edge specific value
                 moveLeft(e);
+                checkTimer();
             case "ArrowLeft":
                 moveLeft(e);
+                checkTimer();
                 break;
             case "Right": // IE/Edge specific value
                 moveRight(e);
+                checkTimer();
             case "ArrowRight":
                 moveRight(e);
+                checkTimer();
                 break;
             case " ":
+                zoom(e);
+                break;
+            case "Esc": // IE/Edge specific value
+                zoom(e);
+            case "Escape":
+                // Do something for "esc" key press.
                 zoom(e);
                 break;
             default:
