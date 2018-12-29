@@ -9,15 +9,19 @@
     align-items: center;
     padding-bottom: 19vmin;
     &__artist {
-        text-transform: uppercase;
-        font-size: 5vw;
-        margin-bottom: 1.1em;
+        font-size: 4.5vw;
+        margin-bottom: .5em;
+        text-decoration: none;
+        color: black;
     }
     &__portfolio {
-        color: #7d7d7d;
+        color: #9b9b9b;
         text-decoration: none;
-        text-transform: uppercase;
-        font-size: 3.125vw;
+        font-size: 4.5vw;
+        transition: color .4s;
+        &:hover {
+            color: black;
+        }
     }
     &__img-wrapper {
         width: 100%;
@@ -68,20 +72,24 @@
         &__img-wrapper {
             margin-top: 0;
             margin-bottom: auto;
-            height: 71%;
-            max-width: 34vw;
-            width: 22vw; // transition: all 0.4s linear;
+            height: 100%;
+            width: 100%
         }
         &__artist {
-            font-size: 0.81vw;
-            letter-spacing: 0.0348em;
-            margin-bottom: .6em;
-            transition: opacity .85s;
+            &\--mobile {
+                // font-size: 0.81vw;
+                // letter-spacing: 0.0348em;
+                // margin-bottom: .6em;
+                // transition: opacity .85s;
+                display: none;
+            }
         }
         &__portfolio {
-            font-size: 0.5vw;
-            letter-spacing: 0.035em;
-            transition: opacity .85s;
+            &\--mobile {
+                // font-size: 0.5vw; // letter-spacing: 0.035em;
+                // transition: opacity .85s;
+                display: none;
+            }
         }
     }
 }

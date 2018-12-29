@@ -37,6 +37,16 @@
                     opacity: 1;
                     pointer-events: auto;
                 }
+                .artist {
+                    display: block;
+                    z-index: 11;
+                    opacity: 1;
+                }
+                .nav {
+                    display: block;
+                    z-index: 11;
+                    opacity: 1;
+                }
             }
         }
         &__cube-face {
@@ -71,16 +81,18 @@
             }
         }
         &__cube-face\--back {
+            align-items: stretch;
+            justify-content: strect;
             width: calc(50%);
             height: calc(50%);
             position: relative;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
+            transform: translate(-50%, -50%); // display: block;
             border: 5px solid transparent;
             background-color: white;
             background-clip: padding-box;
+            padding: 6% 3.7% 6% 5.2%;
         }
         &__cube-face\--top-left {
             width: calc(25% + 5px);

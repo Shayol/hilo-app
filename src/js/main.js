@@ -3,13 +3,6 @@ import '../img/favicon.ico';
 
 require('intersection-observer');
 
-// import '../assets/Camila Lamarca.pdf';
-// import '../assets/Carolina Zancolli.pdf';
-// import '../assets/Claudia Cortinez.pdf';
-// import '../assets/Florencia Walter.pdf';
-// import '../assets/Samuel Lasso.pdf';
-// import '../assets/Sol Pochat.pdf';
-
 import { generateSlides, shuffledData } from './generateSlides';
 
 generateSlides();
@@ -40,9 +33,6 @@ window.addEventListener('load', function () {
     let container = document.querySelector(".container");
     let slider = document.querySelector(".slider__content");
     let sliderParent = document.querySelector(".slider");
-    let arrowDown = document.querySelector(".arrow--down");
-    let arrowLeft = document.querySelector(".arrow--left");
-    let arrowRight = document.querySelector(".arrow--right");
     let slides = document.querySelectorAll(".slide");
     let cube = document.querySelector('.d__cube');
     let back = document.querySelector(".d__cube-face--back");
@@ -63,21 +53,21 @@ window.addEventListener('load', function () {
     });
 
     //navigate slider
-    arrowDown.addEventListener('click', e => {
-        if (slideIndex < slides.length - 1) {
+    // arrowDown.addEventListener('click', e => {
+    //     if (slideIndex < slides.length - 1) {
 
-            if (TweenLite) {
+    //         if (TweenLite) {
 
-                TweenLite.to(slider, .5, { scrollTo: "#slide" + (slideIndex + 1) });
-            }
-        }
-        else {
-            if (TweenLite) {
+    //             TweenLite.to(slider, .5, { scrollTo: "#slide" + (slideIndex + 1) });
+    //         }
+    //     }
+    //     else {
+    //         if (TweenLite) {
 
-                TweenLite.to(slider, 0, { scrollTo: "#slide0" });
-            }
-        }
-    });
+    //             TweenLite.to(slider, 0, { scrollTo: "#slide0" });
+    //         }
+    //     }
+    // });
 
     const intersectionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
@@ -90,24 +80,6 @@ window.addEventListener('load', function () {
 
     slides.forEach((element) => intersectionObserver.observe(element));
 
-    //loop scroll
-
-    slider.addEventListener('scroll', function (event) {
-        let element = event.target;
-        if (element.scrollHeight - 1 <= element.clientHeight + element.scrollTop) {
-            console.log('scrolled');
-            if (TweenLite) {
-
-                TweenLite.to(slider, 0, { scrollTo: "#slide0" });
-            }
-        }
-    });
-
-    //desktop slider navigation
-
-    arrowLeft.addEventListener('click', moveLeft);
-
-    arrowRight.addEventListener('click', moveRight);
 
     function moveRight(e) {
         let current = document.querySelector(".show-slide");

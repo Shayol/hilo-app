@@ -8,37 +8,45 @@ let shuffledData = shuffle(data);
 
 function generateSlides() {
     let str = '';
-    let content = document.querySelector(".slider__content");
+    let artistStr = '';
+    let navStr = '';
+    let slider = document.querySelector(".slider__content");
+    let cubeBack = document.querySelector(".d__cube-face--back");
+    let artist = document.querySelector(".artist");
+    let nav = document.querySelector(".nav");
 
     shuffledData.forEach((el, index) => {
 
         str += `<div id="slide${index}" data-id="${index}" class="slide">
-                <div class="slide__img-wrapper" style="background-image:url('../img/${el.firstname}_${el.lastname}.png');"></div>
-                    <h2 class="slide__artist">
-                    ${el.firstname} ${el.lastname}
-                    </h2>
-                    <a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="slide__portfolio" download>
-                        portfolio
+                    <div class="slide__img-wrapper" style="background-image:url('../img/${el.firstname} ${el.lastname}.png');"></div>
+                    <a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="slide__artist slide__artist--mobile" download>
+                        ${capitalize(el.firstname)} ${capitalize(el.lastname)}
+                    </a>
+                    <a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="slide__portfolio slide__portfolio--mobile" download>
+                        Portfolio
                     </a>
                 </div > `
+
+        artistStr += `<div class='artist__item'>
+                        <a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="artist__name" download>
+                        ${capitalize(el.firstname)} ${capitalize(el.lastname)}
+                    </a>
+                    <a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="artist__portfolio" download>
+                        Portfolio
+                    </a>
+                    </div>`;
+
+        navStr += `<div class='nav__item'>
+                        ${capitalize(el.lastname)}
+                   </div>`;
     });
 
-    str += `<div class="arrow arrow--down slide__arrow slide__arrow--down">
-                <div class="arrow__content"></div>
-            </div>`;
+    slider.innerHTML = str;
 
+    artist.innerHTML = artistStr;
 
-    str +=
-        `<div class="arrow slider__arrow arrow--left">
-                <div class="arrow__content"></div>
-            </div>`;
+    nav.innerHTML += navStr;
 
-    str +=
-        `<div class="arrow slider__arrow arrow--right">
-                <div class="arrow__content"></div>
-            </div>`;
-
-    content.innerHTML = str;
 
 }
 
