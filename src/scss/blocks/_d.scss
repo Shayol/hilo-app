@@ -82,7 +82,7 @@
         }
         &__cube-face\--back {
             align-items: stretch;
-            justify-content: strect;
+            justify-content: stretch;
             width: calc(50%);
             height: calc(50%);
             position: relative;
@@ -92,7 +92,7 @@
             border: 5px solid transparent;
             background-color: white;
             background-clip: padding-box;
-            padding: 6% 3.7% 6% 5.2%;
+            padding: 6vmin 3.7vmin 6vmin 6vmin;
         }
         &__cube-face\--top-left {
             width: calc(25% + 5px);

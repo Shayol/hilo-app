@@ -51,10 +51,13 @@
             margin-right: auto;
             position: relative;
         }
-        &\--small {
-            .slider__logo {
-                opacity: 0;
-                z-index: -1;
+        &\--big {
+            .slider__content {
+                overflow-y: scroll;
+                .slide {
+                    position: static;
+                    opacity: 1;
+                }
             }
         }
     }

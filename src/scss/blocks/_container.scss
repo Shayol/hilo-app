@@ -20,7 +20,10 @@
     }
     @media(min-width: $desktop) {
         &__content {
-            flex-grow: 1; // height: auto;
+            flex-grow: 1;
+            height: initial;
+            display: block;
+            height: 80%;
         }
         &__background {
             position: absolute;

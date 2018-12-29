@@ -168,7 +168,7 @@ window.addEventListener('load', function () {
         if (e && e.target.classList.contains("slide__portfolio") || container.classList.contains("show-info")) {
             return;
         }
-        sliderParent.classList.toggle("slider--small");
+        sliderParent.classList.toggle("slider--big");
         cube.classList.toggle("d__cube--big");
         checkTimer();
     }
