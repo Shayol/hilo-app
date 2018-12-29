@@ -2,6 +2,7 @@
     display: none;
     @media(min-width: $desktop) {
         opacity: 0;
+        transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
         z-index: -1;
         display: flex;
         width: 20%;
