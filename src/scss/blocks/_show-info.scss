@@ -17,8 +17,19 @@
         .nav {
             display: none !important;
         }
-        .container__content {
-            width: 85%;
+        .slider {
+            opacity: 0;
+            z-index: -1;
+        }
+        .contacts {
+            display: block;
+            opacity: 1;
+            z-index: 1;
+        }
+        .about {
+            display: block;
+            opacity: 1;
+            z-index: 6;
         }
     }
 }

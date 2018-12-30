@@ -1,0 +1,21 @@
+.about {
+    display: none;
+    @media(min-width: $desktop) {
+        height: 100%;
+        width: 100%;
+        padding-top: 20%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
+        &__text {
+            font-size: 0.62vw;
+            line-height: 2em;
+        }
+        &__bold {
+            font-weight: 600;
+        }
+    }
+}

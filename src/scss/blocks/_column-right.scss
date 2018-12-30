@@ -1,0 +1,10 @@
+.column-right {
+    display: none;
+    @media(min-width: $desktop) {
+        width: calc(15% + 1.8vmin);
+        display: flex;
+        opacity: 0;
+        z-index: -1;
+        flex-direction: column;
+    }
+}
