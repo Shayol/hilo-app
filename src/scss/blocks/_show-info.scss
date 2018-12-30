@@ -9,5 +9,16 @@
         opacity: 0;
         transition-delay: initial;
     }
-    @media(min-width: $desktop) {}
+    @media(min-width: $desktop) {
+        .artist {
+            opacity: 0 !important;
+            z-index: 1 !important;
+        }
+        .nav {
+            display: none !important;
+        }
+        .container__content {
+            width: 85%;
+        }
+    }
 }

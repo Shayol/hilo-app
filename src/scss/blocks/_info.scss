@@ -63,6 +63,7 @@
         margin-bottom: 2em;
         display: block;
         text-align: center;
+        text-decoration: none;
     }
     &__second-page-text {
         // margin-bottom: 0.6em;
@@ -88,9 +89,6 @@
         width: 56px;
         height: 56px;
     }
-    &__dot {
-        displaY: none;
-    }
     @media(max-width: $desktop - 1) and (orientation: landscape) {
         padding-left: 4%;
         padding-right: 4%;
@@ -108,31 +106,30 @@
         padding: 0 0 2.5vmin 0;
         &__content {
             display: flex;
-            overflow-y: hidden;
             flex-direction: column;
-            justify-content: space-between;
+            overflow-y: hidden; // justify-content: space-between;
             padding: 0;
-            width: 65.5%;
-            margin-left: auto;
-            margin-right: auto;
+            width: 100%;
         }
         &__first-page {
             order: 1;
             padding: 0;
             height: auto;
             display: flex;
+            justify-content: flex-end;
+            flex-direction: row;
         }
         &__contact {
-            display: flex;
+            // display: flex;
+            text-align: right;
         }
         &__second-page {
-            height: auto;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: stretch;
             padding: 0;
+            display: block;
             flex-grow: 0;
+            flex-direction: row;
+            justify-content: flex-start;
+            height: auto;
         }
         &__instagram {
             display: block;
@@ -156,7 +153,7 @@
         &__right-column {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             justify-content: stretch;
         }
         &__header {
@@ -169,6 +166,13 @@
         &__curator {
             margin-bottom: 0;
         }
+        &__artists {
+            display: none;
+        }
+        &__director,
+        &__curator {
+            display: flex;
+        }
         &__curator .info__second-page-text {
             margin-bottom: 0;
         }
@@ -176,6 +180,7 @@
             font-size: 0.6677vw;
             line-height: 1.3333em;
             margin-bottom: 0;
+            text-align: left;
             &\--mobile {
                 display: none;
             }
@@ -194,16 +199,9 @@
         &__email {
             margin-top: auto;
         }
-        &__break {
-            display: none;
-        }
         &__instagram-svg {
             width: 20px;
             height: 20px;
-        }
-        &__dot {
-            display: initial;
-            margin-right: 0.22em;
         }
     }
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
