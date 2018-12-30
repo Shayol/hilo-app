@@ -65,24 +65,17 @@
         padding: 0;
         transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
         &__img-wrapper {
-            margin-top: 0;
-            margin-bottom: 10%;
+            margin: 0;
             height: 100%;
             width: 100%
         }
         &__artist {
             &\--mobile {
-                // font-size: 0.81vw;
-                // letter-spacing: 0.0348em;
-                // margin-bottom: .6em;
-                // transition: opacity .85s;
                 display: none;
             }
         }
         &__portfolio {
             &\--mobile {
-                // font-size: 0.5vw; // letter-spacing: 0.035em;
-                // transition: opacity .85s;
                 display: none;
             }
         }

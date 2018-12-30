@@ -28,7 +28,7 @@ generateSlides();
 // })
 
 window.addEventListener('load', function () {
-    let sliderLogo = document.querySelectorAll(".logo");
+    let sliderLogo = document.querySelectorAll(".logo__wrapper");
     let info = document.querySelector('.info');
     let container = document.querySelector(".container");
     let slider = document.querySelector(".slider__content");
@@ -42,6 +42,7 @@ window.addEventListener('load', function () {
     let background2 = document.querySelector(".container__background--2");
     let scrollNav = document.querySelectorAll(".nav__item");
     let backgroundFirst = true;
+    let prevRatio = 0.0;
 
 
     //show info
@@ -74,6 +75,7 @@ window.addEventListener('load', function () {
         el.addEventListener('click', e => {
             if (TweenLite) {
                 e.preventDefault();
+                e.stopPropagation();
                 TweenLite.to(slider, 1, { scrollTo: "#" + el.href.split("#")[1] });
             }
         });
@@ -81,7 +83,13 @@ window.addEventListener('load', function () {
 
     const intersectionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
-            if (entry.intersectionRatio > 0.3) {
+
+
+            let artist = document.querySelector(`#artist${entry.target.dataset.id}`);
+
+            if (entry.intersectionRatio >= 0.6) {
+
+                artist.style.zIndex = '1';
                 slideIndex = parseInt(entry.target.dataset.id);
 
                 scrollNav.forEach(nav => {
@@ -91,6 +99,16 @@ window.addEventListener('load', function () {
                     }
                 });
             }
+
+
+            // if (entry.intersectionRatio > prevRatio) {
+            artist.style.opacity = `${entry.intersectionRatio >= 0.6 ? 1 : 0}`;
+            // }
+            // else {
+            //     // entry.target.style.backgroundColor = decreasingColor.replace("ratio", entry.intersectionRatio);
+            // }
+
+            prevRatio = entry.intersectionRatio;
 
         });
     }, { threshold: 0.6 });
@@ -176,8 +194,6 @@ window.addEventListener('load', function () {
     }
 
     //intro animation
-    slides[0].classList.add("show-slide");
-
     setTimeout(() => {
         // background1.style.backgroundColor = "transparent";
         changeBorder(0);

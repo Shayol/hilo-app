@@ -17,7 +17,7 @@ function generateSlides() {
 
     shuffledData.forEach((el, index) => {
 
-        str += `<div id="slide${index}" data-id="${index}" class="slide">
+        str += `<div id="slide${index}" data-id="${index}" class="slide ${index == 0 ? 'show-slide' : ''}">
                     <div class="slide__img-wrapper" style="background-image:url('../img/${el.firstname} ${el.lastname}.png');"></div>
                     <a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="slide__artist slide__artist--mobile" download>
                         ${capitalize(el.firstname)} ${capitalize(el.lastname)}
@@ -27,13 +27,13 @@ function generateSlides() {
                     </a>
                 </div > `
 
-        artistStr += `<div class='artist__item'>
+        artistStr += `<div class='artist__item' id='artist${index}'>
                         <a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="artist__name" download>
                         ${capitalize(el.firstname)} ${capitalize(el.lastname)}
-                    </a>
-                    <a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="artist__portfolio" download>
-                        Portfolio
-                    </a>
+                        </a>
+                        <a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="artist__portfolio" download>
+                            Portfolio
+                        </a>
                     </div>`;
 
         navStr += `<a href='#slide${index}' class='nav__item'>

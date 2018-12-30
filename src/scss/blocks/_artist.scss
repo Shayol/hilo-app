@@ -7,6 +7,8 @@
         z-index: -1;
         &__item {
             position: absolute;
+            opacity: 0;
+            transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
             top: 0;
             left: 0;
             opacity: 0;
@@ -15,7 +17,7 @@
             }
         }
         &__name {
-            font-size: 0.81vw;
+            font-size: .67vw;
             letter-spacing: 0.0348em;
             margin-bottom: .6em;
             transition: opacity .85s;
@@ -24,7 +26,8 @@
             display: block;
         }
         &__portfolio {
-            font-size: 0.5vw;
+            text-align: left;
+            font-size: 0.6vw;
             letter-spacing: 0.035em;
             transition: opacity .85s;
             color: #9b9b9b;
