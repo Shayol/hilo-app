@@ -5,20 +5,24 @@
         transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
         z-index: -1;
         display: flex;
-        width: calc(10% + 2.4vmin);
+        width: calc(15% + 1.8vmin);
         height: 100%;
         flex-direction: column;
         justify-content: center;
         align-items: flex-end;
         &__item {
-            font-size: 0.81vw;
-            letter-spacing: 0.0348em;
+            font-size: 0.52vw;
+            line-height: 1.33em;
+            letter-spacing: 0.11em;
             color: #9b9b9b;
             text-align: right;
             text-decoration: none;
             &:hover {
                 color: black;
             }
+        }
+        &__item~&__item {
+            margin-top: 1.3em;
         }
     }
 }

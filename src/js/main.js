@@ -124,23 +124,16 @@ window.addEventListener('load', function () {
             let newIndex = currentNumber > 0 ? currentNumber - 1 : slides.length - 1;
             let newSlide = slides[newIndex];
 
-            current.addEventListener("transitionend", handleTransition, false);
-
             current.classList.remove("show-slide");
 
-            function handleTransition(event) {
+            if (TweenLite) {
 
-                if (TweenLite) {
-
-                    TweenLite.to(slider, 0, { scrollTo: "#slide" + newIndex });
-                }
-
-                newSlide.classList.add("show-slide");
-                setTimeout(changeBorder, 400, newIndex);
-
-                current.removeEventListener('transitionend', handleTransition);
-
+                TweenLite.to(slider, 0, { scrollTo: "#slide" + newIndex });
             }
+
+            newSlide.classList.add("show-slide");
+            setTimeout(changeBorder, 400, newIndex);
+
         }
     }
 
@@ -152,23 +145,15 @@ window.addEventListener('load', function () {
             let newIndex = currentNumber < slides.length - 1 ? currentNumber + 1 : 0;
             let newSlide = slides[newIndex];
 
-            current.addEventListener("transitionend", handleTransition, false);
-
             current.classList.remove("show-slide");
 
-            function handleTransition(event) {
+            if (TweenLite) {
 
-                if (TweenLite) {
-
-                    TweenLite.to(slider, 0, { scrollTo: "#slide" + newIndex });
-                }
-
-                newSlide.classList.add("show-slide");
-                setTimeout(changeBorder, 400, newIndex);
-
-                current.removeEventListener('transitionend', handleTransition);
-
+                TweenLite.to(slider, 0, { scrollTo: "#slide" + newIndex });
             }
+
+            newSlide.classList.add("show-slide");
+            setTimeout(changeBorder, 400, newIndex);
         }
     }
 

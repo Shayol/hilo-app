@@ -1,7 +1,7 @@
 .artist {
     display: none;
     @media(min-width: $desktop) {
-        margin-top: auto;
+        // margin-top: auto;
         position: relative;
         opacity: 0;
         z-index: -1;
@@ -14,16 +14,18 @@
             opacity: 0;
             &:first-child {
                 opacity: 1;
+                position: static;
             }
         }
         &__name {
             font-size: .67vw;
             letter-spacing: 0.0348em;
-            margin-bottom: .6em;
+            margin-bottom: .9em;
             transition: opacity .85s;
             text-decoration: none;
             color: black;
             display: block;
+            text-align: left;
         }
         &__portfolio {
             text-align: left;
