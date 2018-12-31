@@ -5,6 +5,7 @@
         position: relative;
         opacity: 0;
         z-index: -1;
+        transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
         &__item {
             position: absolute;
             opacity: 0;

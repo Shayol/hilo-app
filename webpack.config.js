@@ -7,11 +7,11 @@ var WebpackPwaManifest = require('webpack-pwa-manifest');
 module.exports = {
   entry: './src/js/main.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     filename: 'script.js',
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, "docs"),
     port: 9000
   },
   devtool: "source-map",

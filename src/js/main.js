@@ -7,26 +7,6 @@ import { generateSlides, shuffledData } from './generateSlides';
 
 generateSlides();
 
-// var vh = document.documentElement.clientHeight * 0.01;
-// document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-// var zoomW = (document.documentElement.clientWidth / (back.clientWidth - 10)).toFixed(2);
-// var zoomH = (document.documentElement.clientHeight / (back.clientHeight - 10)).toFixed(2);
-// var zoom = zoomW > zoomH ? zoomW : zoomH;
-
-// document.documentElement.style.setProperty('--brUp', `${zoom}`);
-
-// window.addEventListener('resize', () => {
-//     vh = document.documentElement.clientHeight * 0.01;
-//     document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-//     // var zoomW = (document.documentElement.clientWidth / (back.clientWidth - 10)).toFixed(2);
-//     // var zoomH = (document.documentElement.clientHeight / (back.clientHeight - 10)).toFixed(2);
-//     // var zoom = zoomW > zoomH ? zoomW : zoomH;
-
-//     // document.documentElement.style.setProperty('--zoom', `${zoom}`);
-// })
-
 window.addEventListener('load', function () {
     let sliderLogo = document.querySelectorAll(".logo__wrapper");
     let info = document.querySelector('.info');
@@ -71,6 +51,8 @@ window.addEventListener('load', function () {
     //     }
     // });
 
+    //scroll to slide when nav clicked
+
     scrollNav.forEach(el => {
         el.addEventListener('click', e => {
             if (TweenLite) {
@@ -91,6 +73,10 @@ window.addEventListener('load', function () {
 
                 artist.style.zIndex = '1';
                 slideIndex = parseInt(entry.target.dataset.id);
+                let newSlide = slides[slideIndex];
+                newSlide.classList.add("show-slide");
+
+                //show active nav when corresponding slide is visible
 
                 scrollNav.forEach(nav => {
                     nav.classList.remove("scrolled");
@@ -98,15 +84,13 @@ window.addEventListener('load', function () {
                         nav.classList.add("scrolled");
                     }
                 });
+
+                setTimeout(changeBorder, 400, slideIndex);
             }
 
+            //change opacity for artist name when it's slide is in viewport
 
-            // if (entry.intersectionRatio > prevRatio) {
             artist.style.opacity = `${entry.intersectionRatio >= 0.6 ? 1 : 0}`;
-            // }
-            // else {
-            //     // entry.target.style.backgroundColor = decreasingColor.replace("ratio", entry.intersectionRatio);
-            // }
 
             prevRatio = entry.intersectionRatio;
 
@@ -160,7 +144,7 @@ window.addEventListener('load', function () {
 
     function changeBorder(newIndex) {
         let slide = shuffledData[newIndex]
-        let url = `url(../img/${slide.firstname}_${slide.lastname}.png)`;
+        let url = `url('../img/${slide.firstname} ${slide.lastname}.png')`;
         if (!backgroundFirst) {
             background1.style.backgroundImage = url;
             background1.style.backgroundPosition = slide.backgroundPosition;
@@ -180,12 +164,11 @@ window.addEventListener('load', function () {
 
     //intro animation
     setTimeout(() => {
-        // background1.style.backgroundColor = "transparent";
         changeBorder(0);
         runTimer();
     }, 800);
 
-    //change slides every 3secs
+    //change slides every 5secs
 
     function runTimer() {
         timerId = setInterval(() => {
@@ -217,6 +200,9 @@ window.addEventListener('load', function () {
         cube.classList.toggle("d__cube--big");
         checkTimer();
     }
+
+
+    //change slides on key press
 
     window.addEventListener('keydown', (e) => {
         if (e.defaultPrevented) {
