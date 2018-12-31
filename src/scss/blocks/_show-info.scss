@@ -14,6 +14,7 @@
             opacity: 0 !important;
             z-index: 1 !important;
             transition-delay: 0s;
+            pointer-events: none;
         }
         .nav {
             opacity: 0 !important;
@@ -36,8 +37,6 @@
             opacity: 1;
             z-index: 6;
             transition-delay: 0.4s !important;
-        } // .column-right {
-        //     width: 20%;
-        // }
+        }
     }
 }
