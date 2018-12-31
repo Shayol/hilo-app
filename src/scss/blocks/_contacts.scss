@@ -9,16 +9,19 @@
             font-size: 0.56vw;
             text-decoration: none;
             color: black;
-            line-height: 2.9em;
+            line-height: 2.5em;
             text-align: right;
             display: block;
         }
         &__instagram {
             text-align: right;
+            margin-top: 0.56vw;
+            margin-bottom: 0.56vw;
+            display: block;
         }
         &__instagram-svg {
-            width: 1.23vw;
-            height: 1.23vw;
+            width: 1.1vw;
+            height: 1.1vw;
         }
     }
 }

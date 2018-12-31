@@ -47,6 +47,9 @@
                     z-index: 11;
                     opacity: 1;
                 }
+                .slider__content {
+                    z-index: 1;
+                }
             }
         }
         &__cube-face {

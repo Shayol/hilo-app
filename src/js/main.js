@@ -9,7 +9,6 @@ generateSlides();
 
 window.addEventListener('load', function () {
     let sliderLogo = document.querySelectorAll(".logo__wrapper");
-    let info = document.querySelector('.info');
     let container = document.querySelector(".container");
     let slider = document.querySelector(".slider__content");
     let sliderParent = document.querySelector(".slider");
@@ -22,7 +21,7 @@ window.addEventListener('load', function () {
     let background2 = document.querySelector(".container__background--2");
     let scrollNav = document.querySelectorAll(".nav__item");
     let backgroundFirst = true;
-    let prevRatio = 0.0;
+    let zoomed = false;
 
 
     //show info
@@ -34,22 +33,6 @@ window.addEventListener('load', function () {
         });
     });
 
-    //navigate slider
-    // arrowDown.addEventListener('click', e => {
-    //     if (slideIndex < slides.length - 1) {
-
-    //         if (TweenLite) {
-
-    //             TweenLite.to(slider, .5, { scrollTo: "#slide" + (slideIndex + 1) });
-    //         }
-    //     }
-    //     else {
-    //         if (TweenLite) {
-
-    //             TweenLite.to(slider, 0, { scrollTo: "#slide0" });
-    //         }
-    //     }
-    // });
 
     //scroll to slide when nav clicked
 
@@ -76,7 +59,13 @@ window.addEventListener('load', function () {
                 artist.style.zIndex = '1';
                 slideIndex = parseInt(entry.target.dataset.id);
                 let newSlide = slides[slideIndex];
-                newSlide.classList.add("show-slide");
+
+                if (!newSlide.classList.contains("show-slide")) {
+                    let currentSlide = document.querySelector(".show-slide");
+                    currentSlide.classList.remove("show-slide");
+                    newSlide.classList.add("show-slide");
+                }
+
 
                 //show active nav when corresponding slide is visible
 
@@ -87,14 +76,12 @@ window.addEventListener('load', function () {
                     }
                 });
 
-                setTimeout(changeBorder, 400, slideIndex);
+                setTimeout(changeBorder, 800, slideIndex);
             }
 
-            //change opacity for artist name when it's slide is in viewport
+            //change opacity for artist name when its slide is in viewport
 
             artist.style.opacity = `${entry.intersectionRatio >= 0.6 ? 1 : 0}`;
-
-            prevRatio = entry.intersectionRatio;
 
         });
     }, { threshold: 0.6 });
@@ -102,7 +89,7 @@ window.addEventListener('load', function () {
     slides.forEach((element) => intersectionObserver.observe(element));
 
 
-    function moveRight(e) {
+    function moveLeft(e) {
         let current = document.querySelector(".show-slide");
         let currentNumber = parseInt(current.dataset.id);
         if (current) {
@@ -118,12 +105,14 @@ window.addEventListener('load', function () {
             }
 
             newSlide.classList.add("show-slide");
-            setTimeout(changeBorder, 400, newIndex);
+            setTimeout(changeBorder, 800, newIndex);
 
         }
     }
 
-    function moveLeft(e) {
+    //show slide to the right
+
+    function moveRight(e) {
         let current = document.querySelector(".show-slide");
         let currentNumber = parseInt(current.dataset.id);
         if (current) {
@@ -139,10 +128,11 @@ window.addEventListener('load', function () {
             }
 
             newSlide.classList.add("show-slide");
-            setTimeout(changeBorder, 400, newIndex);
+            setTimeout(changeBorder, 800, newIndex);
         }
     }
 
+    //change cubes edge background when gallary image changes
 
     function changeBorder(newIndex) {
         let slide = shuffledData[newIndex]
@@ -168,7 +158,7 @@ window.addEventListener('load', function () {
     setTimeout(() => {
         changeBorder(0);
         runTimer();
-    }, 800);
+    }, 250);
 
     //change slides every 5secs
 
@@ -201,6 +191,7 @@ window.addEventListener('load', function () {
         sliderParent.classList.toggle("slider--big");
         cube.classList.toggle("d__cube--big");
         checkTimer();
+        zoomed = !zoomed;
     }
 
 

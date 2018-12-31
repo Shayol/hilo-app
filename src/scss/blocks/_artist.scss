@@ -6,6 +6,7 @@
         opacity: 0;
         z-index: -1;
         transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
+        transition-delay: 0.4s;
         &__item {
             position: absolute;
             opacity: 0;
