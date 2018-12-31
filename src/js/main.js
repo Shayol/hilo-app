@@ -58,7 +58,9 @@ window.addEventListener('load', function () {
             if (TweenLite) {
                 e.preventDefault();
                 e.stopPropagation();
-                TweenLite.to(slider, 1, { scrollTo: "#" + el.href.split("#")[1] });
+                let n = parseInt(el.href.split("#slide")[1]);
+                let topOffset = slider.clientHeight * n;
+                TweenLite.to(slider, 1, { scrollTo: topOffset });
             }
         });
     });
@@ -112,7 +114,7 @@ window.addEventListener('load', function () {
 
             if (TweenLite) {
 
-                TweenLite.to(slider, 0, { scrollTo: "#slide" + newIndex });
+                TweenLite.to(slider, 0, { scrollTo: slider.clientHeight * newIndex });
             }
 
             newSlide.classList.add("show-slide");
@@ -133,7 +135,7 @@ window.addEventListener('load', function () {
 
             if (TweenLite) {
 
-                TweenLite.to(slider, 0, { scrollTo: "#slide" + newIndex });
+                TweenLite.to(slider, 0, { scrollTo: slider.clientHeight * newIndex });
             }
 
             newSlide.classList.add("show-slide");
