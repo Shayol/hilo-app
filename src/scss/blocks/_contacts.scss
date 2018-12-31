@@ -4,21 +4,21 @@
         opacity: 0;
         z-index: -1;
         transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
+        text-align: right;
         &__text {
             font-size: 0.56vw;
             text-decoration: none;
             color: black;
-            line-height: 2em;
+            line-height: 2.9em;
             text-align: right;
             display: block;
         }
         &__instagram {
-            width: 1.23vw;
-            height: 1.23vw;
+            text-align: right;
         }
         &__instagram-svg {
-            height: 100%;
-            width: 100%;
+            width: 1.23vw;
+            height: 1.23vw;
         }
     }
 }

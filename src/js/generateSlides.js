@@ -10,10 +10,11 @@ function generateSlides() {
     let str = '';
     let artistStr = '';
     let navStr = '';
+    let infoStr = '';
     let slider = document.querySelector(".slider__content");
-    let cubeBack = document.querySelector(".d__cube-face--back");
     let artist = document.querySelector(".artist");
     let nav = document.querySelector(".nav");
+    let info = document.querySelector(".info__artists");
 
     shuffledData.forEach((el, index) => {
 
@@ -39,13 +40,24 @@ function generateSlides() {
         navStr += `<a href='#slide${index}' class='nav__item'>
                         ${capitalize(el.lastname)}
                    </a>`;
+
+        infoStr += `<a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="info__second-page-text" download>
+                        ${capitalize(el.firstname)} ${capitalize(el.lastname)}
+                    </a>`;
+
+
     });
 
     slider.innerHTML = str;
 
     artist.innerHTML = artistStr;
 
-    nav.innerHTML += navStr;
+    nav.innerHTML = navStr;
+
+    info.innerHTML = `<h2 class="info__header">
+                            artists
+                        </h2>
+                        ${infoStr}`;
 
 
 }

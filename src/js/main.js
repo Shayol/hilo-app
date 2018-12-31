@@ -210,7 +210,7 @@ window.addEventListener('load', function () {
     back.addEventListener('click', zoom);
 
     function zoom(e) {
-        if (e && e.target.classList.contains("slide__portfolio") || container.classList.contains("show-info")) {
+        if (e && e.target.classList.contains("slide__portfolio") || container.classList.contains("show-info") || container.classList.contains("nav__item")) {
             return;
         }
         sliderParent.classList.toggle("slider--big");

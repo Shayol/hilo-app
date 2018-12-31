@@ -29,7 +29,7 @@
         margin: 0;
         padding: 0;
         margin-bottom: 0;
-        transition: all .85s cubic-bezier(.455, .03, .515, .955);
+        transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
         -webkit-transform: translateZ(0); //to remove jumping due to pixel rounding during transition in crome
         pointer-events: none;
         &__wrapper {

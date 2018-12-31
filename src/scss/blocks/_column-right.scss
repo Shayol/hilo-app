@@ -1,6 +1,7 @@
 .column-right {
     display: none;
     @media(min-width: $desktop) {
+        position: relative;
         width: calc(15% + 1.8vmin);
         display: flex;
         opacity: 0;

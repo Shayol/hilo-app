@@ -1,14 +1,17 @@
 .nav {
     display: none;
     @media(min-width: $desktop) {
-        opacity: 0;
         transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
-        z-index: -1;
         display: flex;
         width: calc(15% + 1.8vmin);
         flex-direction: column;
         justify-content: center;
         align-items: flex-end;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
         &__item {
             font-size: 0.52vw;
             line-height: 1.33em;

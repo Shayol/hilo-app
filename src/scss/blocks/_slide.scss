@@ -62,7 +62,7 @@
         opacity: 0;
         z-index: -1;
         transition-delay: initial;
-        padding: 0;
+        padding: 10% 0;
         transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
         &__img-wrapper {
             margin: 0;

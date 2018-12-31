@@ -66,14 +66,14 @@
         text-decoration: none;
     }
     &__second-page-text {
-        // margin-bottom: 0.6em;
         color: #000000;
         font-size: 4.4vmin;
         line-height: 1.8em;
         font-weight: 300;
-        letter-spacing: 0.03478em; // margin-bottom: 2em;
+        letter-spacing: 0.03478em;
         display: block;
         text-align: center;
+        text-decoration: none;
     }
     &__email {
         color: black;
@@ -102,9 +102,8 @@
         }
     }
     @media(min-width: $desktop) {
-        display: none;
-        // position: static;
- // padding: 0; // &__content {
+        display: none; // position: static;
+        // padding: 0; // &__content {
         //     display: flex;
         //     flex-direction: column;
         //     overflow-y: hidden; // justify-content: space-between;

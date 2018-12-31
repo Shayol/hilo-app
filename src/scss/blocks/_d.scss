@@ -95,6 +95,7 @@
             background-color: white;
             background-clip: padding-box;
             padding: 4.9vmin 4.3vmin 4.9vmin 6.1vmin;
+            cursor: pointer;
         }
         &__cube-face\--top-left {
             width: calc(25% + 5px);
