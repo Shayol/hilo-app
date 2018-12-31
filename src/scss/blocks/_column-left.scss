@@ -1,0 +1,16 @@
+.column-left {
+    @media(min-width: $desktop) {
+        display: none;
+        z-index: -1;
+        width: 12.5%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 0;
+        transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
+    }
+}

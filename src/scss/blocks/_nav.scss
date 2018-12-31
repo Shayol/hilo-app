@@ -4,14 +4,14 @@
         transition: opacity .4s cubic-bezier(.455, .03, .515, .955);
         transition-delay: 0.4s;
         display: flex;
-        width: calc(15% + 1.8vmin);
+        width: 100%;
         flex-direction: column;
         justify-content: center;
         align-items: flex-end;
         position: absolute;
         z-index: 1;
         top: 50%;
-        right: 0;
+        right: -0.8vw;
         transform: translateY(-50%);
         &__item {
             font-size: 0.52vw;

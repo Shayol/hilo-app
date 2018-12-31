@@ -21,7 +21,6 @@ window.addEventListener('load', function () {
     let background2 = document.querySelector(".container__background--2");
     let scrollNav = document.querySelectorAll(".nav__item");
     let backgroundFirst = true;
-    let zoomed = false;
 
 
     //show info
@@ -191,7 +190,6 @@ window.addEventListener('load', function () {
         sliderParent.classList.toggle("slider--big");
         cube.classList.toggle("d__cube--big");
         checkTimer();
-        zoomed = !zoomed;
     }
 
 

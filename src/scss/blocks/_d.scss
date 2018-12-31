@@ -32,9 +32,11 @@
             transform: scale(1);
             &\--big {
                 transform: scale(2.08);
-                .logo {
-                    z-index: 11;
+                .column-left {
+                    z-index: 1;
                     opacity: 1;
+                }
+                .logo {
                     pointer-events: auto;
                 }
                 .artist {
@@ -97,7 +99,7 @@
             border: 5px solid transparent;
             background-color: white;
             background-clip: padding-box;
-            padding: 4.9vmin 4.3vmin 4.9vmin 6.1vmin;
+            padding: 4.9vmin 6.1vmin 4.9vmin 6.1vmin;
             cursor: pointer;
         }
         &__cube-face\--top-left {
