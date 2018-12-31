@@ -260,26 +260,11 @@ body {
       padding-top: 5vh; } }
   @media (min-width: 769px) {
     .logo {
-      display: none;
-      width: 15%;
+      z-index: 1;
+      width: 100%;
       background-color: transparent;
-      height: 100%;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      -webkit-box-pack: justify;
-          -ms-flex-pack: justify;
-              justify-content: space-between;
-      opacity: 0;
       margin: 0;
       padding: 0;
-      margin-bottom: 0;
-      -webkit-transition: opacity 0.4s cubic-bezier(0.02, 0.01, 0.47, 1);
-      transition: opacity 0.4s cubic-bezier(0.02, 0.01, 0.47, 1);
       -webkit-transform: translateZ(0);
       pointer-events: none; }
       .logo__wrapper {
@@ -335,6 +320,7 @@ body {
       padding: 0;
       background-color: transparent; }
       .slider__content {
+        z-index: -1;
         position: relative;
         padding: 0;
         overflow-y: scroll;
@@ -452,9 +438,14 @@ body {
 @media (min-width: 769px) {
   .show-info .artist {
     opacity: 0 !important;
-    z-index: 1 !important; }
+    z-index: 1 !important;
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s; }
   .show-info .nav {
-    display: none !important; }
+    opacity: 0 !important;
+    z-index: -1 !important;
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s; }
   .show-info .slider {
     opacity: 0;
     z-index: -1;
@@ -463,13 +454,15 @@ body {
   .show-info .contacts {
     display: block;
     opacity: 1;
-    z-index: 1; }
+    z-index: 1;
+    -webkit-transition-delay: 0.4s;
+            transition-delay: 0.4s;
+    pointer-events: auto; }
   .show-info .about {
-    display: block;
     opacity: 1;
     z-index: 6;
-    -webkit-transition-delay: 0.4s;
-            transition-delay: 0.4s; } }
+    -webkit-transition-delay: 0.4s !important;
+            transition-delay: 0.4s !important; } }
 
 @media (min-width: 769px) {
   .show-slide {
@@ -524,9 +517,10 @@ body {
     .d__cube--big {
       -webkit-transform: scale(2.08);
               transform: scale(2.08); }
+      .d__cube--big .column-left {
+        z-index: 1;
+        opacity: 1; }
       .d__cube--big .logo {
-        z-index: 11;
-        opacity: 1;
         pointer-events: auto; }
       .d__cube--big .artist {
         display: block;
@@ -538,6 +532,8 @@ body {
         display: flex;
         z-index: 11;
         opacity: 1; }
+      .d__cube--big .slider__content {
+        z-index: 1; }
   .d__cube-face {
     display: block;
     position: absolute;
@@ -589,7 +585,7 @@ body {
     border: 5px solid transparent;
     background-color: white;
     background-clip: padding-box;
-    padding: 4.9vmin 4.3vmin 4.9vmin 6.1vmin;
+    padding: 4.9vmin 6.1vmin 4.9vmin 6.1vmin;
     cursor: pointer; }
   .d__cube-face--top-left {
     width: calc(25% + 5px);
@@ -770,7 +766,9 @@ body {
       opacity: 0;
       z-index: -1;
       -webkit-transition: opacity 0.4s cubic-bezier(0.02, 0.01, 0.47, 1);
-      transition: opacity 0.4s cubic-bezier(0.02, 0.01, 0.47, 1); }
+      transition: opacity 0.4s cubic-bezier(0.02, 0.01, 0.47, 1);
+      -webkit-transition-delay: 0.4s;
+              transition-delay: 0.4s; }
       .artist__item {
         position: absolute;
         opacity: 0;
@@ -808,12 +806,14 @@ body {
   display: none; }
   @media (min-width: 769px) {
     .nav {
-      -webkit-transition: opacity 0.85s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-      transition: opacity 0.85s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      -webkit-transition: opacity 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      transition: opacity 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      -webkit-transition-delay: 0.4s;
+              transition-delay: 0.4s;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      width: calc(15% + 1.8vmin);
+      width: 100%;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
@@ -827,7 +827,7 @@ body {
       position: absolute;
       z-index: 1;
       top: 50%;
-      right: 0;
+      right: -0.8vw;
       -webkit-transform: translateY(-50%);
               transform: translateY(-50%); }
       .nav__item {
@@ -850,7 +850,7 @@ body {
   @media (min-width: 769px) {
     .column-right {
       position: relative;
-      width: calc(15% + 1.8vmin);
+      width: 12.5%;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -862,34 +862,66 @@ body {
               flex-direction: column; } }
 
 @media (min-width: 769px) {
+  .column-left {
+    display: none;
+    z-index: -1;
+    width: 12.5%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0;
+    -webkit-transition: opacity 0.4s cubic-bezier(0.02, 0.01, 0.47, 1);
+    transition: opacity 0.4s cubic-bezier(0.02, 0.01, 0.47, 1); } }
+
+@media (min-width: 769px) {
   .contacts {
-    margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
     opacity: 0;
     z-index: -1;
+    pointer-events: none;
     -webkit-transition: opacity 0.4s cubic-bezier(0.02, 0.01, 0.47, 1);
     transition: opacity 0.4s cubic-bezier(0.02, 0.01, 0.47, 1);
-    text-align: right; }
+    text-align: right;
+    padding-right: 0.5vw; }
     .contacts__text {
       font-size: 0.56vw;
       text-decoration: none;
       color: black;
-      line-height: 2.9em;
+      line-height: 2.4em;
       text-align: right;
-      display: block; }
+      display: block;
+      white-space: nowrap; }
     .contacts__instagram {
-      text-align: right; }
+      text-align: right;
+      margin-top: 0.48vw;
+      margin-bottom: 0.6vw;
+      display: block; }
     .contacts__instagram-svg {
-      width: 1.23vw;
-      height: 1.23vw; } }
+      width: 1.1vw;
+      height: 1.1vw; } }
 
 .about {
   display: none; }
   @media (min-width: 769px) {
     .about {
+      display: block;
       height: 100%;
       width: 100%;
-      padding-top: 19%;
-      padding-left: 14.5%;
+      padding-top: 18%;
+      padding-left: 18%;
       position: absolute;
       top: 0;
       left: 0;
@@ -902,7 +934,7 @@ body {
         margin-left: auto; }
       .about__text {
         font-size: 0.62vw;
-        line-height: 2.9em; }
+        line-height: 3em; }
       .about__bold {
         font-weight: 600; } }
 

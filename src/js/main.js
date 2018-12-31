@@ -74,8 +74,6 @@ window.addEventListener('load', function () {
                         nav.classList.add("scrolled");
                     }
                 });
-
-                setTimeout(changeBorder, 800, slideIndex);
             }
 
             //change opacity for artist name when its slide is in viewport
@@ -104,7 +102,7 @@ window.addEventListener('load', function () {
             }
 
             newSlide.classList.add("show-slide");
-            setTimeout(changeBorder, 800, newIndex);
+            setTimeout(changeBorder, 400, newIndex);
 
         }
     }
@@ -127,7 +125,7 @@ window.addEventListener('load', function () {
             }
 
             newSlide.classList.add("show-slide");
-            setTimeout(changeBorder, 800, newIndex);
+            setTimeout(changeBorder, 400, newIndex);
         }
     }
 
@@ -157,7 +155,7 @@ window.addEventListener('load', function () {
     setTimeout(() => {
         changeBorder(0);
         runTimer();
-    }, 250);
+    }, 50);
 
     //change slides every 5secs
 
@@ -190,6 +188,9 @@ window.addEventListener('load', function () {
         sliderParent.classList.toggle("slider--big");
         cube.classList.toggle("d__cube--big");
         checkTimer();
+        if (!cube.classList.contains("d__cube--big")) {
+            changeBorder(parseInt(document.querySelector(".show-slide").dataset.id));
+        }
     }
 
 
