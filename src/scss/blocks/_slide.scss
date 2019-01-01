@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 19vmin;
+    transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
     &__artist {
         font-size: 4.5vw;
         margin-bottom: .5em;
@@ -23,7 +24,7 @@
             color: black;
         }
     }
-    &__img-wrapper {
+    &__img {
         width: 100%;
         flex-shrink: 1;
         height: 70%;
@@ -33,10 +34,6 @@
         margin: 0;
         margin-bottom: 2vh;
     }
-    &__img {
-        width: 100%;
-        height: auto;
-    }
     &__arrow\--down {
         margin-top: auto;
     }
@@ -44,7 +41,7 @@
         flex-wrap: wrap;
         align-content: space-around;
         justify-items: space-around;
-        &__img-wrapper {
+        &__img {
             height: 90%;
             margin: 0;
             max-width: 34vw;
@@ -63,8 +60,7 @@
         z-index: -1;
         transition-delay: initial;
         padding: 10% 0;
-        transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
-        &__img-wrapper {
+        &__img {
             margin: 0;
             height: 100%;
             width: 100%

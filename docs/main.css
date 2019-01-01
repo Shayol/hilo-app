@@ -440,7 +440,8 @@ body {
     opacity: 0 !important;
     z-index: 1 !important;
     -webkit-transition-delay: 0s;
-            transition-delay: 0s; }
+            transition-delay: 0s;
+    pointer-events: none; }
   .show-info .nav {
     opacity: 0 !important;
     z-index: -1 !important;

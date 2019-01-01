@@ -15,6 +15,7 @@ window.addEventListener('load', function () {
     let slides = document.querySelectorAll(".slide");
     let cube = document.querySelector('.d__cube');
     let back = document.querySelector(".d__cube-face--back");
+    let artwork = document.querySelectorAll(".slide__img");
     let timerId;
     let slideIndex = 0;
     let background1 = document.querySelector(".container__background--1");
@@ -31,6 +32,21 @@ window.addEventListener('load', function () {
             container.classList.toggle("show-info");
         });
     });
+
+    //intro animation
+    if (document.documentElement.clientWidth > 768) {
+        let currentSlide = document.querySelector(".show-slide");
+        currentSlide.style.opacity = "0";
+        setTimeout(() => {
+            currentSlide.style.opacity = "1";
+            setTimeout(changeBorder, 850, 0);
+            runTimer();
+        }, 8000);
+    }
+    else {
+        runTimer();
+    }
+
 
 
     //scroll to slide when nav clicked
@@ -102,7 +118,7 @@ window.addEventListener('load', function () {
             }
 
             newSlide.classList.add("show-slide");
-            setTimeout(changeBorder, 400, newIndex);
+            setTimeout(changeBorder, 850, newIndex);
 
         }
     }
@@ -125,7 +141,7 @@ window.addEventListener('load', function () {
             }
 
             newSlide.classList.add("show-slide");
-            setTimeout(changeBorder, 400, newIndex);
+            setTimeout(changeBorder, 850, newIndex);
         }
     }
 
@@ -151,18 +167,12 @@ window.addEventListener('load', function () {
 
     }
 
-    //intro animation
-    setTimeout(() => {
-        changeBorder(0);
-        runTimer();
-    }, 50);
-
     //change slides every 5secs
 
     function runTimer() {
         timerId = setInterval(() => {
             moveRight();
-        }, 5000);
+        }, 3000);
     }
 
 
@@ -179,12 +189,9 @@ window.addEventListener('load', function () {
 
     //zoom in 
 
-    back.addEventListener('click', zoom);
+    artwork.forEach(img => img.addEventListener('click', zoom));
 
     function zoom(e) {
-        if (e && e.target.classList.contains("slide__portfolio") || container.classList.contains("show-info") || container.classList.contains("nav__item")) {
-            return;
-        }
         sliderParent.classList.toggle("slider--big");
         cube.classList.toggle("d__cube--big");
         checkTimer();
