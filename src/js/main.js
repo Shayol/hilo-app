@@ -36,12 +36,32 @@ window.addEventListener('load', function () {
     //intro animation
     if (document.documentElement.clientWidth > 768) {
         let currentSlide = document.querySelector(".show-slide");
-        currentSlide.style.opacity = "0";
-        setTimeout(() => {
-            currentSlide.style.opacity = "1";
-            setTimeout(changeBorder, 850, 0);
+        // currentSlide.style.opacity = "0";
+
+        // let style = document.createElement('style');
+        // style.innerHTML =
+        //     '.some-element {' +
+        //     'color: purple;' +
+        //     'background-color: #e5e5e5;' +
+        //     'height: 150px;' +
+        //     '}';
+
+        // // Get the first script tag
+        // var ref = document.querySelector('script');
+
+        // // Insert our new styles before the first script tag
+        // ref.parentNode.insertBefore(style, ref);
+
+        currentSlide.addEventListener("animationend", () => {
+            // setTimeout(changeBorder, 850, 0);
+            currentSlide.style.animation = "initial";
+            changeBorder(0);
             runTimer();
-        }, 8850);
+        });
+        // setTimeout(() => {
+        //     // currentSlide.style.opacity = "1";
+
+        // }, 8850);
     }
     else {
         runTimer();
