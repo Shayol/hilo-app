@@ -1,8 +1,10 @@
 .show-slide {
+    opacity: 1;
+    transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
+    transition-delay: 0.85s;
+    -webkit-transform: translateZ(0);
     @media(min-width: $desktop) {
         opacity: 1;
-        transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
-        transition-delay: 0.85s;
-        -webkit-transform: translateZ(0);
+        z-index: 1;
     }
 }

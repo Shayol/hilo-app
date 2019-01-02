@@ -28,7 +28,7 @@ window.addEventListener('load', function () {
 
     sliderLogo.forEach(logo => {
         logo.addEventListener('click', (e) => {
-            e.stopPropagation();
+            // e.stopPropagation();
             container.classList.toggle("show-info");
         });
     });
@@ -41,10 +41,20 @@ window.addEventListener('load', function () {
             currentSlide.style.opacity = "1";
             setTimeout(changeBorder, 850, 0);
             runTimer();
-        }, 8000);
+        }, 8850);
     }
     else {
         runTimer();
+        window.addEventListener('click', detectInteraction);
+        window.addEventListener('touchstart', detectInteraction);
+        window.addEventListener('scroll', detectInteraction);
+    }
+
+    function detectInteraction() {
+        clearInterval(timerId);
+        window.removeEventListener('click', detectInteraction);
+        window.removeEventListener('touchstart', detectInteraction);
+        window.removeEventListener('scroll', detectInteraction);
     }
 
 
@@ -55,7 +65,7 @@ window.addEventListener('load', function () {
         el.addEventListener('click', e => {
             if (TweenLite) {
                 e.preventDefault();
-                e.stopPropagation();
+                // e.stopPropagation();
                 let n = parseInt(el.href.split("#slide")[1]);
                 let topOffset = slider.clientHeight * n;
                 TweenLite.to(slider, 1, { scrollTo: topOffset });
@@ -106,7 +116,7 @@ window.addEventListener('load', function () {
         let current = document.querySelector(".show-slide");
         let currentNumber = parseInt(current.dataset.id);
         if (current) {
-            if (e) e.stopPropagation();
+            // if (e) e.stopPropagation();
             let newIndex = currentNumber > 0 ? currentNumber - 1 : slides.length - 1;
             let newSlide = slides[newIndex];
 
@@ -129,7 +139,7 @@ window.addEventListener('load', function () {
         let current = document.querySelector(".show-slide");
         let currentNumber = parseInt(current.dataset.id);
         if (current) {
-            if (e) e.stopPropagation();
+            // if (e) e.stopPropagation();
             let newIndex = currentNumber < slides.length - 1 ? currentNumber + 1 : 0;
             let newSlide = slides[newIndex];
 
@@ -137,7 +147,9 @@ window.addEventListener('load', function () {
 
             if (TweenLite) {
 
-                TweenLite.to(slider, 0, { scrollTo: slider.clientHeight * newIndex });
+                setTimeout(() => {
+                    TweenLite.to(slider, 0, { scrollTo: slider.clientHeight * newIndex });
+                }, 850);
             }
 
             newSlide.classList.add("show-slide");
