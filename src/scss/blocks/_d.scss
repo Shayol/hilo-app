@@ -57,11 +57,11 @@
         &__cube-face {
             display: block;
             position: absolute;
-            background-color: transparent;
+            background-color: transparent; // transition: all 1.85s linear;
         }
         &__cube-face\--top-right {
-            width: calc(25% + 5px);
-            height: calc(25% + 5px);
+            width: calc(25% + var(--edge-width, 5px));
+            height: calc(25% + var(--edge-width, 5px));
             top: 0;
             right: 0;
             &::after {
@@ -69,18 +69,18 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: calc(100% - 5px);
-                height: calc(100% - 5px);
+                width: calc(100% - var(--edge-width, 5px));
+                height: calc(100% - var(--edge-width, 5px));
                 border-top: 25vh solid white;
                 border-right: 25vw solid transparent;
             }
             &::before {
                 content: '';
                 position: absolute;
-                top: 5px;
+                top: var(--edge-width, 5px);
                 right: 0;
-                width: calc(100% - 5px);
-                height: calc(100% - 5px);
+                width: calc(100% - var(--edge-width, 5px));
+                height: calc(100% - var(--edge-width, 5px));
                 border-bottom: 25vh solid white;
                 border-left: 25vw solid transparent;
             }
@@ -90,20 +90,20 @@
             justify-content: space-between;
             display: flex;
             flex-direction: row;
-            width: calc(50%);
-            height: calc(50%);
+            width: 50%;
+            height: 50%;
             position: relative;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%); // display: block;
-            border: 5px solid transparent;
+            border: var(--edge-width, 5px) solid transparent;
             background-color: white;
             background-clip: padding-box;
             padding: 4.9vmin 6.1vmin 4.9vmin 6.1vmin;
         }
         &__cube-face\--top-left {
-            width: calc(25% + 5px);
-            height: calc(25% + 5px);
+            width: calc(25% + var(--edge-width, 5px));
+            height: calc(25% + var(--edge-width, 5px));
             left: 0;
             top: 0;
             &::after {
@@ -111,25 +111,25 @@
                 position: absolute;
                 top: 0;
                 right: 0;
-                width: calc(100% - 5px);
-                height: calc(100% - 5px);
+                width: calc(100% - var(--edge-width, 5px));
+                height: calc(100% - var(--edge-width, 5px));
                 border-top: 25vh solid white;
                 border-left: 25vw solid transparent;
             }
             &::before {
                 content: '';
                 position: absolute;
-                top: 5px;
+                top: var(--edge-width, 5px);
                 left: 0;
-                width: calc(100% - 5px);
-                height: calc(100% - 5px);
+                width: calc(100% - var(--edge-width, 5px));
+                height: calc(100% - var(--edge-width, 5px));
                 border-bottom: 25vh solid white;
                 border-right: 25vw solid transparent;
             }
         }
         &__cube-face\--bottom-left {
-            width: calc(25% + 5px);
-            height: calc(25% + 5px);
+            width: calc(25% + var(--edge-width, 5px));
+            height: calc(25% + var(--edge-width, 5px));
             bottom: 0;
             left: 0;
             &::after {
@@ -137,25 +137,25 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: calc(100% - 5px);
-                height: calc(100% - 5px);
+                width: calc(100% - var(--edge-width, 5px));
+                height: calc(100% - var(--edge-width, 5px));
                 border-top: 25vh solid white;
                 border-right: 25vw solid transparent;
             }
             &::before {
                 content: '';
                 position: absolute;
-                top: 5px;
+                top: var(--edge-width, 5px);
                 right: 0;
-                width: calc(100% - 5px);
-                height: calc(100% - 5px);
+                width: calc(100% - var(--edge-width, 5px));
+                height: calc(100% - var(--edge-width, 5px));
                 border-bottom: 25vh solid white;
                 border-left: 25vw solid transparent;
             }
         }
         &__cube-face\--bottom-right {
-            width: calc(25% + 5px);
-            height: calc(25% + 5px);
+            width: calc(25% + var(--edge-width, 5px));
+            height: calc(25% + var(--edge-width, 5px));
             bottom: 0;
             right: 0;
             &::after {
@@ -163,29 +163,29 @@
                 position: absolute;
                 top: 0;
                 right: 0;
-                width: calc(100% - 5px);
-                height: calc(100% - 5px);
+                width: calc(100% - var(--edge-width, 5px));
+                height: calc(100% - var(--edge-width, 5px));
                 border-top: 25vh solid white;
                 border-left: 25vw solid transparent;
             }
             &::before {
                 content: '';
                 position: absolute;
-                top: 5px;
+                top: var(--edge-width, 5px);
                 left: 0;
-                width: calc(100% - 5px);
-                height: calc(100% - 5px);
+                width: calc(100% - var(--edge-width, 5px));
+                height: calc(100% - var(--edge-width, 5px));
                 border-bottom: 25vh solid white;
                 border-right: 25vw solid transparent;
             }
         }
         &__cube-face\--middle-left {
             width: 25%;
-            height: calc(50% - 10px);
+            height: calc(50% - 2 * var(--edge-width, 5px));
             background-color: white;
             border-top: 1px solid white;
             border-bottom: 1px solid white;
-            top: calc(25% + 5px);
+            top: calc(25% + var(--edge-width, 5px));
             left: 0;
             &::before {
                 content: '';
@@ -210,9 +210,9 @@
         }
         &__cube-face\--middle-right {
             width: 25%;
-            height: calc(50% - 10px);
+            height: calc(50% - 2 * var(--edge-width, 5px));
             background-color: white;
-            top: calc(25% + 5px);
+            top: calc(25% + var(--edge-width, 5px));
             right: 0;
             &::before {
                 content: '';
@@ -236,11 +236,11 @@
             }
         }
         &__cube-face\--middle-top {
-            width: calc(50% - 10px);
+            width: calc(50% - 2 * var(--edge-width, 5px));
             height: 25%;
             background-color: white;
             top: 0;
-            left: calc(25% + 5px);
+            left: calc(25% + var(--edge-width, 5px));
             &::before {
                 content: '';
                 position: absolute;
@@ -261,11 +261,11 @@
             }
         }
         &__cube-face\--middle-bottom {
-            width: calc(50% - 10px);
+            width: calc(50% - 2 * var(--edge-width, 5px));
             height: 25%;
             background-color: white;
             bottom: 0;
-            left: calc(25% + 5px);
+            left: calc(25% + var(--edge-width, 5px));
             &::before {
                 content: '';
                 position: absolute;

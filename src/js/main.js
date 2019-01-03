@@ -4,6 +4,7 @@ import '../img/favicon.ico';
 require('intersection-observer');
 
 import { generateSlides, shuffledData } from './generateSlides';
+import { debug } from "util";
 
 generateSlides();
 
@@ -55,6 +56,7 @@ window.addEventListener('load', function () {
         currentSlide.addEventListener("animationend", () => {
             // setTimeout(changeBorder, 850, 0);
             currentSlide.style.animation = "initial";
+            document.documentElement.style.setProperty('--edge-width', "5px");
             changeBorder(0);
             runTimer();
         });
