@@ -9,6 +9,12 @@
     align-items: center;
     padding-bottom: 19vmin;
     transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
+    opacity: 0;
+    &\--visible {
+        @media(max-width: $desktop - 1) and (orientation: portrait) {
+            opacity: 1;
+        }
+    }
     &__artist {
         font-size: 4.5vw;
         margin-bottom: .5em;
@@ -32,7 +38,7 @@
         background-position: 50% 50%;
         background-size: contain;
         margin: 0;
-        margin-bottom: 2vh;
+        margin-bottom: 2vh; // opacity: 0;
     }
     &__arrow\--down {
         margin-top: auto;
@@ -46,7 +52,8 @@
         &__img {
             margin: 0;
             height: 100%;
-            width: 100%
+            width: 100%;
+            cursor: pointer;
         }
         &__artist {
             &\--mobile {

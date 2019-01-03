@@ -37,21 +37,6 @@ window.addEventListener('load', function () {
     //intro animation
     if (document.documentElement.clientWidth > 768) {
         let currentSlide = document.querySelector(".show-slide");
-        // currentSlide.style.opacity = "0";
-
-        // let style = document.createElement('style');
-        // style.innerHTML =
-        //     '.some-element {' +
-        //     'color: purple;' +
-        //     'background-color: #e5e5e5;' +
-        //     'height: 150px;' +
-        //     '}';
-
-        // // Get the first script tag
-        // var ref = document.querySelector('script');
-
-        // // Insert our new styles before the first script tag
-        // ref.parentNode.insertBefore(style, ref);
 
         currentSlide.addEventListener("animationend", () => {
             // setTimeout(changeBorder, 850, 0);
@@ -60,23 +45,20 @@ window.addEventListener('load', function () {
             changeBorder(0);
             runTimer();
         });
-        // setTimeout(() => {
-        //     // currentSlide.style.opacity = "1";
-
-        // }, 8850);
     }
     else {
         runTimer();
         window.addEventListener('click', detectInteraction);
         window.addEventListener('touchstart', detectInteraction);
-        window.addEventListener('scroll', detectInteraction);
+        slider.addEventListener('wheel', detectInteraction);
     }
 
     function detectInteraction() {
         clearInterval(timerId);
+        slides.forEach(slide => slide.classList.add("slide--visible"));
         window.removeEventListener('click', detectInteraction);
         window.removeEventListener('touchstart', detectInteraction);
-        window.removeEventListener('scroll', detectInteraction);
+        slider.removeEventListener('wheel', detectInteraction);
     }
 
 

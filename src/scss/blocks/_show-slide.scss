@@ -1,9 +1,13 @@
 .show-slide {
     opacity: 1;
     transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
-    transition-delay: 0.85s;
-    -webkit-transform: translateZ(0);
+    transition-delay: 0.85s; // .slide__img {
+    //     opacity: 1;
+    // }
     @media(min-width: $desktop) {
+        transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
+        transition-delay: 0.85s;
+        -webkit-transform: translateZ(0);
         &#slide0 {
             opacity: 1;
             animation: show-slide 9.7s cubic-bezier(.455, .03, .515, .955) forwards;
