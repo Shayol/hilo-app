@@ -5,6 +5,13 @@
     src: local("Helvetica Neue Light"), local("HelveticaNeue-Light"), url('../fonts/HelveticaNeue-Light.woff') format('woff');
 }
 
+@font-face {
+    font-family: 'Helvetica Neue Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local("Helvetica Neue Regular"), local("HelveticaNeue-Regular"), url('../fonts/HelveticaNeue-Regular.woff') format('woff');
+}
+
 *,
 body,
 html,
