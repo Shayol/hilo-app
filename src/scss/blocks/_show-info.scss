@@ -9,7 +9,8 @@
         opacity: 0;
         transition-delay: initial;
     }
-    @media(min-width: $desktop) {
+    @media(min-width: $desktop),
+    screen and (orientation: landscape) {
         .artist {
             opacity: 0 !important;
             z-index: 1 !important;

@@ -19,7 +19,8 @@
         flex-direction: column;
         background-color: white;
     }
-    @media(min-width: $desktop) {
+    @media(min-width: $desktop),
+    screen and (orientation: landscape) {
         &__scene {
             width: 100%;
             height: 100%;

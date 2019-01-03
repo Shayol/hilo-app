@@ -25,7 +25,8 @@
         -webkit-overflow-scrolling: touch;
         height: 100%;
     }
-    @media(min-width: $desktop) {
+    @media(min-width: $desktop),
+    screen and (orientation: landscape) {
         position: relative;
         padding: 0;
         background-color: transparent;

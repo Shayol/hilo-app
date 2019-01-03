@@ -21,7 +21,8 @@
             display: block;
         }
     }
-    @media(min-width: $desktop) {
+    @media(min-width: $desktop),
+    screen and (orientation: landscape) {
         &__content {
             flex-grow: 1;
             width: 70%;

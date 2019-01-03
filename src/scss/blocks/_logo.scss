@@ -14,21 +14,13 @@
             stroke: #000000;
         }
     }
-    @media(max-width: $desktop - 1) and (orientation: landscape) {
-        padding-top: 5vh;
-    }
-    @media(min-width: $desktop) {
-        // display: none; // width: 12.5%;
+    @media(min-width: $desktop),
+    screen and (orientation: landscape) {
         z-index: 1;
         width: 100%;
         background-color: transparent; // height: 100%;
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: space-between;
-        // opacity: 0;
         margin: 0;
-        padding: 0; // margin-bottom: 0;
-        // transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
+        padding: 0;
         -webkit-transform: translateZ(0); //to remove jumping due to pixel rounding during transition in crome
         pointer-events: none;
         &__wrapper {

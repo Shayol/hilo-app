@@ -1,5 +1,5 @@
 .contacts {
-    @media(min-width: $desktop) {
+    @media(min-width: $desktop), screen and (orientation: landscape) {
         position: absolute;
         bottom: 0;
         right: 0;
