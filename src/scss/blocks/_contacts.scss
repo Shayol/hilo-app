@@ -8,25 +8,26 @@
         pointer-events: none;
         transition: opacity 0.4s cubic-bezier(.02, .01, .47, 1);
         text-align: right;
-        padding-right: 0.5vw;
+        padding-right: 0.45vw;
         &__text {
-            font-size: 0.56vw;
+            font-size: 0.5279vw;
+            letter-spacing: 0.06666em;
             text-decoration: none;
             color: black;
-            line-height: 2.4em;
+            line-height: 2em;
             text-align: right;
             display: block;
             white-space: nowrap;
         }
         &__instagram {
             text-align: right;
-            margin-top: 0.48vw;
-            margin-bottom: 0.6vw;
+            margin-top: 0.3vw;
+            margin-bottom: 0.8vw;
             display: block;
         }
         &__instagram-svg {
-            width: 1.1vw;
-            height: 1.1vw;
+            width: 1vw;
+            height: 1vw;
         }
     }
 }

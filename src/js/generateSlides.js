@@ -21,7 +21,7 @@ function generateSlides() {
         str += `<div id="slide${index}" data-id="${index}" class="slide ${index == 0 ? 'show-slide' : ''}">
                     <div class="slide__img" style="background-image:url('../img/${el.firstname} ${el.lastname}.png');"></div>
                     <a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="slide__artist slide__artist--mobile" download>
-                        ${capitalize(el.firstname)} ${capitalize(el.lastname)}
+                        ${el.firstname.toUpperCase()} ${el.lastname.toUpperCase()}
                     </a>
                     <a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="slide__portfolio slide__portfolio--mobile" download>
                         Portfolio
@@ -30,7 +30,7 @@ function generateSlides() {
 
         artistStr += `<div class='artist__item' id='artist${index}'>
                         <a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="artist__name" download>
-                        ${capitalize(el.firstname)} ${capitalize(el.lastname)}
+                        ${el.firstname.toUpperCase()} ${el.lastname.toUpperCase()}
                         </a>
                         <a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="artist__portfolio" download>
                             Portfolio
