@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
     let slides = document.querySelectorAll(".slide");
     let cube = document.querySelector('.d__cube');
     let back = document.querySelector(".d__cube-face--back");
-    let artwork = document.querySelectorAll(".slide__img");
+    let sliderWrapper = document.querySelector(".slider__wrapper");
     let timerId;
     let slideIndex = 0;
     let background1 = document.querySelector(".container__background--1");
@@ -205,7 +205,7 @@ window.addEventListener('load', function () {
 
     //zoom in 
 
-    artwork.forEach(img => img.addEventListener('click', zoom));
+    sliderWrapper.addEventListener('click', zoom);
 
     function zoom(e) {
         sliderParent.classList.toggle("slider--big");

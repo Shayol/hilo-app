@@ -25,20 +25,12 @@
         -webkit-overflow-scrolling: touch;
         height: 100%;
     }
-    @media(max-width: $desktop - 1) and (orientation: landscape) {
-        &__content {
-            padding: 0;
-        }
-        &__wrapper {
-            padding-left: 4vw;
-            padding-right: 4vw;
-        }
-    }
     @media(min-width: $desktop) {
         position: relative;
         padding: 0;
         background-color: transparent;
         &__content {
+            z-index: -1;
             position: relative;
             padding: 0;
             overflow-y: scroll;
@@ -57,6 +49,7 @@
             margin-right: auto;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
         &\--big {
             .slide {

@@ -87,18 +87,6 @@
         width: 36px;
         height: 36px;
     }
-    @media(max-width: $desktop - 1) and (orientation: landscape) {
-        padding-left: 4%;
-        padding-right: 4%;
-        &__description {
-            margin-bottom: 0.55em;
-            margin-top: 0.75em;
-        }
-        &__second-page,
-        &__first-page {
-            height: auto;
-        }
-    }
     @media(min-width: $desktop) {
         display: none; // position: static;
         // padding: 0; // &__content {
