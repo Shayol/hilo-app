@@ -21,8 +21,8 @@
             display: block;
         }
     }
-    @media(min-width: $desktop),
-    screen and (orientation: landscape) {
+    @media (orientation: landscape),
+    screen and (min-width: $big-desktop) and (orientation: portrait) {
         &__content {
             flex-grow: 1;
             width: 70%;
@@ -43,6 +43,11 @@
                 opacity: 1;
                 background-color: black;
             }
+        }
+    }
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+        &__content {
+            width: 60%;
         }
     }
 }

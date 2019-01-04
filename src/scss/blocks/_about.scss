@@ -1,6 +1,6 @@
 .about {
     display: none;
-    @media(min-width: $desktop), screen and (orientation: landscape) {
+    @media (orientation: landscape),  screen and (min-width: $big-desktop) and (orientation: portrait) {
         display: block;
         height: 100%;
         width: 100%;

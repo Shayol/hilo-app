@@ -1,6 +1,6 @@
 .artist {
     display: none;
-    @media(min-width: $desktop), screen and (orientation: landscape) {
+    @media (orientation: landscape),  screen and (min-width: $big-desktop) and (orientation: portrait) {
         // margin-top: auto;
         position: relative;
         opacity: 0;

@@ -9,8 +9,8 @@
         opacity: 0;
         transition-delay: initial;
     }
-    @media(min-width: $desktop),
-    screen and (orientation: landscape) {
+    @media (orientation: landscape),
+    screen and (min-width: $big-desktop) and (orientation: portrait) {
         .artist {
             opacity: 0 !important;
             z-index: 1 !important;
@@ -30,7 +30,7 @@
         .contacts {
             display: block;
             opacity: 1;
-            z-index: 1;
+            z-index: 6;
             transition-delay: 0.4s;
             pointer-events: auto;
         }

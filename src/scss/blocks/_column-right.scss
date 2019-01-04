@@ -1,11 +1,14 @@
 .column-right {
     display: none;
-    @media(min-width: $desktop), screen and (orientation: landscape) {
+    @media (orientation: landscape), screen and (min-width: $big-desktop) and (orientation: portrait) {
         position: relative;
         width: 15%;
         display: flex;
         opacity: 0;
         z-index: -1;
         flex-direction: column;
+    }
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+        width: 20%;
     }
 }

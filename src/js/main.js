@@ -35,7 +35,7 @@ window.addEventListener('load', function () {
     });
 
     //intro animation
-    if (document.documentElement.clientWidth > 768) {
+    if (document.documentElement.clientWidth > 1366 || document.documentElement.clientWidth > document.documentElement.clientHeight) {
         let currentSlide = document.querySelector(".show-slide");
 
         currentSlide.addEventListener("animationend", () => {
@@ -47,6 +47,14 @@ window.addEventListener('load', function () {
         });
     }
     else {
+        let currentSlide = document.querySelector(".show-slide");
+        let intro = document.querySelector(".intro");
+        currentSlide.style.animation = "initial";
+        intro.style.zIndex = "-1";
+        intro.style.opacity = "0";
+        intro.style.animation = "initial";
+
+        document.documentElement.style.setProperty('--edge-width', "5px");
         runTimer();
         window.addEventListener('click', detectInteraction);
         window.addEventListener('touchstart', detectInteraction);
