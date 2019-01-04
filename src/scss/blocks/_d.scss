@@ -58,7 +58,11 @@
         &__cube-face {
             display: block;
             position: absolute;
-            background-color: transparent; // transition: all 1.85s linear;
+            background-color: transparent;
+            // transition: all .85s linear; // &::after,
+// &::before {
+//     transition: all .85s linear;
+// }
         }
         &__cube-face\--top-right {
             width: calc(25% + var(--edge-width, 5px));

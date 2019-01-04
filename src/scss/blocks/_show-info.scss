@@ -48,5 +48,11 @@
             z-index: 11;
             opacity: 1;
         }
+        .d__cube {
+            transform: scale(2.08);
+        }
+        .logo {
+            pointer-events: auto;
+        }
     }
 }
