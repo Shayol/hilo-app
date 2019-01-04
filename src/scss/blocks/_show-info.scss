@@ -39,5 +39,14 @@
             z-index: 6;
             transition-delay: 0.4s !important;
         }
+        .column-right {
+            display: flex;
+            z-index: 11;
+            opacity: 1;
+        }
+        .column-left {
+            z-index: 11;
+            opacity: 1;
+        }
     }
 }

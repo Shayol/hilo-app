@@ -11,9 +11,7 @@
     transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
     opacity: 0;
     &\--visible {
-        @media(max-width: $big-desktop - 1) and (orientation: portrait) {
-            opacity: 1;
-        }
+        opacity: 1;
     }
     &__artist {
         font-size: 4.5vw;
