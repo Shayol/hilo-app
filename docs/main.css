@@ -452,7 +452,12 @@ body {
     opacity: 1; }
   .show-info .column-left {
     z-index: 11;
-    opacity: 1; } }
+    opacity: 1; }
+  .show-info .d__cube {
+    -webkit-transform: scale(2.08);
+            transform: scale(2.08); }
+  .show-info .logo {
+    pointer-events: auto; } }
 
 .show-slide {
   opacity: 1;
