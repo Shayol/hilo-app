@@ -49,9 +49,11 @@
         line-height: 2.4em;
         letter-spacing: 0.05em;
     }
-    &__artists,
+    &__artists {
+        margin-bottom: 5.5vmax;
+    }
     &__director {
-        margin-bottom: 5vmax;
+        margin-bottom: 3vmax;
     }
     &__small-text {
         color: #000000;
@@ -66,7 +68,7 @@
     &__second-page-text {
         color: #000000;
         font-size: 3.9vmin;
-        line-height: 2.4em;
+        line-height: 2.6em;
         font-weight: 300;
         letter-spacing: 0.05em;
         display: block;
@@ -90,16 +92,5 @@
     @media(min-width: $desktop),
     screen and (orientation: landscape) {
         display: none;
-    }
-    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-        &__description {
-            font-size: 4vmin;
-            line-height: 1.333em;
-        }
-        &__second-page-text {
-            font-size: 4vmin;
-            line-height: 1.333em;
-            margin-bottom: 0;
-        }
     }
 }

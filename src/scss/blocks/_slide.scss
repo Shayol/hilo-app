@@ -20,12 +20,14 @@
         margin-bottom: .5em;
         text-decoration: none;
         color: black;
+        -webkit-transform: translateZ(0);
     }
     &__portfolio {
         color: #9b9b9b;
         text-decoration: none;
         font-size: 4.5vw;
         transition: color .4s;
+        -webkit-transform: translateZ(0);
         &:hover {
             color: black;
         }
@@ -43,8 +45,8 @@
     &__arrow\--down {
         margin-top: auto;
     }
-    @media (min-width: $desktop),
-    screen and (orientation: landscape) {
+    @media (orientation: landscape),
+    screen and (min-width: $big-desktop) and (orientation: portrait) {
         opacity: 0;
         z-index: -1;
         transition-delay: initial;
