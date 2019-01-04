@@ -35,31 +35,44 @@ window.addEventListener('load', function () {
     });
 
     //intro animation
-    if (document.documentElement.clientWidth > 1366 || document.documentElement.clientWidth > document.documentElement.clientHeight) {
-        let currentSlide = document.querySelector(".show-slide");
+    function init() {
+        if (document.documentElement.clientWidth > 1366 || document.documentElement.clientWidth > document.documentElement.clientHeight) {
+            let currentSlide = document.querySelector(".show-slide");
 
-        currentSlide.addEventListener("animationend", () => {
-            // setTimeout(changeBorder, 850, 0);
+            currentSlide.addEventListener("animationend", () => {
+                currentSlide.style.animation = "initial";
+                document.documentElement.style.setProperty('--edge-width', "5px");
+                changeBorder(0);
+                runTimer();
+            });
+        }
+        else {
+            let currentSlide = document.querySelector(".show-slide");
+            let intro = document.querySelector(".intro");
             currentSlide.style.animation = "initial";
-            document.documentElement.style.setProperty('--edge-width', "5px");
-            changeBorder(0);
-            runTimer();
-        });
-    }
-    else {
-        let currentSlide = document.querySelector(".show-slide");
-        let intro = document.querySelector(".intro");
-        currentSlide.style.animation = "initial";
-        intro.style.zIndex = "-1";
-        intro.style.opacity = "0";
-        intro.style.animation = "initial";
+            intro.style.zIndex = "-1";
+            intro.style.opacity = "0";
+            intro.style.animation = "initial";
 
-        document.documentElement.style.setProperty('--edge-width', "5px");
-        runTimer();
-        window.addEventListener('click', detectInteraction);
-        window.addEventListener('touchstart', detectInteraction);
-        slider.addEventListener('wheel', detectInteraction);
+            document.documentElement.style.setProperty('--edge-width', "5px");
+            runTimer();
+            window.addEventListener('click', detectInteraction);
+            window.addEventListener('touchstart', detectInteraction);
+            slider.addEventListener('wheel', detectInteraction);
+        }
+
     }
+
+    init();
+
+    // window.addEventListener('resize', () => {
+    //     init();
+    // });
+    // window.addEventListener('resize', () => {
+    //     let n = parseInt(document.querySelector(".show-slide").dataset.id);
+    //     let topOffset = slider.clientHeight * n;
+    //     TweenLite.to(slider, 0, { scrollTo: topOffset });
+    // });
 
     function detectInteraction() {
         clearInterval(timerId);
@@ -101,6 +114,7 @@ window.addEventListener('load', function () {
                     let currentSlide = document.querySelector(".show-slide");
                     currentSlide.classList.remove("show-slide");
                     newSlide.classList.add("show-slide");
+                    changeBorder(slideIndex);
                 }
 
 
@@ -220,7 +234,7 @@ window.addEventListener('load', function () {
         cube.classList.toggle("d__cube--big");
         checkTimer();
         if (!cube.classList.contains("d__cube--big")) {
-            changeBorder(parseInt(document.querySelector(".show-slide").dataset.id));
+            // changeBorder(parseInt(document.querySelector(".show-slide").dataset.id));
         }
     }
 
