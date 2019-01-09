@@ -626,7 +626,10 @@ body {
               transform: scale(2); }
       .d__cube--big .column-left {
         z-index: 1;
-        opacity: 1; }
+        opacity: 1;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
       .d__cube--big .logo {
         pointer-events: auto; }
       .d__cube--big .artist {
@@ -1057,8 +1060,7 @@ body {
       line-height: 2em;
       text-align: right;
       display: block;
-      white-space: nowrap;
-      -webkit-filter: blur(0px); }
+      white-space: nowrap; }
     .contacts__instagram {
       text-align: right;
       margin-top: 0.28vw;
@@ -1090,8 +1092,7 @@ body {
       .about__text {
         font-size: 0.5279vw;
         line-height: 3em;
-        letter-spacing: 0.0666em;
-        -webkit-filter: blur(0px); } }
+        letter-spacing: 0.0666em; } }
 
 .intro {
   z-index: -1;
