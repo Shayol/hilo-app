@@ -193,7 +193,7 @@ window.addEventListener('load', function () {
     } //change cubes edge background when gallary image changes
     function changeBorder(newIndex) {
         let slide = shuffledData[newIndex];
-        let url = `url('../img/${slide.firstname} ${slide.lastname}.png')`;
+        let url = `url('../hilo-app/img/${slide.firstname} ${slide.lastname}.png')`;
         if (!backgroundFirst) {
             background1.style.backgroundImage = url;
             background1.style.backgroundPosition = slide.backgroundPosition;

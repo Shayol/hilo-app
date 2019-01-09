@@ -19,8 +19,8 @@ function generateSlides() {
     shuffledData.forEach((el, index) => {
 
         str += `<div id="slide${index}" data-id="${index}" class="slide ${index == 0 ? 'show-slide' : ''}">
-                    <div class="slide__img" style="background-image:url('../img/${el.firstname} ${el.lastname}.png');">
-                        <div class="slide__img slide__img--desktop" style="background-image:url('../img/${el.firstname} ${el.lastname}.png') !important;width:${el.desktopSize};">
+                    <div class="slide__img" style="background-image:url('../hilo-app/img/${el.firstname} ${el.lastname}.png');">
+                        <div class="slide__img slide__img--desktop" style="background-image:url('../hilo-app/img/${el.firstname} ${el.lastname}.png') !important;width:${el.desktopSize};">
                         </div>
                     </div>
                     <a href="../assets/${capitalize(el.firstname)} ${capitalize(el.lastname)}.pdf" class="slide__artist slide__artist--mobile" download>
