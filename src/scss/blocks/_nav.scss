@@ -1,6 +1,6 @@
 .nav {
     display: none;
-    @media (orientation: landscape),  screen and (min-width: $big-desktop) and (orientation: portrait) {
+    @media (orientation: landscape), screen and (min-width: $desktop) {
         transition: opacity .4s cubic-bezier(.455, .03, .515, .955);
         transition-delay: 0.4s;
         display: flex;

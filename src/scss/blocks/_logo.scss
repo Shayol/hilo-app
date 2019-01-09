@@ -1,10 +1,9 @@
 .logo {
     width: 27.14vmin;
-    padding-top: 17.5vmin;
+    padding-top: calc(var(--vh, 1vh) * 8.78);
     height: auto;
     -webkit-transform: translateZ(0); //to remove jumping due to pixel rounding during transition in crome
     cursor: pointer;
-    margin-bottom: 2.5vmin;
     background-color: white;
     text-align: center;
     &__svg {
@@ -16,7 +15,7 @@
         }
     }
     @media (orientation: landscape),
-    screen and (min-width: $big-desktop) and (orientation: portrait) {
+    screen and (min-width: $desktop) {
         z-index: 1;
         width: 100%;
         background-color: transparent; // height: 100%;
@@ -29,5 +28,10 @@
         &__svg {
             height: auto;
         }
+    }
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait),
+    (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+        padding-top: 11.7vmin;
+        width: 24.7vmin;
     }
 }

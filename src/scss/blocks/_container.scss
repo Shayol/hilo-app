@@ -22,12 +22,11 @@
         }
     }
     @media (orientation: landscape),
-    screen and (min-width: $big-desktop) and (orientation: portrait) {
+    screen and (min-width: $desktop) {
         &__content {
-            flex-grow: 1;
-            width: 70%;
             display: block;
             height: 100%;
+            flex-grow: 1;
         }
         &__background {
             position: absolute;
@@ -41,13 +40,36 @@
             transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
             &\--1 {
                 opacity: 1;
+                background-color: white;
+            }
+            &\--2 {}
+            &\--3 {
+                opacity: 0;
                 background-color: black;
+                animation: border-fade 3.55s cubic-bezier(.455, .03, .515, .955);
+                transition: initial;
             }
         }
     }
-    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-        &__content {
-            width: 60%;
+    @media(device-width: 1366px) and (device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape),
+    (min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+        &__background\--3 {
+            animation: initial;
         }
+    }
+}
+
+@keyframes border-fade {
+    0% {
+        opacity: 0;
+    }
+    23.9437% {
+        opacity: 1;
+    }
+    76.0563% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }

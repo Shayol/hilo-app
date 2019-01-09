@@ -1,7 +1,7 @@
 .artist {
     display: none;
-    @media (orientation: landscape),  screen and (min-width: $big-desktop) and (orientation: portrait) {
-        // margin-top: auto;
+    @media (orientation: landscape), screen and (min-width: $desktop) {
+        height: 20%;
         position: relative;
         opacity: 0;
         z-index: -1;
@@ -9,37 +9,50 @@
         transition-delay: 0.4s;
         &__item {
             position: absolute;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            left: 0;
+            bottom: 0;
             opacity: 0;
             transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
             top: 0;
             left: 0;
             opacity: 0;
-            &:first-child {
-                opacity: 1;
+            z-index: 0;
+            &\--active {
+                z-index: 1;
                 position: static;
             }
         }
         &__name {
-            font-size: 0.5983vw;
-            letter-spacing: 0.033em;
-            margin-bottom: .9em;
+            font-size: 0.5279vw;
+            letter-spacing: 0.1333em;
+            line-height: 2em;
             transition: opacity .85s;
             text-decoration: none;
             color: black;
             display: block;
             text-align: left;
+            white-space: nowrap;
+            overflow: visible;
+            transform: translateZ(0);
             &:hover~.artist__portfolio {
                 color: black;
             }
         }
         &__portfolio {
             text-align: left;
-            font-size: 0.6vw;
-            letter-spacing: 0.035em;
+            font-size: 0.5279vw;
+            letter-spacing: 0.1333em;
+            line-height: 2em;
             transition: opacity .85s, color 0.3s;
             color: #9b9b9b;
             text-decoration: none;
             display: block;
+            filter: blur(0px);
+            transform: translateZ(0);
             &:hover {
                 color: black;
             }

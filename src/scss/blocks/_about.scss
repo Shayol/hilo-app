@@ -1,11 +1,11 @@
 .about {
     display: none;
-    @media (orientation: landscape),  screen and (min-width: $big-desktop) and (orientation: portrait) {
+    @media (orientation: landscape), screen and (min-width: $desktop) and (orientation: portrait) {
         display: block;
         height: 100%;
         width: 100%;
-        padding-top: 22%;
-        padding-left: 16%;
+        padding-top: 11.8vmin;
+        padding-left: 3vmax;
         position: absolute;
         top: 0;
         left: 0;
@@ -18,12 +18,9 @@
         }
         &__text {
             font-size: 0.5279vw;
-            line-height: 3.1em;
-            letter-spacing: 0.06666em;
-            font-family: 'Helvetica Neue Regular';
-        }
-        &__bold {
-            font-weight: 600;
+            line-height: 3em;
+            letter-spacing: 0.0666em;
+            -webkit-filter: blur(0px);
         }
     }
 }

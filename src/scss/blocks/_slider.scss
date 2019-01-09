@@ -10,6 +10,16 @@
     z-index: 10;
     opacity: 1;
     background-color: white;
+    &::before {
+        height: calc(var(--vh, 1vh) * 4.39);
+        content: '';
+        width: 100%;
+        position: absolute;
+        top: -1px;
+        left: 0;
+        background-color: white;
+        z-index: 2;
+    }
     &__wrapper {
         flex-grow: 1;
         overflow: hidden;
@@ -25,13 +35,20 @@
         -webkit-overflow-scrolling: touch;
         height: 100%;
     }
+    &\--slides-visible {
+        .slide {
+            opacity: 1;
+        }
+    }
     @media (orientation: landscape),
-    screen and (min-width: $big-desktop) and (orientation: portrait) {
+    screen and (min-width: $desktop) {
         position: relative;
         padding: 0;
         background-color: transparent;
+        &::before {
+            display: none;
+        }
         &__content {
-            z-index: -1;
             position: relative;
             padding: 0;
             overflow-y: scroll;
@@ -52,11 +69,5 @@
             overflow: hidden;
             cursor: pointer;
         }
-        &\--big {
-            .slide {
-                opacity: 1;
-            }
-        }
     }
-    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {}
 }

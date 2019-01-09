@@ -10,7 +10,7 @@
         transition-delay: initial;
     }
     @media (orientation: landscape),
-    screen and (min-width: $big-desktop) and (orientation: portrait) {
+    screen and (min-width: $desktop) {
         .artist {
             opacity: 0 !important;
             z-index: 1 !important;
@@ -47,13 +47,6 @@
         .column-left {
             z-index: 11;
             opacity: 1;
-        }
-        .d__cube {
-            transform: scale(2.08);
-            transition: initial;
-        }
-        .logo {
-            pointer-events: auto;
         }
     }
 }

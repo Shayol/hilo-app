@@ -7,25 +7,26 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 10vmin;
+    padding-bottom: calc(var(--vh, 1vh) * 11);
     transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
     opacity: 0;
     &\--visible {
         opacity: 1;
     }
     &__artist {
-        font-size: 4.5vw;
-        margin-bottom: .5em;
+        font-size: 4.3vw;
+        letter-spacing: 0.091em;
+        line-height: 1.9545em;
         text-decoration: none;
         color: black;
-        -webkit-transform: translateZ(0);
     }
     &__portfolio {
         color: #9b9b9b;
         text-decoration: none;
-        font-size: 4.5vw;
+        font-size: 4.3vw;
+        letter-spacing: 0.091em;
+        line-height: 1.9545em;
         transition: color .4s;
-        -webkit-transform: translateZ(0);
         &:hover {
             color: black;
         }
@@ -38,13 +39,16 @@
         background-position: 50% 50%;
         background-size: contain;
         margin: 0;
-        margin-bottom: 2vh; // opacity: 0;
+        margin-bottom: calc(var(--vh, 1vh) * 2);
+        &\--desktop {
+            display: none;
+        }
     }
     &__arrow\--down {
         margin-top: auto;
     }
     @media (orientation: landscape),
-    screen and (min-width: $big-desktop) and (orientation: portrait) {
+    screen and (min-width: $desktop) {
         opacity: 0;
         z-index: -1;
         transition-delay: initial;
@@ -52,7 +56,14 @@
         &__img {
             margin: 0;
             height: 100%;
-            width: 100%;
+            background-image: none !important;
+            &\--desktop {
+                width: 100%;
+                display: block;
+                height: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
         &__artist {
             &\--mobile {
@@ -63,6 +74,23 @@
             &\--mobile {
                 display: none;
             }
+        }
+    }
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2),
+    (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+        padding-bottom: 4vmin;
+        &__artist {
+            font-size: 2.8646vw;
+            letter-spacing: 0.091em;
+            line-height: 1.9545em;
+        }
+        &__portfolio {
+            font-size: 2.8646vw;
+            letter-spacing: 0.091em;
+            line-height: 1.9545em;
+        }
+        &__img {
+            background-size: 90%;
         }
     }
 }

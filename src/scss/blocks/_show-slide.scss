@@ -1,16 +1,11 @@
 .show-slide {
     opacity: 1;
     transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
-    transition-delay: 0.85s; // .slide__img {
-    //     opacity: 1;
-    // }
-    @media (orientation: landscape),  screen and (min-width: $big-desktop) and (orientation: portrait) {
-        transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
-        transition-delay: 0.85s;
-        -webkit-transform: translateZ(0);
+    transition-delay: 0.85s;
+    @media (orientation: landscape), screen and (min-width: $desktop) {
         &#slide0 {
             opacity: 1;
-            animation: show-slide 9.7s cubic-bezier(.455, .03, .515, .955) forwards;
+            animation: show-slide 2.7s cubic-bezier(.455, .03, .515, .955) forwards;
         }
         opacity: 1;
         z-index: 1;
@@ -21,7 +16,7 @@
     0% {
         opacity: 0;
     }
-    91.2371% {
+    68.5185% {
         opacity: 0;
     }
     100% {
