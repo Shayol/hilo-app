@@ -612,9 +612,6 @@ body {
     -webkit-transition: all 0.85s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     transition: all 0.85s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     -webkit-font-smoothing: subpixel-antialiased;
-    -webkit-transform: translate3d(0, 0, 0), scale3d(1, 1, 1);
-            transform: translate3d(0, 0, 0), scale3d(1, 1, 1);
-    -webkit-perspective: 1000;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -625,8 +622,8 @@ body {
         -ms-flex-pack: center;
             justify-content: center; }
     .d__cube--big {
-      -webkit-transform: scale3d(2.08, 2.08, 2.08);
-              transform: scale3d(2.08, 2.08, 2.08); }
+      -webkit-transform: scale(2);
+              transform: scale(2); }
       .d__cube--big .column-left {
         z-index: 1;
         opacity: 1; }
