@@ -1,6 +1,7 @@
 .show-slide {
-    // opacity: 1; // transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
-    // transition-delay: 0.85s;
+    opacity: 1;
+    transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
+    transition-delay: 0.85s;
     @media (orientation: landscape), screen and (min-width: $desktop) {
         &#slide0 {
             opacity: 1;

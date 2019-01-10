@@ -121,42 +121,42 @@ window.addEventListener('load', function () {
         nav.classList.add("scrolled");
     }
 
-    // const intersectionObserver = new IntersectionObserver((entries, observer) => {
-    //     entries.forEach((entry) => {
-    //         let artist = artists[parseInt(entry.target.dataset.id)];
-    //         if (entry.intersectionRatio >= 0.6) {
-    //             if (!navScrollInProgress) { }
-    //             artists.forEach(artist => {
-    //                 artist.style.zIndex = "-1";
-    //                 artist.style.opacity = "0";
-    //             });
-    //             artist.style.zIndex = "1";
-    //             artist.style.opacity = "1";
+    const intersectionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            let artist = artists[parseInt(entry.target.dataset.id)];
+            if (entry.intersectionRatio >= 0.6) {
+                if (!navScrollInProgress) { }
+                artists.forEach(artist => {
+                    artist.style.zIndex = "-1";
+                    artist.style.opacity = "0";
+                });
+                artist.style.zIndex = "1";
+                artist.style.opacity = "1";
 
-    //             slideIndex = parseInt(entry.target.dataset.id);
-    //             let newSlide = slides[slideIndex];
+                slideIndex = parseInt(entry.target.dataset.id);
+                let newSlide = slides[slideIndex];
 
-    //             if (!newSlide.classList.contains("show-slide")) {
-    //                 let currentSlide = document.querySelector(".show-slide");
-    //                 currentSlide.classList.remove("show-slide");
-    //                 newSlide.classList.add("show-slide");
-    //                 setTimeout(changeBorder, 850, slideIndex);
-    //             }
-    //             //show active nav when corresponding slide is visible
-    //             if (!navScrollInProgress) {
-    //                 let nav = document.querySelector(`[href='#slide${slideIndex}']`);
-    //                 activateNav(nav);
+                if (!newSlide.classList.contains("show-slide")) {
+                    let currentSlide = document.querySelector(".show-slide");
+                    currentSlide.classList.remove("show-slide");
+                    newSlide.classList.add("show-slide");
+                    setTimeout(changeBorder, 850, slideIndex);
+                }
+                //show active nav when corresponding slide is visible
+                if (!navScrollInProgress) {
+                    let nav = document.querySelector(`[href='#slide${slideIndex}']`);
+                    activateNav(nav);
 
-    //             }
-    //         }
-    //     }
-    //     );
-    // }, { threshold: 0.6 });
+                }
+            }
+        }
+        );
+    }, { threshold: 0.6 });
 
-    // slides.forEach((element) => intersectionObserver.observe(element));
+    slides.forEach((element) => intersectionObserver.observe(element));
 
 
-    function moveLeft(e) {
+    function moveUp(e) {
         let current = document.querySelector(".show-slide");
         let currentNumber = parseInt(current.dataset.id);
         if (current) {
@@ -171,16 +171,14 @@ window.addEventListener('load', function () {
             setTimeout(changeBorder, 850, newIndex);
         }
     } //show slide to the right
-    function moveRight(e) {
+    function moveDown(e) {
         let current = document.querySelector(".show-slide");
         let currentNumber = parseInt(current.dataset.id);
         if (current) {
             let newIndex = currentNumber < slides.length - 1 ? currentNumber + 1 : 0;
             let newSlide = slides[newIndex];
-            TweenLite.from(current, .85, { opacity: 1, ease: Power2.easeOut });
             current.classList.remove("show-slide");
             if (TweenLite) {
-
                 setTimeout(() => {
                     TweenLite.to(slider, 0, {
                         scrollTo: slider.clientHeight * newIndex
@@ -190,7 +188,6 @@ window.addEventListener('load', function () {
                     , 850);
             }
             newSlide.classList.add("show-slide");
-            TweenLite.from(newSlide, .85, { opacity: 1, ease: Sine.easeOut });
             setTimeout(changeBorder, 850, newIndex);
         }
     } //change cubes edge background when gallary image changes
@@ -212,7 +209,7 @@ window.addEventListener('load', function () {
         backgroundFirst = !backgroundFirst;
     } //change slides every 4secs
     function runTimer() {
-        timerId = setInterval(() => { moveRight() }, 4000);
+        timerId = setInterval(() => { moveDown() }, 4000);
     }
     function stopTimer() {
         clearInterval(timerId);
@@ -228,16 +225,16 @@ window.addEventListener('load', function () {
             return; // Do nothing if the event was already processed
         }
         switch (e.key) {
-            case "Left": // IE/Edge specific value
-                moveLeft(e);
+            case "Up": // IE/Edge specific value
+                moveUp(e);
                 stopTimer();
-            case "ArrowLeft": moveLeft(e);
+            case "ArrowUp": moveUp(e);
                 stopTimer();
                 break;
-            case "Right": // IE/Edge specific value
-                moveRight(e);
+            case "Down": // IE/Edge specific value
+                moveDown(e);
                 stopTimer();
-            case "ArrowRight": moveRight(e);
+            case "ArrowDown": moveDown(e);
                 stopTimer();
                 break;
             case " ": zoom(e);

@@ -417,7 +417,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  opacity: 0; }
+  -webkit-transition: opacity 0.85s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: opacity 0.85s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  opacity: 0;
+  -webkit-transform: translate3d(1, 1, 1);
+          transform: translate3d(1, 1, 1); }
   .slide--visible {
     opacity: 1; }
   .slide__artist {
@@ -537,14 +541,20 @@ body {
     z-index: 11;
     opacity: 1; } }
 
-@media (orientation: landscape), screen and (min-width: 1280px) {
-  .show-slide {
-    opacity: 1;
-    z-index: 1; }
-    .show-slide#slide0 {
+.show-slide {
+  opacity: 1;
+  -webkit-transition: opacity 0.85s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: opacity 0.85s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -webkit-transition-delay: 0.85s;
+          transition-delay: 0.85s; }
+  @media (orientation: landscape), screen and (min-width: 1280px) {
+    .show-slide {
       opacity: 1;
-      -webkit-animation: show-slide 2.7s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
-              animation: show-slide 2.7s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards; } }
+      z-index: 1; }
+      .show-slide#slide0 {
+        opacity: 1;
+        -webkit-animation: show-slide 2.7s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+                animation: show-slide 2.7s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards; } }
 
 @-webkit-keyframes show-slide {
   0% {
@@ -1000,7 +1010,6 @@ body {
 
 @media (orientation: landscape), screen and (min-width: 1280px) {
   .column-left {
-    display: none;
     z-index: -1;
     width: 25%;
     height: 100%;
