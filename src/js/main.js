@@ -121,39 +121,39 @@ window.addEventListener('load', function () {
         nav.classList.add("scrolled");
     }
 
-    const intersectionObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            let artist = artists[parseInt(entry.target.dataset.id)];
-            if (entry.intersectionRatio >= 0.6) {
-                if (!navScrollInProgress) { }
-                artists.forEach(artist => {
-                    artist.style.zIndex = "-1";
-                    artist.style.opacity = "0";
-                });
-                artist.style.zIndex = "1";
-                artist.style.opacity = "1";
+    // const intersectionObserver = new IntersectionObserver((entries, observer) => {
+    //     entries.forEach((entry) => {
+    //         let artist = artists[parseInt(entry.target.dataset.id)];
+    //         if (entry.intersectionRatio >= 0.6) {
+    //             if (!navScrollInProgress) { }
+    //             artists.forEach(artist => {
+    //                 artist.style.zIndex = "-1";
+    //                 artist.style.opacity = "0";
+    //             });
+    //             artist.style.zIndex = "1";
+    //             artist.style.opacity = "1";
 
-                slideIndex = parseInt(entry.target.dataset.id);
-                let newSlide = slides[slideIndex];
+    //             slideIndex = parseInt(entry.target.dataset.id);
+    //             let newSlide = slides[slideIndex];
 
-                if (!newSlide.classList.contains("show-slide")) {
-                    let currentSlide = document.querySelector(".show-slide");
-                    currentSlide.classList.remove("show-slide");
-                    newSlide.classList.add("show-slide");
-                    setTimeout(changeBorder, 850, slideIndex);
-                }
-                //show active nav when corresponding slide is visible
-                if (!navScrollInProgress) {
-                    let nav = document.querySelector(`[href='#slide${slideIndex}']`);
-                    activateNav(nav);
+    //             if (!newSlide.classList.contains("show-slide")) {
+    //                 let currentSlide = document.querySelector(".show-slide");
+    //                 currentSlide.classList.remove("show-slide");
+    //                 newSlide.classList.add("show-slide");
+    //                 setTimeout(changeBorder, 850, slideIndex);
+    //             }
+    //             //show active nav when corresponding slide is visible
+    //             if (!navScrollInProgress) {
+    //                 let nav = document.querySelector(`[href='#slide${slideIndex}']`);
+    //                 activateNav(nav);
 
-                }
-            }
-        }
-        );
-    }, { threshold: 0.6 });
+    //             }
+    //         }
+    //     }
+    //     );
+    // }, { threshold: 0.6 });
 
-    slides.forEach((element) => intersectionObserver.observe(element));
+    // slides.forEach((element) => intersectionObserver.observe(element));
 
 
     function moveLeft(e) {
