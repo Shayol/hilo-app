@@ -35,11 +35,10 @@
             align-items: center;
             justify-content: center;
             &\--big {
-                transform: scale(2);
+                transform: scale(2.08);
                 .column-left {
                     z-index: 1;
                     opacity: 1;
-                    display: flex;
                 }
                 .logo {
                     pointer-events: auto;

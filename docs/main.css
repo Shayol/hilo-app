@@ -300,7 +300,6 @@ body {
   width: 27.14vmin;
   padding-top: calc(var(--vh, 1vh) * 8.78);
   height: auto;
-  -webkit-transform: translateZ(0);
   cursor: pointer;
   background-color: white;
   text-align: center; }
@@ -418,7 +417,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-bottom: calc(var(--vh, 1vh) * 11);
   -webkit-transition: opacity 0.85s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: opacity 0.85s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   opacity: 0; }
@@ -622,14 +620,11 @@ body {
         -ms-flex-pack: center;
             justify-content: center; }
     .d__cube--big {
-      -webkit-transform: scale(2);
-              transform: scale(2); }
+      -webkit-transform: scale(2.08);
+              transform: scale(2.08); }
       .d__cube--big .column-left {
         z-index: 1;
-        opacity: 1;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex; }
+        opacity: 1; }
       .d__cube--big .logo {
         pointer-events: auto; }
       .d__cube--big .artist {
@@ -936,9 +931,7 @@ body {
         display: block;
         text-align: left;
         white-space: nowrap;
-        overflow: visible;
-        -webkit-transform: translateZ(0);
-                transform: translateZ(0); }
+        overflow: visible; }
         .artist__name:hover ~ .artist__portfolio {
           color: black; }
       .artist__portfolio {
@@ -950,11 +943,7 @@ body {
         transition: opacity .85s, color 0.3s;
         color: #9b9b9b;
         text-decoration: none;
-        display: block;
-        -webkit-filter: blur(0px);
-                filter: blur(0px);
-        -webkit-transform: translateZ(0);
-                transform: translateZ(0); }
+        display: block; }
         .artist__portfolio:hover {
           color: black; } }
 

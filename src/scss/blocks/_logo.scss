@@ -1,8 +1,7 @@
 .logo {
     width: 27.14vmin;
     padding-top: calc(var(--vh, 1vh) * 8.78);
-    height: auto;
-    -webkit-transform: translateZ(0); //to remove jumping due to pixel rounding during transition in crome
+    height: auto; // -webkit-transform: translateZ(0); //to remove jumping due to pixel rounding during transition in crome
     cursor: pointer;
     background-color: white;
     text-align: center;

@@ -7,7 +7,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: calc(var(--vh, 1vh) * 11);
     transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
     opacity: 0;
     &\--visible {

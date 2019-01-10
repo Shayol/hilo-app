@@ -37,7 +37,6 @@
             text-align: left;
             white-space: nowrap;
             overflow: visible;
-            transform: translateZ(0);
             &:hover~.artist__portfolio {
                 color: black;
             }
@@ -51,8 +50,6 @@
             color: #9b9b9b;
             text-decoration: none;
             display: block;
-            filter: blur(0px);
-            transform: translateZ(0);
             &:hover {
                 color: black;
             }
