@@ -177,9 +177,10 @@ window.addEventListener('load', function () {
         if (current) {
             let newIndex = currentNumber < slides.length - 1 ? currentNumber + 1 : 0;
             let newSlide = slides[newIndex];
+            TweenLite.from(current, .85, { opacity: 1, ease: Power2.easeOut });
             current.classList.remove("show-slide");
             if (TweenLite) {
-                TweenLite.fromTo(current, .85, { opacity: 1 }, { opacity: 0, ease: Sine.easeOut });
+
                 setTimeout(() => {
                     TweenLite.to(slider, 0, {
                         scrollTo: slider.clientHeight * newIndex
@@ -189,7 +190,7 @@ window.addEventListener('load', function () {
                     , 850);
             }
             newSlide.classList.add("show-slide");
-            TweenLite.fromTo(newSlide, .85, { opacity: 0 }, { opacity: 1, ease: Sine.easeOut });
+            TweenLite.from(newSlide, .85, { opacity: 1, ease: Sine.easeOut });
             setTimeout(changeBorder, 850, newIndex);
         }
     } //change cubes edge background when gallary image changes

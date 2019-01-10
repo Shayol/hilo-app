@@ -539,6 +539,7 @@ body {
 
 @media (orientation: landscape), screen and (min-width: 1280px) {
   .show-slide {
+    opacity: 1;
     z-index: 1; }
     .show-slide#slide0 {
       opacity: 1;
