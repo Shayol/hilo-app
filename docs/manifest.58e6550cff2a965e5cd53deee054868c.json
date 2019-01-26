@@ -31,9 +31,8 @@
       "type": "image/png"
     }
   ],
-  "name": "hilo",
-  "short_name": "hilo",
-  "orientation": "portrait",
+  "name": "HILO",
+  "short_name": "HILO",
   "display": "standalone",
   "start_url": ".",
   "description": "Contemporary art gallery representing emerging artists from Latin America"
